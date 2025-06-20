@@ -655,195 +655,76 @@
 
 
 
-   @foreach ($abouts as $about)
-    <section class="about-section section-padding fix bg-cover relative overflow-hidden"
-        style="background-image: url('{{ asset('storage/' . ($about->background_image ?? 'assets/img/service/service-bg-2.jpg')) }}');">
-
-        <!-- Overlay gradient pour améliorer la lisibilité -->
-        <div class="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-black/30"></div>
-
-        <!-- Éléments décoratifs -->
-        <div class="absolute top-10 left-10 w-32 h-32 bg-blue-500/10 rounded-full blur-xl animate-pulse"></div>
-        <div class="absolute bottom-20 right-20 w-24 h-24 bg-purple-500/10 rounded-full blur-lg animate-pulse" style="animation-delay: 1s;"></div>
-
-        <div class="container relative z-10">
-            <div class="about-wrapper style-2">
-                <div class="row align-items-center">
-                    <!-- Image Section -->
-                    <div class="col-lg-6">
-                        <div class="relative">
-                            <!-- Card principale avec effet glassmorphism -->
-                            <div class="bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl rounded-3xl overflow-hidden transform hover:scale-105 transition-all duration-500 hover:shadow-3xl">
-                                <div class="p-6">
-                                    <!-- Cercle décoratif animé -->
-                                    <div class="text-center mb-4">
-                                        <div class="inline-block relative">
-                                            <img src="{{ asset('assets/img/about/circle.png') }}" alt="shape-img"
-                                                class="w-20 h-20 animate-spin-slow opacity-80">
-                                            <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-600 rounded-full opacity-20 animate-pulse"></div>
-                                        </div>
+    @foreach ($abouts as $about)
+        <section class="about-section section-padding fix bg-cover"
+            style="background-image: url('{{ asset('storage/' . ($about->background_image ?? 'assets/img/service/service-bg-2.jpg')) }}');">
+            <div class="container">
+                <div class="about-wrapper style-2">
+                    <div class="row">
+                        <!-- Image Section -->
+                        <div class="col-lg-6">
+                            <div class="card shadow rounded-4 overflow-hidden">
+                                <div class="card-body p-3">
+                                    <!-- Cercle décoratif (optionnel) -->
+                                    <div class="text-center mb-3">
+                                        <img src="{{ asset('assets/img/about/circle.png') }}" alt="shape-img"
+                                            class="img-fluid" style="max-width: 80px;">
                                     </div>
 
-                                    <!-- Première image avec overlay hover -->
-                                    <div class="mb-4 wow fadeInLeft relative group" data-wow-delay=".3s">
-                                        <div class="relative overflow-hidden rounded-2xl">
-                                            <img src="{{ asset('storage/' . $about->image) }}" alt="about-img-1"
-                                                class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110">
-
-                                            <!-- Overlay au hover -->
-                                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-                                            <!-- Effet de brillance -->
-                                            <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
-                                        </div>
+                                    <!-- Première image -->
+                                    <div class="mb-3 wow fadeInLeft" data-wow-delay=".3s">
+                                        <img src="{{ asset('storage/' . $about->image) }}" alt="about-img-1"
+                                            class="img-fluid rounded w-100">
                                     </div>
 
-                                    <!-- Intégration YouTube avec design moderne -->
+                                    <!-- Intégration lien YouTube -->
                                     @php
                                         $youtubeId = getYoutubeId($about->lient_youtube);
                                     @endphp
 
                                     @if ($youtubeId)
-                                        <div class="video-section wow fadeInUp relative group" data-wow-delay=".5s">
-                                            <div class="relative overflow-hidden rounded-2xl shadow-lg" style="padding-bottom:56.25%;height:0;">
-                                                <iframe src="https://www.youtube.com/embed/{{ $youtubeId }}"
-                                                    frameborder="0"
-                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                                    allowfullscreen
-                                                    class="absolute top-0 left-0 w-full h-full rounded-2xl transition-transform duration-300 group-hover:scale-105"
-                                                    style="box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);"></iframe>
-
-                                                <!-- Bordure décorative -->
-                                                <div class="absolute -inset-0.5 bg-gradient-to-r from-red-600 to-pink-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
-                                            </div>
-
-                                            <!-- Indicateur de lecture -->
-                                            <div class="absolute top-4 right-4 bg-red-600 text-white px-2 py-1 rounded-full text-xs font-semibold flex items-center gap-1 animate-pulse">
-                                                <div class="w-2 h-2 bg-white rounded-full"></div>
-                                                LIVE
-                                            </div>
+                                        <div class="video-section wow fadeInUp" data-wow-delay=".5s"
+                                            style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                                            <iframe src="https://www.youtube.com/embed/{{ $youtubeId }}"
+                                                frameborder="0"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                allowfullscreen
+                                                style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius: .5rem;"></iframe>
                                         </div>
                                     @endif
                                 </div>
                             </div>
-
-                            <!-- Éléments décoratifs flottants -->
-                            <div class="absolute -top-6 -right-6 w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl rotate-12 opacity-80 animate-bounce"></div>
-                            <div class="absolute -bottom-4 -left-4 w-8 h-8 bg-gradient-to-br from-green-400 to-blue-500 rounded-lg -rotate-12 opacity-70 animate-bounce" style="animation-delay: 0.5s;"></div>
                         </div>
-                    </div>
 
-                    <!-- Content Section -->
-                    <div class="col-lg-6 mt-5 mt-lg-0">
-                        <div class="about-content relative">
-                            <!-- Élément décoratif de fond -->
-                            <div class="absolute -top-10 -left-10 w-32 h-32 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-full blur-2xl"></div>
-
-                            <div class="section-title relative z-10">
-                                <span class="wow fadeInUp inline-block px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full text-sm font-semibold tracking-wide uppercase shadow-lg transform hover:scale-105 transition-all duration-300">
-                                    {{ $about->slug }}
-                                </span>
-
-                                <h2 class="wow fadeInUp mt-4 text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent leading-tight" data-wow-delay=".3s">
-                                    {{ $about->slug }}
-                                </h2>
-
-                                <!-- Ligne décorative -->
-                                <div class="mt-4 flex items-center gap-4">
-                                    <div class="h-1 w-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"></div>
-                                    <div class="h-1 w-8 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full"></div>
-                                    <div class="h-1 w-4 bg-gradient-to-r from-pink-600 to-red-600 rounded-full"></div>
+                        <!-- Content Section -->
+                        <div class="col-lg-6 mt-4 mt-lg-0">
+                            <div class="about-content">
+                                <div class="section-title">
+                                    <span class="wow fadeInUp">{{ $about->slug }}</span>
+                                    <h2 class="wow fadeInUp" data-wow-delay=".3s">
+                                        {{ $about->slug }}
+                                    </h2>
                                 </div>
-                            </div>
+                                <p class="mt-3 mt-md-0 wow fadeInUp" data-wow-delay=".5s">
+                                    {!! $about->contenu !!}
+                                </p>
 
-                            <!-- Contenu avec typographie améliorée -->
-                            <div class="mt-6 relative z-10">
-                                <div class="prose prose-lg max-w-none wow fadeInUp" data-wow-delay=".5s">
-                                    <div class="text-gray-700 leading-relaxed text-lg font-light bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/20">
-                                        {!! $about->contenu !!}
+                                <div class="about-author">
+                                    <div class="about-button wow fadeInUp" data-wow-delay=".5s">
+                                        <a href="about.html" class="theme-btn">
+                                            Explore More
+                                            <i class="fa-solid fa-arrow-right-long"></i>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
-
-                            <!-- Section bouton avec design moderne -->
-                            <div class="about-author mt-8">
-                                <div class="about-button wow fadeInUp" data-wow-delay=".5s">
-                                    <a href="about.html" class="group relative inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-2xl shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 overflow-hidden">
-                                        <!-- Effet de brillance animé -->
-                                        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-
-                                        <span class="relative z-10">Explore More</span>
-                                        <i class="fa-solid fa-arrow-right-long relative z-10 transform group-hover:translate-x-2 transition-transform duration-300"></i>
-
-                                        <!-- Particules flottantes -->
-                                        <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                            <div class="absolute top-2 left-4 w-1 h-1 bg-white rounded-full animate-ping"></div>
-                                            <div class="absolute top-4 right-6 w-1 h-1 bg-white rounded-full animate-ping" style="animation-delay: 0.2s;"></div>
-                                            <div class="absolute bottom-3 left-8 w-1 h-1 bg-white rounded-full animate-ping" style="animation-delay: 0.4s;"></div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
                         </div>
+
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-@endforeach
-
-<style>
-    @keyframes spin-slow {
-        from {
-            transform: rotate(0deg);
-        }
-        to {
-            transform: rotate(360deg);
-        }
-    }
-
-    .animate-spin-slow {
-        animation: spin-slow 10s linear infinite;
-    }
-
-    /* Effet de glassmorphism */
-    .backdrop-blur-md {
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-    }
-
-    /* Ombres personnalisées */
-    .shadow-3xl {
-        box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
-    }
-
-    /* Animation des éléments */
-    @keyframes float {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-10px); }
-    }
-
-    .animate-float {
-        animation: float 3s ease-in-out infinite;
-    }
-
-    /* Effets de survol pour les cards */
-    .about-section .card:hover {
-        transform: translateY(-5px);
-    }
-
-    /* Typographie responsive */
-    @media (max-width: 768px) {
-        .section-title h2 {
-            font-size: 2.5rem !important;
-        }
-    }
-
-    /* Amélioration des transitions */
-    * {
-        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    }
-</style>
+        </section>
+    @endforeach
 
 
 
