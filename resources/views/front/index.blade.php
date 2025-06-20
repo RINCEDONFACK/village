@@ -693,7 +693,8 @@ function getYoutubeId($url) {
                         <h3>
                             <a href="team-details.html">{{ $team->name }}</a>
                         </h3>
-                        <p>{{ $team->fonction }}</p>
+                        <p>{{ $team->fonction}}</p>
+                        <p>{{ $team->presentation}}</p>
                     </div>
                 </div>
             </div>
