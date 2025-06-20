@@ -840,58 +840,6 @@
     </section>
 @endforeach
 
-<style>
-    @keyframes spin-slow {
-        from {
-            transform: rotate(0deg);
-        }
-        to {
-            transform: rotate(360deg);
-        }
-    }
-
-    .animate-spin-slow {
-        animation: spin-slow 10s linear infinite;
-    }
-
-    /* Effet de glassmorphism */
-    .backdrop-blur-md {
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-    }
-
-    /* Ombres personnalisées */
-    .shadow-3xl {
-        box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
-    }
-
-    /* Animation des éléments */
-    @keyframes float {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-10px); }
-    }
-
-    .animate-float {
-        animation: float 3s ease-in-out infinite;
-    }
-
-    /* Effets de survol pour les cards */
-    .about-section .card:hover {
-        transform: translateY(-5px);
-    }
-
-    /* Typographie responsive */
-    @media (max-width: 768px) {
-        .section-title h2 {
-            font-size: 2.5rem !important;
-        }
-    }
-
-    /* Amélioration des transitions */
-    * {
-        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    }
-</style>
 
 
 
