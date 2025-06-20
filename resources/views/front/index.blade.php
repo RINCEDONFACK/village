@@ -170,77 +170,86 @@
 
 
 
+@php
+    // Fonction inline pour extraire l'ID YouTube
+    if (!function_exists('getYoutubeId')) {
+        function getYoutubeId($url)
+        {
+            preg_match('/(?:youtube\.com\/(?:[^\/]+\/.+|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/', $url, $matches);
+            return $matches[1] ?? null;
+        }
+    }
+@endphp
 
-    @foreach ($abouts as $about)
-        <section class="about-section section-padding fix bg-cover"
-            style="background-image: url('{{ asset('storage/' . ($about->background_image ?? 'assets/img/service/service-bg-2.jpg')) }}');">
-            <div class="container">
-                <div class="about-wrapper style-2">
-                    <div class="row">
-                        <!-- Image Section -->
-                        <div class="col-lg-6">
-                            <div class="card shadow rounded-4 overflow-hidden">
-                                <div class="card-body p-3">
-                                    <!-- Cercle décoratif (optionnel) -->
-                                    <div class="text-center mb-3">
-                                        <img src="{{ asset('assets/img/about/circle.png') }}" alt="shape-img"
-                                            class="img-fluid" style="max-width: 80px;">
-                                    </div>
-
-                                    <!-- Première image -->
-                                    <div class="mb-3 wow fadeInLeft" data-wow-delay=".3s">
-                                        <img src="{{ asset('storage/' . $about->image) }}" alt="about-img-1"
-                                            class="img-fluid rounded w-100">
-                                    </div>
-
-                                    <!-- Intégration lien YouTube -->
-                                    @php
-                                        $youtubeId = getYoutubeId($about->lient_youtube);
-                                    @endphp
-
-                                    @if ($youtubeId)
-                                        <div class="video-section wow fadeInUp" data-wow-delay=".5s"
-                                            style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
-                                            <iframe src="https://www.youtube.com/embed/{{ $youtubeId }}"
-                                                frameborder="0"
-                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                                allowfullscreen
-                                                style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius: .5rem;"></iframe>
-                                        </div>
-                                    @endif
+@foreach ($abouts as $about)
+    <section class="about-section section-padding fix bg-cover"
+        style="background-image: url('{{ asset('storage/' . ($about->background_image ?? 'assets/img/service/service-bg-2.jpg')) }}');">
+        <div class="container">
+            <div class="about-wrapper style-2">
+                <div class="row">
+                    <!-- Section image -->
+                    <div class="col-lg-6">
+                        <div class="card shadow rounded-4 overflow-hidden">
+                            <div class="card-body p-3">
+                                <!-- Cercle décoratif -->
+                                <div class="text-center mb-3">
+                                    <img src="{{ asset('assets/img/about/circle.png') }}" alt="shape-img"
+                                        class="img-fluid" style="max-width: 80px;">
                                 </div>
+
+                                <!-- Image principale -->
+                                <div class="mb-3 wow fadeInLeft" data-wow-delay=".3s">
+                                    <img src="{{ asset('storage/' . $about->image) }}" alt="about-img-1"
+                                        class="img-fluid rounded w-100">
+                                </div>
+
+                                <!-- Vidéo YouTube -->
+                                @php
+                                    $youtubeId = getYoutubeId($about->lient_youtube);
+                                @endphp
+
+                                @if ($youtubeId)
+                                    <div class="video-section wow fadeInUp" data-wow-delay=".5s"
+                                        style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                                        <iframe src="https://www.youtube.com/embed/{{ $youtubeId }}"
+                                            frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                            allowfullscreen
+                                            style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius: .5rem;"></iframe>
+                                    </div>
+                                @endif
                             </div>
                         </div>
-
-                        <!-- Content Section -->
-                        <div class="col-lg-6 mt-4 mt-lg-0">
-                            <div class="about-content">
-                                <div class="section-title">
-                                    <span class="wow fadeInUp">{{ $about->slug }}</span>
-                                    <h2 class="wow fadeInUp" data-wow-delay=".3s">
-                                        {{ $about->slug }}
-                                    </h2>
-                                </div>
-                                <p class="mt-3 mt-md-0 wow fadeInUp" data-wow-delay=".5s">
-                                    {!! $about->contenu !!}
-                                </p>
-
-                                <div class="about-author">
-                                    <div class="about-button wow fadeInUp" data-wow-delay=".5s">
-                                        <a href="about.html" class="theme-btn">
-                                            Explore More
-                                            <i class="fa-solid fa-arrow-right-long"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
+
+                    <!-- Section contenu -->
+                    <div class="col-lg-6 mt-4 mt-lg-0">
+                        <div class="about-content">
+                            <div class="section-title">
+                                <span class="wow fadeInUp">{{ $about->slug }}</span>
+                                <h2 class="wow fadeInUp" data-wow-delay=".3s">{{ $about->slug }}</h2>
+                            </div>
+                            <p class="mt-3 mt-md-0 wow fadeInUp" data-wow-delay=".5s">
+                                {!! $about->contenu !!}
+                            </p>
+
+                            <div class="about-author">
+                                <div class="about-button wow fadeInUp" data-wow-delay=".5s">
+                                    <a href="about.html" class="theme-btn">
+                                        Explore More
+                                        <i class="fa-solid fa-arrow-right-long"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Fin contenu -->
                 </div>
             </div>
-        </section>
-    @endforeach
+        </div>
+    </section>
+@endforeach
+
 
 
 
