@@ -268,16 +268,16 @@ function getYoutubeId($url) {
                                 <div class="brand-image text-center">
                                     @if($item->url)
                                         <a href="{{ $item->url }}" target="_blank">
-                                            <img 
-                                                src="{{ asset('storage/' . $item->logo) }}" 
-                                                alt="{{ $item->name }}" 
+                                            <img
+                                                src="{{ asset('storage/' . $item->logo) }}"
+                                                alt="{{ $item->name }}"
                                                 class="partner-logo"
                                             >
                                         </a>
                                     @else
-                                        <img 
-                                            src="{{ asset('storage/' . $item->logo) }}" 
-                                            alt="{{ $item->name }}" 
+                                        <img
+                                            src="{{ asset('storage/' . $item->logo) }}"
+                                            alt="{{ $item->name }}"
                                             class="partner-logo"
                                         >
                                     @endif
@@ -673,11 +673,12 @@ function getYoutubeId($url) {
                 <i class="fa-solid fa-arrow-right-long"></i>
             </a>
         </div>
+         @foreach($teams as $team)
         <div class="row">
             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
                 <div class="single-team-items">
                     <div class="team-image">
-                        <img src="assets/img/team/04.jpg" alt="team-img">
+                        <img src="{{ asset('storage/' . $team->image) }}" alt="team-img">
                         <div class="social-profile">
                             <ul>
                                 <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
@@ -690,79 +691,15 @@ function getYoutubeId($url) {
                     </div>
                     <div class="team-content text-center">
                         <h3>
-                            <a href="team-details.html">Marvin McKinney</a>
+                            <a href="team-details.html">{{ $team->name }}</a>
                         </h3>
-                        <p>Web Designer</p>
+                        <p>{{ $team->fonction }}</p>
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".5s">
-                <div class="single-team-items">
-                    <div class="team-image">
-                        <img src="assets/img/team/05.jpg" alt="team-img">
-                        <div class="social-profile">
-                            <ul>
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
 
-                            </ul>
-                            <span class="plus-btn"><i class="fas fa-share-alt"></i></span>
-                        </div>
-                    </div>
-                    <div class="team-content text-center">
-                        <h3>
-                            <a href="team-details.html">Marvin McKinney</a>
-                        </h3>
-                        <p>Web Designer</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".7s">
-                <div class="single-team-items">
-                    <div class="team-image">
-                        <img src="assets/img/team/06.jpg" alt="team-img">
-                        <div class="social-profile">
-                            <ul>
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-
-                            </ul>
-                            <span class="plus-btn"><i class="fas fa-share-alt"></i></span>
-                        </div>
-                    </div>
-                    <div class="team-content text-center">
-                        <h3>
-                            <a href="team-details.html">Marvin McKinney</a>
-                        </h3>
-                        <p>Web Designer</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".9s">
-                <div class="single-team-items">
-                    <div class="team-image">
-                        <img src="assets/img/team/07.jpg" alt="team-img">
-                        <div class="social-profile">
-                            <ul>
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-
-                            </ul>
-                            <span class="plus-btn"><i class="fas fa-share-alt"></i></span>
-                        </div>
-                    </div>
-                    <div class="team-content text-center">
-                        <h3>
-                            <a href="team-details.html">Marvin McKinney</a>
-                        </h3>
-                        <p>Web Designer</p>
-                    </div>
-                </div>
-            </div>
         </div>
+        @endforeach
     </div>
 </section>
 
