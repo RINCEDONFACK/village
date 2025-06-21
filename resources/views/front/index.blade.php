@@ -773,7 +773,7 @@
                                     <p>{{ Str::limit($team->presentation, 80) }}</p>
                                 </div>
                                 <div class="team-footer">
-                                    <a href="team-details.html" class="view-profile-btn">
+                                    <a href="{{ route('equipe.show', $team->id) }}" class="view-profile-btn">
                                         <span>Voir le profil</span>
                                         <i class="fas fa-arrow-right"></i>
                                     </a>
