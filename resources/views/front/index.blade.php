@@ -718,57 +718,351 @@
         </div>
     </div>
 
-    <!--<< Team Section Start >>-->
     <section class="team-section-3 fix section-padding section-bg">
-        <div class="line-shape">
-            <img src="assets/img/team/line-shape.png" alt="shape-img">
-        </div>
-        <div class="mask-shape">
-            <img src="assets/img/team/mask-shape-2.png" alt="shape-img">
-        </div>
-        <div class="container">
-            <div class="section-title-area">
-                <div class="section-title">
-                    <span class="wow fadeInUp">Team Members</span>
-                    <h2 class="wow fadeInUp" data-wow-delay=".3s">
-                        Our Dedicated Team <br> Members
-                    </h2>
-                </div>
-                <a href="team.html" class="theme-btn wow fadeInUp" data-wow-delay=".5s">
-                    All Member
-                    <i class="fa-solid fa-arrow-right-long"></i>
-                </a>
+    <div class="line-shape">
+        <img src="assets/img/team/line-shape.png" alt="shape-img">
+    </div>
+    <div class="mask-shape">
+        <img src="assets/img/team/mask-shape-2.png" alt="shape-img">
+    </div>
+    <div class="container">
+        <div class="section-title-area">
+            <div class="section-title">
+                <span class="wow fadeInUp">Notre Équipe</span>
+                <h2 class="wow fadeInUp" data-wow-delay=".3s">
+                    Nos Membres Dévoués <br> et Compétents
+                </h2>
             </div>
-            @foreach ($teams as $team)
-                <div class="row">
-                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
-                        <div class="single-team-items">
-                            <div class="team-image">
-                                <img src="{{ asset('storage/' . $team->image) }}" alt="team-img">
-                                <div class="social-profile">
-                                    <ul>
-                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+            <a href="team.html" class="theme-btn wow fadeInUp" data-wow-delay=".5s">
+                Tous les Membres
+                <i class="fa-solid fa-arrow-right-long"></i>
+            </a>
+        </div>
 
-                                    </ul>
-                                    <span class="plus-btn"><i class="fas fa-share-alt"></i></span>
+        <!-- Conteneur pour l'affichage horizontal -->
+        <div class="team-container">
+            <div class="row">
+                @foreach ($teams as $team)
+                    <div class="col-xl-3 col-lg-4 col-md-6 mb-2 wow fadeInUp" data-wow-delay=".3s">
+                        <div class="single-team-items modern-card">
+                            <div class="team-image-wrapper">
+                                <div class="team-image">
+                                    <img src="{{ asset('storage/' . $team->image) }}" alt="team-img">
+                                    <div class="image-overlay">
+                                        <div class="social-profile">
+                                            <ul>
+                                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="team-badge">
+                                    <i class="fas fa-star"></i>
                                 </div>
                             </div>
-                            <div class="team-content text-center">
-                                <h3>
-                                    <a href="team-details.html">{{ $team->name }}</a>
-                                </h3>
-                                <p>{{ $team->fonction }}</p>
-                                <p>{{ $team->presentation }}</p>
+                            <div class="team-content">
+                                <div class="team-header">
+                                    <h3>
+                                        <a href="team-details.html">{{ $team->name }}</a>
+                                    </h3>
+                                    <span class="team-role">{{ $team->fonction }}</span>
+                                </div>
+                                <div class="team-description">
+                                    <p>{{ Str::limit($team->presentation, 80) }}</p>
+                                </div>
+                                <div class="team-footer">
+                                    <a href="team-details.html" class="view-profile-btn">
+                                        <span>Voir le profil</span>
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-
-                </div>
-            @endforeach
+                @endforeach
+            </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<style>
+/* Design moderne pour la section équipe */
+.team-container {
+    margin-top: 50px;
+}
+
+@media (min-width: 1200px) {
+    .team-container .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: space-between;
+        margin: 0 -7px;
+    }
+
+    .team-container .col-xl-3 {
+        flex: 1;
+        min-width: 280px;
+        max-width: calc(25% - 12px);
+        padding: 0 7px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .team-container .row {
+        gap: 20px;
+        margin: 0 -10px;
+    }
+
+    .team-container .col-xl-3 {
+        max-width: calc(25% - 15px);
+        padding: 0 10px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .team-container .col-lg-4 {
+        flex: 0 0 32%;
+        max-width: 32%;
+        padding: 0 5px;
+    }
+
+    .team-container .row {
+        gap: 10px;
+        margin: 0 -5px;
+    }
+}
+
+/* Design moderne des cartes */
+.single-team-items.modern-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    height: 100%;
+}
+
+.single-team-items.modern-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.single-team-items.modern-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px 20px 0 0;
+}
+
+.team-image-wrapper {
+    position: relative;
+    padding: 25px 25px 15px;
+}
+
+.team-image {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    aspect-ratio: 1;
+}
+
+.team-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.single-team-items.modern-card:hover .team-image img {
+    transform: scale(1.05);
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.single-team-items.modern-card:hover .image-overlay {
+    opacity: 1;
+}
+
+.social-profile ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.social-profile ul li a {
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.social-profile ul li a:hover {
+    background: rgba(255, 255, 255, 0.9);
+    color: #667eea;
+    transform: scale(1.1);
+}
+
+.team-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.team-content {
+    padding: 20px 25px 25px;
+    text-align: left;
+}
+
+.team-header {
+    margin-bottom: 15px;
+}
+
+.team-header h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.team-header h3 a {
+    color: #2c3e50;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.team-header h3 a:hover {
+    color: #667eea;
+}
+
+.team-role {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.team-description {
+    margin: 15px 0;
+}
+
+.team-description p {
+    color: #6c757d;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.team-footer {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.view-profile-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.view-profile-btn:hover {
+    color: #764ba2;
+    gap: 12px;
+}
+
+.view-profile-btn i {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+.view-profile-btn:hover i {
+    transform: translateX(3px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .team-container .row {
+        gap: 15px;
+    }
+
+    .single-team-items.modern-card {
+        margin-bottom: 20px;
+    }
+
+    .team-image-wrapper {
+        padding: 20px 20px 10px;
+    }
+
+    .team-content {
+        padding: 15px 20px 20px;
+    }
+}
+
+/* Animation pour les cartes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.single-team-items.modern-card {
+    animation: fadeInUp 0.6s ease forwards;
+}
+</style>
 
     <!--<< Testimonial Section Start >>-->
     <section class="tesimonial-section-3 section-padding section-bg-2 bg-cover">
