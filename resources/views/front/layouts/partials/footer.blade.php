@@ -11,13 +11,13 @@
                 <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
                     <div class="single-footer-widget">
                         <div class="widget-head">
-                            <h3>About Us</h3>
+                            <h3>À propos de nous</h3>
                         </div>
                         <div class="footer-content">
                             <p>
-                                Phasellus ultricies aliquam volutpat
-                                ullamcorper laoreet neque, a lacinia
-                                curabitur lacinia mollis
+                                La Maison du Village, votre destination pour découvrir
+                                la richesse culturelle, promouvoir l'autonomisation des femmes
+                                et explorer les innovations technologiques.
                             </p>
                             <div class="social-icon d-flex align-items-center">
                                 <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -31,37 +31,37 @@
                 <div class="col-xl-2 col-lg-4 col-md-6 ps-lg-5 wow fadeInUp" data-wow-delay=".5s">
                     <div class="single-footer-widget">
                         <div class="widget-head">
-                            <h3>Quick Links</h3>
+                            <h3>Navigation</h3>
                         </div>
                         <ul class="list-area">
                             <li>
-                                <a href="about.html">
+                                <a href="{{ route('accueil.index') }}">
                                     <i class="fa-solid fa-chevron-right"></i>
-                                    Infotech About
+                                    Accueil
                                 </a>
                             </li>
                             <li>
-                                <a href="service.html">
+                                <a href="{{ route('propos.index') }}">
                                     <i class="fa-solid fa-chevron-right"></i>
-                                    Our Services
+                                    À propos
                                 </a>
                             </li>
                             <li>
-                                <a href="news.html">
+                                <a href="{{ route('cultures.index') }}">
                                     <i class="fa-solid fa-chevron-right"></i>
-                                    Our Blogs
+                                    Culture
                                 </a>
                             </li>
                             <li>
-                                <a href="faq.html">
+                                <a href="{{ route('women.index') }}">
                                     <i class="fa-solid fa-chevron-right"></i>
-                                    FAQ’S
+                                    Femmes
                                 </a>
                             </li>
                             <li>
-                                <a href="contact.html">
+                                <a href="{{ route('blog.index') }}">
                                     <i class="fa-solid fa-chevron-right"></i>
-                                    Contact Us
+                                    Actualités
                                 </a>
                             </li>
                         </ul>
@@ -70,37 +70,37 @@
                 <div class="col-xl-3 col-lg-4 col-md-6 ps-lg-5 wow fadeInUp" data-wow-delay=".5s">
                     <div class="single-footer-widget style-margin">
                         <div class="widget-head">
-                            <h3>IT Solution</h3>
+                            <h3>Nos Services</h3>
                         </div>
                         <ul class="list-area">
                             <li>
-                                <a href="service-details.html">
+                                <a href="{{ route('site.informatique.index') }}">
                                     <i class="fa-solid fa-chevron-right"></i>
-                                    IT Management
+                                    Informatique
                                 </a>
                             </li>
                             <li>
-                                <a href="service-details.html">
+                                <a href="{{ route('projects.index') }}">
                                     <i class="fa-solid fa-chevron-right"></i>
-                                    Web Development
+                                    Projets
                                 </a>
                             </li>
                             <li>
-                                <a href="service-details.html">
+                                <a href="{{ route('equipe.index') }}">
                                     <i class="fa-solid fa-chevron-right"></i>
-                                    Cyber Security
+                                    Équipe
                                 </a>
                             </li>
                             <li>
-                                <a href="service-details.html">
+                                <a href="#">
                                     <i class="fa-solid fa-chevron-right"></i>
-                                    SEO Optimization
+                                    Fête de la jeunesse
                                 </a>
                             </li>
                             <li>
-                                <a href="service-details.html">
+                                <a href="{{ route('contacter.index') }}">
                                     <i class="fa-solid fa-chevron-right"></i>
-                                    App Development
+                                    Contact
                                 </a>
                             </li>
                         </ul>
@@ -113,10 +113,11 @@
                         </div>
                        <div class="footer-content">
                             <p>
-                                 Sign up to seargin weekly newsletter to get the latest updates.
+                                Inscrivez-vous à notre newsletter hebdomadaire pour recevoir
+                                les dernières mises à jour de La Maison du Village.
                             </p>
                             <div class="footer-input">
-                                <input type="email" id="email2" placeholder="Enter Email Address">
+                                <input type="email" id="email2" placeholder="Entrez votre adresse email">
                                 <button class="newsletter-btn" type="submit">
                                     <i class="fab fa-telegram-plane"></i>
                                 </button>
@@ -132,7 +133,7 @@
         <div class="footer-wrapper d-flex align-items-center justify-content-between">
             <!-- Logo dans un avatar -->
             <div class="footer-logo wow fadeInLeft" data-wow-delay=".3s">
-                <a href="index.html" class="d-flex align-items-center">
+                <a href="{{ route('accueil.index') }}" class="d-flex align-items-center">
                     <div style="
                         width: 60px;
                         height: 60px;
@@ -148,7 +149,7 @@
 
             <!-- Texte du footer -->
             <p class="wow fadeInRight color-2" data-wow-delay=".5s">
-                © All Copyright 2025 by <a href="index.html">LA MAISON DU VILLAGE</a>
+                © Tous droits réservés 2025 par <a href="{{ route('accueil.index') }}">LA MAISON DU VILLAGE</a>
             </p>
         </div>
     </div>
@@ -175,5 +176,4 @@
 <script src="{{asset('assets/js/main.js')}}"></script>
 </body>
 
-<!-- Mirrored from gramentheme.com/html/la maison du village/index-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 18 Apr 2025 09:52:58 GMT -->
 </html>
