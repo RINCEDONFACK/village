@@ -320,8 +320,7 @@
     </style>
 
 
-
- <section class="service-section-3 pb-0 fix section-padding bg-cover"
+<section class="service-section-3 pb-0 fix section-padding bg-cover"
          style="background-image: url('assets/img/service/service-bg-3.jpg');">
     <div class="container">
         <div class="section-title-area">
@@ -341,7 +340,7 @@
         <div class="formations-container">
             <div class="row">
                 @foreach ($informatique as $info)
-                    <div class="col-xl-4 col-lg-6 col-md-6 mb-4">
+                    <div class="col-xl-4 col-lg-6 col-md-6 mb-2">
                         <div class="service-card-items h-100">
                             <div class="service-image">
                                 @if ($info->image)
@@ -399,14 +398,16 @@
     .formations-container .row {
         display: flex;
         flex-wrap: wrap;
-        gap: 30px;
+        gap: 10px;
         justify-content: space-between;
+        margin: 0 -5px;
     }
 
     .formations-container .col-xl-4 {
         flex: 1;
-        min-width: 300px;
-        max-width: calc(33.33% - 20px);
+        min-width: 280px;
+        max-width: calc(33.33% - 7px);
+        padding: 0 5px;
     }
 
     .service-card-items {
@@ -414,6 +415,7 @@
         display: flex;
         flex-direction: column;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
+        margin-bottom: 10px;
     }
 
     .service-card-items:hover {
@@ -440,23 +442,27 @@
 /* Styles pour écrans très larges (1400px+) */
 @media (min-width: 1400px) {
     .formations-container .row {
-        gap: 40px;
+        gap: 15px;
+        margin: 0 -7px;
     }
 
     .formations-container .col-xl-4 {
-        max-width: calc(33.33% - 27px);
+        max-width: calc(33.33% - 10px);
+        padding: 0 7px;
     }
 }
 
 /* Styles pour écrans moyens */
 @media (min-width: 992px) and (max-width: 1199px) {
     .formations-container .col-lg-6 {
-        flex: 0 0 48%;
-        max-width: 48%;
+        flex: 0 0 49%;
+        max-width: 49%;
+        padding: 0 5px;
     }
 
     .formations-container .row {
-        gap: 20px;
+        gap: 10px;
+        margin: 0 -5px;
     }
 }
 
@@ -492,6 +498,7 @@
     margin-top: 5px;
 }
 </style>
+
     <!-- Work Process Section Start -->
     <section class="work-process-section fix section-padding pt-0">
         <div class="container">
