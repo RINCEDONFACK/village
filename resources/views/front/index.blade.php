@@ -171,7 +171,6 @@
 
 
 @php
-    // Fonction inline pour extraire l'ID YouTube
     if (!function_exists('getYoutubeId')) {
         function getYoutubeId($url)
         {

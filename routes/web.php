@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\{
     CompanyMissionController,
     CultureController,
     DashboardController,
+    ItcommunityController,
     ProfilController,
     WomentemController
 };
@@ -96,7 +97,6 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     // Routes Contacts
     Route::resource('contacts', ContactController::class);
 
-    // Routes Settings
     Route::resource('settings', SettingController::class);
 
     // Routes Utilisateurs (Users)
@@ -143,6 +143,17 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::patch('/women/{id}/toggle-status', [WomentemController::class, 'toggleStatus'])->name('women.toggleStatus');
 });
 
+});
+
+Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
+    Route::get('itcommunities', [ItcommunityController::class, 'index'])->name('itcommunities.index');
+    Route::get('itcommunities/create', [ItcommunityController::class, 'create'])->name('itcommunities.create');
+    Route::post('itcommunities', [ItcommunityController::class, 'store'])->name('itcommunities.store');
+    Route::get('itcommunities/{itcommunity}', [ItcommunityController::class, 'show'])->name('itcommunities.show');
+    Route::get('itcommunities/{itcommunity}/edit', [ItcommunityController::class, 'edit'])->name('itcommunities.edit');
+    Route::put('itcommunities/{itcommunity}', [ItcommunityController::class, 'update'])->name('itcommunities.update');
+    Route::delete('itcommunities/{itcommunity}', [ItcommunityController::class, 'destroy'])->name('itcommunities.destroy');
+    Route::patch('itcommunities/{itcommunity}/toggle-status', [ItcommunityController::class, 'toggleStatus'])->name('itcommunities.toggleStatus');
 });
 
 Route::middleware(['auth'])->group(function () {
