@@ -170,84 +170,88 @@
 
 
 
-@php
-    if (!function_exists('getYoutubeId')) {
-        function getYoutubeId($url)
-        {
-            preg_match('/(?:youtube\.com\/(?:[^\/]+\/.+|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/', $url, $matches);
-            return $matches[1] ?? null;
+    @php
+        if (!function_exists('getYoutubeId')) {
+            function getYoutubeId($url)
+            {
+                preg_match(
+                    '/(?:youtube\.com\/(?:[^\/]+\/.+|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/',
+                    $url,
+                    $matches,
+                );
+                return $matches[1] ?? null;
+            }
         }
-    }
-@endphp
+    @endphp
 
-@foreach ($abouts as $about)
-    <section class="about-section section-padding fix bg-cover"
-        style="background-image: url('{{ asset('storage/' . ($about->background_image ?? 'assets/img/service/service-bg-2.jpg')) }}');">
-        <div class="container">
-            <div class="about-wrapper style-2">
-                <div class="row">
-                    <!-- Section image -->
-                    <div class="col-lg-6">
-                        <div class="card shadow rounded-4 overflow-hidden">
-                            <div class="card-body p-3">
-                                <!-- Cercle décoratif -->
-                                <div class="text-center mb-3">
-                                    <img src="{{ asset('assets/img/about/circle.png') }}" alt="shape-img"
-                                        class="img-fluid" style="max-width: 80px;">
-                                </div>
-
-                                <!-- Image principale -->
-                                <div class="mb-3 wow fadeInLeft" data-wow-delay=".3s">
-                                    <img src="{{ asset('storage/' . $about->image) }}" alt="about-img-1"
-                                        class="img-fluid rounded w-100">
-                                </div>
-
-                                <!-- Vidéo YouTube -->
-                                @php
-                                    $youtubeId = getYoutubeId($about->lient_youtube);
-                                @endphp
-
-                                @if ($youtubeId)
-                                    <div class="video-section wow fadeInUp" data-wow-delay=".5s"
-                                        style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
-                                        <iframe src="https://www.youtube.com/embed/{{ $youtubeId }}"
-                                            frameborder="0"
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                            allowfullscreen
-                                            style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius: .5rem;"></iframe>
+    @foreach ($abouts as $about)
+        <section class="about-section section-padding fix bg-cover"
+            style="background-image: url('{{ asset('storage/' . ($about->background_image ?? 'assets/img/service/service-bg-2.jpg')) }}');">
+            <div class="container">
+                <div class="about-wrapper style-2">
+                    <div class="row">
+                        <!-- Section image -->
+                        <div class="col-lg-6">
+                            <div class="card shadow rounded-4 overflow-hidden">
+                                <div class="card-body p-3">
+                                    <!-- Cercle décoratif -->
+                                    <div class="text-center mb-3">
+                                        <img src="{{ asset('assets/img/about/circle.png') }}" alt="shape-img"
+                                            class="img-fluid" style="max-width: 80px;">
                                     </div>
-                                @endif
-                            </div>
-                        </div>
-                    </div>
 
-                    <!-- Section contenu -->
-                    <div class="col-lg-6 mt-4 mt-lg-0">
-                        <div class="about-content">
-                            <div class="section-title">
-                                <span class="wow fadeInUp">{{ $about->slug }}</span>
-                                <h2 class="wow fadeInUp" data-wow-delay=".3s">{{ $about->slug }}</h2>
-                            </div>
-                            <p class="mt-3 mt-md-0 wow fadeInUp" data-wow-delay=".5s">
-                                {!! $about->contenu !!}
-                            </p>
+                                    <!-- Image principale -->
+                                    <div class="mb-3 wow fadeInLeft" data-wow-delay=".3s">
+                                        <img src="{{ asset('storage/' . $about->image) }}" alt="about-img-1"
+                                            class="img-fluid rounded w-100">
+                                    </div>
 
-                            <div class="about-author">
-                                <div class="about-button wow fadeInUp" data-wow-delay=".5s">
-                                    <a href="about.html" class="theme-btn">
-                                        Explore More
-                                        <i class="fa-solid fa-arrow-right-long"></i>
-                                    </a>
+                                    <!-- Vidéo YouTube -->
+                                    @php
+                                        $youtubeId = getYoutubeId($about->lient_youtube);
+                                    @endphp
+
+                                    @if ($youtubeId)
+                                        <div class="video-section wow fadeInUp" data-wow-delay=".5s"
+                                            style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                                            <iframe src="https://www.youtube.com/embed/{{ $youtubeId }}"
+                                                frameborder="0"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                allowfullscreen
+                                                style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius: .5rem;"></iframe>
+                                        </div>
+                                    @endif
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Section contenu -->
+                        <div class="col-lg-6 mt-4 mt-lg-0">
+                            <div class="about-content">
+                                <div class="section-title">
+                                    <span class="wow fadeInUp">{{ $about->slug }}</span>
+                                    <h2 class="wow fadeInUp" data-wow-delay=".3s">{{ $about->slug }}</h2>
+                                </div>
+                                <p class="mt-3 mt-md-0 wow fadeInUp" data-wow-delay=".5s">
+                                    {!! $about->contenu !!}
+                                </p>
+
+                                <div class="about-author">
+                                    <div class="about-button wow fadeInUp" data-wow-delay=".5s">
+                                        <a href="about.html" class="theme-btn">
+                                            Explore More
+                                            <i class="fa-solid fa-arrow-right-long"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Fin contenu -->
                     </div>
-                    <!-- Fin contenu -->
                 </div>
             </div>
-        </div>
-    </section>
-@endforeach
+        </section>
+    @endforeach
 
 
 
@@ -333,108 +337,58 @@
                     <i class="fa-solid fa-arrow-right-long"></i>
                 </a>
             </div>
-            <div class="row">
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="service-card-items">
-                        <div class="service-image">
-                            <img src="assets/img/service/02.jpg" alt="image formation">
-                        </div>
-                        <div class="icon-2">
-                            <img src="assets/img/service/icon/s-icon-1.svg" alt="icone">
-                        </div>
-                        <div class="service-content">
-                            <div class="icon">
-                                <img src="assets/img/service/icon/s-icon-1.svg" alt="icone">
+            @foreach ($informatique as $info)
+                <div class="row">
+                    <div class="col-xl-3 col-lg-4 col-md-6">
+                        <div class="service-card-items">
+                            <div class="service-image">
+                                @if ($info->image)
+                                    <img src="{{ asset('storage/' . $info->image) }}" alt="{{ $info->titre }}">
+                                @else
+                                    <img src="{{ asset('assets/img/service/02.jpg') }}" alt="image formation par défaut">
+                                @endif
                             </div>
-                            <h4>
-                                <a href="formation-details.html">Sécurité des Bases de Données</a>
-                            </h4>
-                            <p>
-                                Apprenez à protéger et gérer efficacement les données dans les systèmes d'information.
-                            </p>
-                            <a href="formation-details.html" class="theme-btn-2 mt-3">
-                                En savoir plus
-                                <i class="fa-solid fa-arrow-right-long"></i>
-                            </a>
+                            <div class="icon-2">
+                                <img src="{{ asset('assets/img/service/icon/s-icon-1.svg') }}" alt="icone">
+                            </div>
+                            <div class="service-content">
+                                <div class="icon">
+                                    <img src="{{ asset('assets/img/service/icon/s-icon-1.svg') }}" alt="icone">
+                                </div>
+                                <h4>
+                                    <a href="">{{ $info->titre }}</a>
+                                </h4>
+                                <p>
+                                    {{ Str::limit($info->description, 100) }}
+                                </p>
+
+                                <!-- Informations supplémentaires -->
+                                <div class="formation-meta">
+                                    @if ($info->duree)
+                                        <span class="badge bg-primary">{{ $info->duree }} heures</span>
+                                    @endif
+                                    @if ($info->date_debut)
+                                        <span
+                                            class="badge bg-success">{{ \Carbon\Carbon::parse($info->date_debut)->format('d/m/Y') }}</span>
+                                    @endif
+                                    @if ($info->lieu)
+                                        <small class="text-muted d-block mt-1">📍 {{ $info->lieu }}</small>
+                                    @endif
+                                    @if ($info->formateur)
+                                        <small class="text-muted d-block">👨‍🏫 {{ $info->formateur }}</small>
+                                    @endif
+                                </div>
+
+                                <a href="{{ route('site.informatique.show', $info->id) }}" class="theme-btn-2 mt-3">
+                                    En savoir plus
+                                    <i class="fa-solid fa-arrow-right-long"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="service-card-items">
-                        <div class="service-image">
-                            <img src="assets/img/service/03.jpg" alt="image formation">
-                        </div>
-                        <div class="icon-2">
-                            <img src="assets/img/service/icon/s-icon-2.svg" alt="icone">
-                        </div>
-                        <div class="service-content">
-                            <div class="icon">
-                                <img src="assets/img/service/icon/s-icon-2.svg" alt="icone">
-                            </div>
-                            <h4>
-                                <a href="formation-details.html">Conseil en Technologies de l'Information</a>
-                            </h4>
-                            <p>
-                                Développez vos compétences en analyse et accompagnement IT pour les PME rurales.
-                            </p>
-                            <a href="formation-details.html" class="theme-btn-2 mt-3">
-                                En savoir plus
-                                <i class="fa-solid fa-arrow-right-long"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="service-card-items">
-                        <div class="service-image">
-                            <img src="assets/img/service/04.jpg" alt="image formation">
-                        </div>
-                        <div class="icon-2">
-                            <img src="assets/img/service/icon/s-icon-4.svg" alt="icone">
-                        </div>
-                        <div class="service-content">
-                            <div class="icon">
-                                <img src="assets/img/service/icon/s-icon-5.svg" alt="icone">
-                            </div>
-                            <h4>
-                                <a href="formation-details.html">Développement d’Applications</a>
-                            </h4>
-                            <p>
-                                Apprenez à concevoir des applications adaptées aux besoins locaux et communautaires.
-                            </p>
-                            <a href="formation-details.html" class="theme-btn-2 mt-3">
-                                En savoir plus
-                                <i class="fa-solid fa-arrow-right-long"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6">
-                    <div class="service-card-items">
-                        <div class="service-image">
-                            <img src="assets/img/service/05.jpg" alt="image formation">
-                        </div>
-                        <div class="icon-2">
-                            <img src="assets/img/service/icon/s-icon-3.svg" alt="icone">
-                        </div>
-                        <div class="service-content">
-                            <div class="icon">
-                                <img src="assets/img/service/icon/s-icon-3.svg" alt="icone">
-                            </div>
-                            <h4>
-                                <a href="formation-details.html">Sensibilisation à la Cybersécurité</a>
-                            </h4>
-                            <p>
-                                Initiez-vous aux bonnes pratiques pour protéger vos systèmes et informations personnelles.
-                            </p>
-                            <a href="formation-details.html" class="theme-btn-2 mt-3">
-                                En savoir plus
-                                <i class="fa-solid fa-arrow-right-long"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
+
         </div>
 
     </section>

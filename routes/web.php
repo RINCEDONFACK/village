@@ -28,6 +28,7 @@ use App\Http\Controllers\site\AcceuilController;
 use App\Http\Controllers\site\BlogController;
 use App\Http\Controllers\site\ContacterController;
 use App\Http\Controllers\site\FrontwomenController;
+use App\Http\Controllers\site\InformatiqueController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -220,4 +221,9 @@ Route::post('/cultures/{id}/commentaire', [TradictionController::class, 'storeCo
 Route::prefix('empowerment')->name('women.')->group(function () {
     Route::get('/', [FrontwomenController::class, 'index'])->name('index');
     Route::get('/{id}', [FrontwomenController::class, 'show'])->name('show');
+});
+
+Route::prefix('formations-informatiques')->group(function () {
+    Route::get('/', [InformatiqueController::class, 'index'])->name('site.informatique.index');
+    Route::get('/{itcommunity}', [InformatiqueController::class, 'show'])->name('site.informatique.show');
 });
