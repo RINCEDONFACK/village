@@ -321,26 +321,28 @@
 
 
 
-    <!-- Service Section Start -->
-    <section class="service-section-3 pb-0 fix section-padding bg-cover"
-        style="background-image: url('assets/img/service/service-bg-3.jpg');">
-        <div class="container">
-            <div class="section-title-area">
-                <div class="section-title">
-                    <span>Nos Domaines de Formation</span>
-                    <h2>
-                        Former et Accompagner les Populations <br> en Zone Rurale avec des Compétences IT
-                    </h2>
-                </div>
-                <a href="formations.html" class="theme-btn">
-                    Voir toutes les formations
-                    <i class="fa-solid fa-arrow-right-long"></i>
-                </a>
+ <section class="service-section-3 pb-0 fix section-padding bg-cover"
+         style="background-image: url('assets/img/service/service-bg-3.jpg');">
+    <div class="container">
+        <div class="section-title-area">
+            <div class="section-title">
+                <span>Nos Domaines de Formation</span>
+                <h2>
+                    Former et Accompagner les Populations <br> en Zone Rurale avec des Compétences IT
+                </h2>
             </div>
-            @foreach ($informatique as $info)
-                <div class="row">
-                    <div class="col-xl-3 col-lg-4 col-md-6">
-                        <div class="service-card-items">
+            <a href="formations.html" class="theme-btn">
+                Voir toutes les formations
+                <i class="fa-solid fa-arrow-right-long"></i>
+            </a>
+        </div>
+
+        <!-- Conteneur pour l'affichage horizontal -->
+        <div class="formations-container">
+            <div class="row">
+                @foreach ($informatique as $info)
+                    <div class="col-xl-4 col-lg-6 col-md-6 mb-4">
+                        <div class="service-card-items h-100">
                             <div class="service-image">
                                 @if ($info->image)
                                     <img src="{{ asset('storage/' . $info->image) }}" alt="{{ $info->titre }}">
@@ -368,8 +370,7 @@
                                         <span class="badge bg-primary">{{ $info->duree }} heures</span>
                                     @endif
                                     @if ($info->date_debut)
-                                        <span
-                                            class="badge bg-success">{{ \Carbon\Carbon::parse($info->date_debut)->format('d/m/Y') }}</span>
+                                        <span class="badge bg-success">{{ \Carbon\Carbon::parse($info->date_debut)->format('d/m/Y') }}</span>
                                     @endif
                                     @if ($info->lieu)
                                         <small class="text-muted d-block mt-1">📍 {{ $info->lieu }}</small>
@@ -386,14 +387,111 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            @endforeach
-
+                @endforeach
+            </div>
         </div>
+    </div>
+</section>
 
-    </section>
+<style>
+/* Styles pour l'affichage horizontal sur grands écrans */
+@media (min-width: 1200px) {
+    .formations-container .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: space-between;
+    }
 
+    .formations-container .col-xl-4 {
+        flex: 1;
+        min-width: 300px;
+        max-width: calc(33.33% - 20px);
+    }
 
+    .service-card-items {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-card-items:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .service-content {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .formation-meta {
+        margin-top: auto;
+        padding-top: 15px;
+    }
+
+    .theme-btn-2 {
+        margin-top: auto;
+    }
+}
+
+/* Styles pour écrans très larges (1400px+) */
+@media (min-width: 1400px) {
+    .formations-container .row {
+        gap: 40px;
+    }
+
+    .formations-container .col-xl-4 {
+        max-width: calc(33.33% - 27px);
+    }
+}
+
+/* Styles pour écrans moyens */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .formations-container .col-lg-6 {
+        flex: 0 0 48%;
+        max-width: 48%;
+    }
+
+    .formations-container .row {
+        gap: 20px;
+    }
+}
+
+/* Amélioration de l'affichage des cartes */
+.service-card-items {
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.service-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.formation-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+
+.formation-meta .badge {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+}
+
+.formation-meta small {
+    font-size: 0.8rem;
+    width: 100%;
+    margin-top: 5px;
+}
+</style>
     <!-- Work Process Section Start -->
     <section class="work-process-section fix section-padding pt-0">
         <div class="container">
