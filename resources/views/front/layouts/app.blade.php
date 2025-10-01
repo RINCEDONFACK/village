@@ -2,7 +2,8 @@
 <html lang="fr">
 
 <head>
-   
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
     <title>La maison du village</title>
     <link rel="shortcut icon" href="{{ asset('assets/img/logo/logo.jpg') }}" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
