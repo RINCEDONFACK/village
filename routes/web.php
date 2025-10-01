@@ -42,6 +42,10 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
+Route::get('/offline', function () {
+    return view('vendor.laravelpwa.offline');
+});
+
 Route::post('/logout', function () {
     Auth::logout();
     request()->session()->invalidate();
