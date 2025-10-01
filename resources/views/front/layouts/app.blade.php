@@ -2,7 +2,7 @@
 <html lang="fr">
 
 <head>
-   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>La maison du village</title>
     <link rel="shortcut icon" href="{{ asset('assets/img/logo/logo.jpg') }}" type="image/x-icon" />
