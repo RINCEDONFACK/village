@@ -849,35 +849,7 @@
                 }
             }
 
-           // ========== DATATABLE ==========
-function initDataTables() {
-    if (typeof jQuery !== 'undefined' && jQuery.fn.DataTable) {
-        jQuery('[id$="Table"]').each(function() {
-            // Ne rien faire si déjà initialisé
-            if (jQuery.fn.DataTable.isDataTable(this)) {
-                return; // Passer au suivant
-            }
-
-            // Initialiser seulement si pas déjà fait
-            jQuery(this).DataTable({
-                responsive: true,
-                paging: true,
-                searching: true,
-                lengthChange: true,
-                pageLength: 10,
-                language: {
-                    paginate: { previous: 'Précédent', next: 'Suivant' },
-                    search: 'Rechercher:',
-                    lengthMenu: 'Afficher _MENU_ éléments',
-                    info: '_START_ à _END_ sur _TOTAL_',
-                    infoEmpty: 'Aucun élément',
-                    infoFiltered: '(filtré de _MAX_)',
-                    zeroRecords: 'Aucun résultat'
-                }
-            });
-        });
-    }
-}
+           
 
             // ========== EVENT LISTENERS ==========
             function initEvents() {
