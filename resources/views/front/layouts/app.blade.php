@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="{{ app()->getLocale() }}">
 
 <head>
 <meta charset="UTF-8">
@@ -9,7 +9,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="mobile-web-app-capable" content="yes">
 
-    <title>La maison du village</title>
+    <title>{{ __('maisonduvillage.site_title') }}</title>
     <link rel="shortcut icon" href="{{ asset('assets/img/logo/logo.jpg') }}" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
@@ -88,6 +88,47 @@
             color: #007bff;
         }
 
+        /* Language Switcher */
+        .language-switcher {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            margin-left: 15px;
+        }
+
+        .language-switcher a {
+            padding: 6px 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            text-decoration: none;
+            color: #555;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            min-height: auto;
+            min-width: auto;
+        }
+
+        .language-switcher a:hover {
+            background: #f5f5f5;
+            border-color: #007bff;
+            color: #007bff;
+        }
+
+        .language-switcher a.active {
+            background: #007bff;
+            color: #fff;
+            border-color: #007bff;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+        }
+
         .hamburger {
             display: none;
             font-size: 24px;
@@ -131,6 +172,16 @@
             .hamburger {
                 display: block;
             }
+
+            .language-switcher {
+                margin-left: 10px;
+                gap: 5px;
+            }
+
+            .language-switcher a {
+                padding: 5px 10px;
+                font-size: 0.8rem;
+            }
         }
 
         /* Tablette */
@@ -158,6 +209,11 @@
 
             .hamburger {
                 font-size: 20px;
+            }
+
+            .language-switcher a {
+                padding: 4px 8px;
+                font-size: 0.75rem;
             }
         }
 
@@ -454,10 +510,7 @@
 
     @include('laravelpwa::meta')
 
-
 </head>
-
-
 
 <body>
 
@@ -465,28 +518,44 @@
         <div class="nav-container">
             <div class="logo">
                 <a href="/">
-                    <img src="{{ asset('assets/img/logo/logo.jpg') }}" alt="Logo du site" />
+                    <img src="{{ asset('assets/img/logo/logo.jpg') }}" alt="{{ __('maisonduvillage.logo_alt') }}" />
                 </a>
             </div>
 
-            <!-- Bouton mobile -->
-            <button class="hamburger" onclick="toggleMenu()" aria-label="Menu de navigation">
-                <i class="fas fa-bars"></i>
-            </button>
+            <div class="nav-right">
+                <!-- Menu -->
+                <nav id="nav-menu" class="menu" role="navigation">
+                    <a href="{{ route('accueil.index') }}">{{ __('maisonduvillage.nav.home') }}</a>
+                    <a href="{{ route('propos.index') }}">{{ __('maisonduvillage.nav.about') }}</a>
+                    <a href="{{ route('cultures.index') }}">{{ __('maisonduvillage.nav.culture') }}</a>
+                    <a href="{{ route('women.index') }}">{{ __('maisonduvillage.nav.women') }}</a>
+                    <a href="{{ route('site.informatique.index') }}">{{ __('maisonduvillage.nav.it') }}</a>
+                    <a href="#">{{ __('maisonduvillage.nav.youth_festival') }}</a>
+                    <a href="{{ route('blog.index') }}">{{ __('maisonduvillage.nav.news') }}</a>
+                    <a href="{{ route('projects.index') }}">{{ __('maisonduvillage.nav.projects') }}</a>
+                    <a href="{{ route('equipe.index') }}">{{ __('maisonduvillage.nav.team') }}</a>
+                    <a href="{{ route('contacter.index') }}">{{ __('maisonduvillage.nav.contact') }}</a>
+                </nav>
 
-            <!-- Menu -->
-            <nav id="nav-menu" class="menu" role="navigation">
-                <a href="{{ route('accueil.index') }}">Accueil</a>
-                <a href="{{ route('propos.index') }}">À propos</a>
-                <a href="{{ route('cultures.index') }}">Culture</a>
-                <a href="{{ route('women.index') }}">Femmes</a>
-                <a href="{{ route('site.informatique.index') }}">Informatique</a>
-                <a href="#">Fête de la jeunesse</a>
-                <a href="{{ route('blog.index') }}">Actualités</a>
-                <a href="{{ route('projects.index') }}">Projets</a>
-                <a href="{{ route('equipe.index') }}">Équipe</a>
-                <a href="{{ route('contacter.index') }}">Contact</a>
-            </nav>
+                <!-- Sélecteur de langue -->
+                <div class="language-switcher">
+                    <a href="{{ route('lang.switch', 'fr') }}"
+                       class="{{ app()->getLocale() == 'fr' ? 'active' : '' }}"
+                       title="{{ __('maisonduvillage.switch_to_french') }}">
+                        🇫🇷 FR
+                    </a>
+                    <a href="{{ route('lang.switch', 'en') }}"
+                       class="{{ app()->getLocale() == 'en' ? 'active' : '' }}"
+                       title="{{ __('maisonduvillage.switch_to_english') }}">
+                        🇬🇧 EN
+                    </a>
+                </div>
+
+                <!-- Bouton mobile -->
+                <button class="hamburger" onclick="toggleMenu()" aria-label="{{ __('maisonduvillage.navigation_menu') }}">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </div>
     </header>
 
@@ -505,14 +574,10 @@
                 <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
                     <div class="single-footer-widget">
                         <div class="widget-head">
-                            <h3>À propos de nous</h3>
+                            <h3>{{ __('maisonduvillage.footer.about_title') }}</h3>
                         </div>
                         <div class="footer-content">
-                            <p>
-                                La Maison du Village, votre destination pour découvrir
-                                la richesse culturelle, promouvoir l'autonomisation des femmes
-                                et explorer les innovations technologiques.
-                            </p>
+                            <p>{{ __('maisonduvillage.footer.about_description') }}</p>
                             <div class="social-icon d-flex align-items-center">
                                 <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                                 <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
@@ -525,37 +590,37 @@
                 <div class="col-xl-2 col-lg-4 col-md-6 ps-lg-5 wow fadeInUp" data-wow-delay=".5s">
                     <div class="single-footer-widget">
                         <div class="widget-head">
-                            <h3>Navigation</h3>
+                            <h3>{{ __('maisonduvillage.footer.navigation_title') }}</h3>
                         </div>
                         <ul class="list-area">
                             <li>
                                 <a href="{{ route('accueil.index') }}">
                                     <i class="fa-solid fa-chevron-right"></i>
-                                    Accueil
+                                    {{ __('maisonduvillage.nav.home') }}
                                 </a>
                             </li>
                             <li>
                                 <a href="{{ route('propos.index') }}">
                                     <i class="fa-solid fa-chevron-right"></i>
-                                    À propos
+                                    {{ __('maisonduvillage.nav.about') }}
                                 </a>
                             </li>
                             <li>
                                 <a href="{{ route('cultures.index') }}">
                                     <i class="fa-solid fa-chevron-right"></i>
-                                    Culture
+                                    {{ __('maisonduvillage.nav.culture') }}
                                 </a>
                             </li>
                             <li>
                                 <a href="{{ route('women.index') }}">
                                     <i class="fa-solid fa-chevron-right"></i>
-                                    Femmes
+                                    {{ __('maisonduvillage.nav.women') }}
                                 </a>
                             </li>
                             <li>
                                 <a href="{{ route('blog.index') }}">
                                     <i class="fa-solid fa-chevron-right"></i>
-                                    Actualités
+                                    {{ __('maisonduvillage.nav.news') }}
                                 </a>
                             </li>
                         </ul>
@@ -564,37 +629,37 @@
                 <div class="col-xl-3 col-lg-4 col-md-6 ps-lg-5 wow fadeInUp" data-wow-delay=".5s">
                     <div class="single-footer-widget style-margin">
                         <div class="widget-head">
-                            <h3>Nos Services</h3>
+                            <h3>{{ __('maisonduvillage.footer.services_title') }}</h3>
                         </div>
                         <ul class="list-area">
                             <li>
                                 <a href="{{ route('site.informatique.index') }}">
                                     <i class="fa-solid fa-chevron-right"></i>
-                                    Informatique
+                                    {{ __('maisonduvillage.nav.it') }}
                                 </a>
                             </li>
                             <li>
                                 <a href="{{ route('projects.index') }}">
                                     <i class="fa-solid fa-chevron-right"></i>
-                                    Projets
+                                    {{ __('maisonduvillage.nav.projects') }}
                                 </a>
                             </li>
                             <li>
                                 <a href="{{ route('equipe.index') }}">
                                     <i class="fa-solid fa-chevron-right"></i>
-                                    Équipe
+                                    {{ __('maisonduvillage.nav.team') }}
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
                                     <i class="fa-solid fa-chevron-right"></i>
-                                    Fête de la jeunesse
+                                    {{ __('maisonduvillage.nav.youth_festival') }}
                                 </a>
                             </li>
                             <li>
                                 <a href="{{ route('contacter.index') }}">
                                     <i class="fa-solid fa-chevron-right"></i>
-                                    Contact
+                                    {{ __('maisonduvillage.nav.contact') }}
                                 </a>
                             </li>
                         </ul>
@@ -603,16 +668,13 @@
                 <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".7s">
                     <div class="single-footer-widget style-margin">
                         <div class="widget-head">
-                            <h3>Newsletter</h3>
+                            <h3>{{ __('maisonduvillage.footer.newsletter_title') }}</h3>
                         </div>
                        <div class="footer-content">
-                            <p>
-                                Inscrivez-vous à notre newsletter hebdomadaire pour recevoir
-                                les dernières mises à jour de La Maison du Village.
-                            </p>
+                            <p>{{ __('maisonduvillage.footer.newsletter_description') }}</p>
                             <div class="footer-input">
-                                <input type="email" id="email2" placeholder="Entrez votre adresse email">
-                                <button class="newsletter-btn" type="submit" aria-label="S'inscrire à la newsletter">
+                                <input type="email" id="email2" placeholder="{{ __('maisonduvillage.footer.email_placeholder') }}">
+                                <button class="newsletter-btn" type="submit" aria-label="{{ __('maisonduvillage.footer.subscribe_button') }}">
                                     <i class="fab fa-telegram-plane"></i>
                                 </button>
                             </div>
@@ -629,20 +691,20 @@
             <div class="footer-logo wow fadeInLeft" data-wow-delay=".3s">
                 <a href="{{ route('accueil.index') }}" class="d-flex align-items-center">
                     <div>
-                        <img src="{{ asset('assets/img/logo/logo.jpg') }}" alt="logo-img">
+                        <img src="{{ asset('assets/img/logo/logo.jpg') }}" alt="{{ __('maisonduvillage.logo_alt') }}">
                     </div>
                 </a>
             </div>
 
             <!-- Texte du footer -->
             <p class="wow fadeInRight color-2" data-wow-delay=".5s">
-                © Tous droits réservés 2025 par <a href="{{ route('accueil.index') }}">LA MAISON DU VILLAGE</a>
+                {{ __('maisonduvillage.footer.copyright', ['year' => date('Y')]) }} <a href="{{ route('accueil.index') }}">{{ __('maisonduvillage.site_name') }}</a>
             </p>
         </div>
     </div>
 
     <!-- Bouton pour remonter -->
-    <a href="#" id="scrollUp" class="scroll-icon" aria-label="Remonter en haut de la page">
+    <a href="#" id="scrollUp" class="scroll-icon" aria-label="{{ __('maisonduvillage.scroll_to_top') }}">
         <i class="far fa-arrow-up"></i>
     </a>
 </div>

@@ -23,6 +23,7 @@ use App\Http\Controllers\Admin\{
     WomentemController
 };
 use App\Http\Controllers\ChatController;
+use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\site\AboutController;
 use App\Http\Controllers\site\AcceuilController;
 use App\Http\Controllers\site\BlogController;
@@ -45,6 +46,8 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/offline', function () {
     return view('vendor.laravelpwa.offline');
 });
+
+Route::get('lang/{locale}', [LanguageController::class, 'switch'])->name('lang.switch');
 
 Route::post('/logout', function () {
     Auth::logout();
