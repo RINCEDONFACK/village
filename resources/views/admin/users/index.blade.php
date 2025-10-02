@@ -3,48 +3,46 @@
 @section('pageSubTitle', 'Utilisateurs / Liste')
 @section('content')
 <div class="container mx-auto p-4">
-    <div class="bg-white shadow-lg rounded-lg p-6">
-        <div class="flex justify-between items-center mb-4">
-            <h2 class="text-2xl font-semibold text-gray-700">Liste des utilisateurs</h2>
-            <a href="{{ route('admin.users.create') }}" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded inline-flex items-center">
-                <i class="fa fa-plus"></i>
-            </a>
-        </div>
-        <hr class="border-t-3 border-blue-500 mb-4">
+    <div class="flex justify-between items-center mb-4">
+        <h2 class="text-2xl font-semibold text-gray-700">Liste des utilisateurs</h2>
+        <a href="{{ route('admin.users.create') }}" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded inline-flex items-center">
+            <i class="fa fa-plus"></i>
+        </a>
+    </div>
+    <hr class="border-t-3 border-blue-500 mb-4">
 
-        <!-- Conteneur scroll horizontal pour responsive -->
-        <div class="overflow-x-auto">
-            <table id="operatorsTable" class="min-w-[600px] w-full mt-4 bg-white shadow-md rounded-lg text-gray-700 border border-gray-200">
-                <thead class="text-gray-600 text-sm uppercase border-b border-gray-300">
-                    <tr>
-                        <th class="p-1 text-left">Nom</th>
-                        <th class="p-1 text-left">Email</th>
-                        <th class="p-1 text-left hidden sm:table-cell">Téléphone</th> <!-- Masqué sur mobile -->
-                        <th class="p-1 text-left">Actions</th>
+    <!-- Conteneur scroll horizontal pour responsive -->
+    <div class="overflow-x-auto">
+        <table id="operatorsTable" class="min-w-[600px] w-full mt-4 bg-white shadow-md rounded-lg text-gray-700 border border-gray-200">
+            <thead class="text-gray-600 text-sm uppercase border-b border-gray-300">
+                <tr>
+                    <th class="p-1 text-left">Nom</th>
+                    <th class="p-1 text-left">Email</th>
+                    <th class="p-1 text-left hidden sm:table-cell">Téléphone</th> <!-- Masqué sur mobile -->
+                    <th class="p-1 text-left">Actions</th>
+                </tr>
+            </thead>
+            <tbody class="text-gray-600 text-sm">
+                @foreach ($users as $user)
+                    <tr class="border-b border-gray-200 hover:bg-gray-100 transition duration-200">
+                        <td class="p-1">{{ $user->name }}</td>
+                        <td class="p-1">{{ $user->email }}</td>
+                        <td class="p-1 hidden sm:table-cell">{{ $user->phone ?? 'N/A' }}</td> <!-- Masqué sur mobile -->
+                        <td class="p-1 flex gap-3">
+                            <a href="{{ route('admin.users.show', $user->id) }}" class="text-gray-500 hover:text-gray-900">
+                                <i class="fa fa-eye"></i>
+                            </a>
+                            <a href="{{ route('admin.users.edit', $user->id) }}" class="text-blue-500 hover:text-blue-700">
+                                <i class="fa fa-pencil"></i>
+                            </a>
+                            <button type="button" class="text-red-500 hover:text-red-700" onclick="openDeleteModal({{ $user->id }})">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </td>
                     </tr>
-                </thead>
-                <tbody class="text-gray-600 text-sm">
-                    @foreach ($users as $user)
-                        <tr class="border-b border-gray-200 hover:bg-gray-100 transition duration-200">
-                            <td class="p-1">{{ $user->name }}</td>
-                            <td class="p-1">{{ $user->email }}</td>
-                            <td class="p-1 hidden sm:table-cell">{{ $user->phone ?? 'N/A' }}</td> <!-- Masqué sur mobile -->
-                            <td class="p-1 flex gap-3">
-                                <a href="{{ route('admin.users.show', $user->id) }}" class="text-gray-500 hover:text-gray-900">
-                                    <i class="fa fa-eye"></i>
-                                </a>
-                                <a href="{{ route('admin.users.edit', $user->id) }}" class="text-blue-500 hover:text-blue-700">
-                                    <i class="fa fa-pencil"></i>
-                                </a>
-                                <button type="button" class="text-red-500 hover:text-red-700" onclick="openDeleteModal({{ $user->id }})">
-                                    <i class="fa fa-trash"></i>
-                                </button>
-                            </td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
-        </div>
+                @endforeach
+            </tbody>
+        </table>
     </div>
 </div>
 
