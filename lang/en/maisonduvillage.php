@@ -173,4 +173,15 @@ return [
         'nov' => 'Nov',
         'dec' => 'Dec',
     ],
+
+
+    'culture' => [
+    'page_title' => 'Cultural Events',
+    'no_events' => 'No cultural events found.',
+],
+
+'buttons' => [
+    // ... (keep existing buttons)
+    'view_more' => 'View More',
+],
 ];

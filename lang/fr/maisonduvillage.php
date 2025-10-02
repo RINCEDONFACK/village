@@ -177,4 +177,14 @@ return [
         'dec' => 'Déc',
     ],
 
+    'culture' => [
+    'page_title' => 'Événements Culturels',
+    'no_events' => 'Aucun événement culturel trouvé.',
+],
+
+'buttons' => [
+    // ... (garder les boutons existants)
+    'view_more' => 'Voir plus',
+],
+
 ];

@@ -11,24 +11,28 @@ class TradictionController extends Controller
     // Affiche la liste des événements culturels
     public function index()
     {
-        $cultures = Culture::latest()->get();
+        // Charger les cultures avec leurs traductions
+        $cultures = Culture::with('translations')->latest()->get();
+
         return view('front.culture', compact('cultures'));
     }
 
-    // Affiche le détail d’un événement
+    // Affiche le détail d'un événement
     public function show($id)
     {
-        $culture = Culture::with('culturecommentaires')->findOrFail($id);
+        // Charger la culture avec ses traductions et commentaires
+        $culture = Culture::with(['translations', 'culturecommentaires'])
+                         ->findOrFail($id);
+
         return view('front.culture_detail', compact('culture'));
     }
-
 
     public function storeCommentaire(Request $request, $id)
     {
         $request->validate([
             'contenu' => 'required|string',
             'auteur' => 'nullable|string|max:255',
-            'photo' => 'nullable',
+            'photo' => 'nullable|image|max:2048',
         ]);
 
         $culture = Culture::findOrFail($id);
@@ -41,9 +45,7 @@ class TradictionController extends Controller
 
         $culture->culturecommentaires()->create($data);
 
-        return redirect()->route('cultures.show', $id)->with('success', 'Commentaire ajouté avec succès.');
+        return redirect()->route('cultures.show', $id)
+                        ->with('success', __('maisonduvillage.messages.comment_added'));
     }
-
-
-    
 }
