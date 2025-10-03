@@ -1050,7 +1050,7 @@
 }
 </style>
 
-  <section class="news-section-3 fix section-padding">
+<section class="news-section-3 fix section-padding">
     <div class="container">
         <div class="section-title-area">
             <div class="section-title">
@@ -1083,16 +1083,25 @@
                                 <ul>
                                     <li>
                                         <i class="fa-regular fa-user"></i>
-                                        {{ __('maisonduvillage.blog.by_admin') }} {{ $post->author->name ?? 'Admin' }}
+                                        {{ $post->author->name ?? 'Admin' }}
                                     </li>
                                     <li>
                                         <i class="fa-solid fa-tag"></i>
                                         {{ $post->category ?? __('maisonduvillage.blog.it_services') }}
                                     </li>
                                 </ul>
-                             
-
-
+                                <h3>
+                                    <a href="{{ route('blog.index'}}">
+                                        {{ Str::limit(strip_tags($post->contenu), 80) }}
+                                    </a>
+                                </h3>
+                                <p class="mt-2">
+                                    {{ Str::limit(strip_tags($post->contenu), 150) }}
+                                </p>
+                                <a href="{{ route('blog.index') }}" class="theme-btn-2 mt-3">
+                                    {{ __('maisonduvillage.buttons.read_more') }}
+                                    <i class="fa-solid fa-arrow-right-long"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
