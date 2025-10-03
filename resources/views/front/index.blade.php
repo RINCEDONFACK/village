@@ -53,16 +53,18 @@
                                         {!! __('maisonduvillage.hero.slide1.description') !!}
                                     </p>
                                     <div class="hero-button">
-                                        <a href="about.html" data-animation="slideInRight" data-duration="2s"
-                                            data-delay=".9s" class="theme-btn hover-white">
-                                            {{ __('maisonduvillage.buttons.learn_more') }}
-                                            <i class="fa-solid fa-arrow-right-long"></i>
-                                        </a>
-                                        <a href="contact.html" data-animation="slideInRight" data-duration="2s"
-                                            data-delay=".9s" class="theme-btn border-white">
-                                            {{ __('maisonduvillage.buttons.contact_us') }}
-                                            <i class="fa-solid fa-arrow-right-long"></i>
-                                        </a>
+                                       <a href="{{ route('propos.index') }}" data-animation="slideInRight" data-duration="2s"
+   data-delay=".9s" class="theme-btn hover-white">
+   About
+   <i class="fa-solid fa-arrow-right-long"></i>
+</a>
+
+                                        <a href="{{ route('contacter.index') }}" data-animation="slideInRight" data-duration="2s"
+   data-delay=".9s" class="theme-btn border-white">
+   <i class="fa-solid fa-arrow-right-long"></i>
+   Contactez-nous
+</a>
+
                                     </div>
                                 </div>
                             </div>
@@ -223,7 +225,7 @@
                                 <p class="mt-3 mt-md-0 wow fadeInUp" data-wow-delay=".5s">
                                     {!! $about->contenu !!}
                                 </p>
-                                
+
                             </div>
                         </div>
                     </div>
