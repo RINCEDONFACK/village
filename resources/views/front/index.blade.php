@@ -1050,120 +1050,69 @@
 }
 </style>
 
-    <section class="news-section-3 fix section-padding">
-        <div class="container">
-            <div class="section-title-area">
-                <div class="section-title">
-                    <span class="wow fadeInUp">{{ __('maisonduvillage.blog.subtitle') }}</span>
-                    <h2 class="wow fadeInUp" data-wow-delay=".3s">
-                        {!! __('maisonduvillage.blog.title') !!}
-                    </h2>
-                </div>
-                <div class="array-button">
-                    <button class="array-prev"><i class="fal fa-arrow-right"></i></button>
-                    <button class="array-next"><i class="fal fa-arrow-left"></i></button>
-                </div>
+  <section class="news-section-3 fix section-padding">
+    <div class="container">
+        <div class="section-title-area">
+            <div class="section-title">
+                <span class="wow fadeInUp">{{ __('maisonduvillage.blog.subtitle') }}</span>
+                <h2 class="wow fadeInUp" data-wow-delay=".3s">
+                    {!! __('maisonduvillage.blog.title') !!}
+                </h2>
             </div>
-            <div class="swiper news-slider">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="news-card-items style-2">
-                            <div class="news-image">
-                                <img src="assets/img/news/04.jpg" alt="news-img">
-                                <div class="post-date">
-                                    <h3>
-                                        17 <br>
-                                        <span>{{ __('maisonduvillage.months.feb') }}</span>
-                                    </h3>
-                                </div>
-                            </div>
-                            <div class="news-content">
-                                <ul>
-                                    <li>
-                                        <i class="fa-regular fa-user"></i>
-                                        {{ __('maisonduvillage.blog.by_admin') }}
-                                    </li>
-                                    <li>
-                                        <i class="fa-solid fa-tag"></i>
-                                        {{ __('maisonduvillage.blog.it_services') }}
-                                    </li>
-                                </ul>
-                                <h3>
-                                    <a href="news-details.html">Simplify Streamline Succeed IT Solutions</a>
-                                </h3>
-                                <a href="news-details.html" class="theme-btn-2 mt-3">
-                                    {{ __('maisonduvillage.buttons.read_more') }}
-                                    <i class="fa-solid fa-arrow-right-long"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="news-card-items style-2">
-                            <div class="news-image">
-                                <img src="assets/img/news/07.jpg" alt="news-img">
-                                <div class="post-date">
-                                    <h3>
-                                        20 <br>
-                                        <span>{{ __('maisonduvillage.months.may') }}</span>
-                                    </h3>
-                                </div>
-                            </div>
-                            <div class="news-content">
-                                <ul>
-                                    <li>
-                                        <i class="fa-regular fa-user"></i>
-                                        {{ __('maisonduvillage.blog.by_admin') }}
-                                    </li>
-                                    <li>
-                                        <i class="fa-solid fa-tag"></i>
-                                        UI/UX Design
-                                    </li>
-                                </ul>
-                                <h3>
-                                    <a href="news-details.html">Unlocking Potential Through Technology</a>
-                                </h3>
-                                <a href="news-details.html" class="theme-btn-2 mt-3">
-                                    {{ __('maisonduvillage.buttons.read_more') }}
-                                    <i class="fa-solid fa-arrow-right-long"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="news-card-items style-2">
-                            <div class="news-image">
-                                <img src="assets/img/news/08.jpg" alt="news-img">
-                                <div class="post-date">
-                                    <h3>
-                                        10 <br>
-                                        <span>{{ __('maisonduvillage.months.feb') }}</span>
-                                    </h3>
-                                </div>
-                            </div>
-                            <div class="news-content">
-                                <ul>
-                                    <li>
-                                        <i class="fa-regular fa-user"></i>
-                                        {{ __('maisonduvillage.blog.by_admin') }}
-                                    </li>
-                                    <li>
-                                        <i class="fa-solid fa-tag"></i>
-                                        Cyber Security
-                                    </li>
-                                </ul>
-                                <h3>
-                                    <a href="news-details.html">Supervisor Disapproved of Latest Work.</a>
-                                </h3>
-                                <a href="news-details.html" class="theme-btn-2 mt-3">
-                                    {{ __('maisonduvillage.buttons.read_more') }}
-                                    <i class="fa-solid fa-arrow-right-long"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="array-button">
+                <button class="array-prev"><i class="fal fa-arrow-right"></i></button>
+                <button class="array-next"><i class="fal fa-arrow-left"></i></button>
             </div>
         </div>
-    </section>
+        <div class="swiper news-slider">
+            <div class="swiper-wrapper">
+                @forelse($posts as $post)
+                    <div class="swiper-slide">
+                        <div class="news-card-items style-2">
+                            <div class="news-image">
+                                <img src="{{ $post->cover_image ? asset('storage/' . $post->cover_image) : asset('assets/img/news/default.jpg') }}"
+                                     alt="{{ $post->slug }}">
+                                <div class="post-date">
+                                    <h3>
+                                        {{ $post->published_at ? $post->published_at->format('d') : $post->created_at->format('d') }} <br>
+                                        <span>{{ $post->published_at ? __('maisonduvillage.months.' . strtolower($post->published_at->format('M'))) : __('maisonduvillage.months.' . strtolower($post->created_at->format('M'))) }}</span>
+                                    </h3>
+                                </div>
+                            </div>
+                            <div class="news-content">
+                                <ul>
+                                    <li>
+                                        <i class="fa-regular fa-user"></i>
+                                        {{ __('maisonduvillage.blog.by_admin') }} {{ $post->author->name ?? 'Admin' }}
+                                    </li>
+                                    <li>
+                                        <i class="fa-solid fa-tag"></i>
+                                        {{ $post->category ?? __('maisonduvillage.blog.it_services') }}
+                                    </li>
+                                </ul>
+                                <h3>
+                                    <a href="{{ route('posts.show', $post->slug) }}">
+                                        {{ Str::limit($post->contenu, 60) }}
+                                    </a>
+                                </h3>
+                                <a href="{{ route('posts.show', $post->slug) }}" class="theme-btn-2 mt-3">
+                                    {{ __('maisonduvillage.buttons.read_more') }}
+                                    <i class="fa-solid fa-arrow-right-long"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                @empty
+                    <div class="swiper-slide">
+                        <div class="news-card-items style-2">
+                            <div class="news-content">
+                                <p>{{ __('maisonduvillage.blog.no_posts') }}</p>
+                            </div>
+                        </div>
+                    </div>
+                @endforelse
+            </div>
+        </div>
+    </div>
+</section>
 @endsection
