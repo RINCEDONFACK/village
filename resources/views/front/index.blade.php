@@ -14,153 +14,151 @@
         </div>
     </div>
 
-    <section class="hero-section fix hero-3">
-        <div class="bottom-shape">
-            <img src="assets/img/hero/bottom-shape.png" alt="shape-img">
-        </div>
-        <div class="array-button">
-            <button class="array-prev"><i class="fal fa-arrow-right"></i></button>
-            <button class="array-next"><i class="fal fa-arrow-left"></i></button>
-        </div>
-        <div class="swiper hero-slider">
-            <div class="swiper-wrapper">
-                <!-- Slide 1 -->
-                <div class="swiper-slide">
-                    <div class="slider-image bg-cover" style="background-image: url('assets/img/hero/hero-2.jpg');">
-                        <div class="mask-shape" data-animation="slideInDown" data-duration="3s" data-delay="2s">
-                            <img src="assets/img/hero/mask-shape-2.png" alt="shape-img">
-                        </div>
-                        <div class="border-shape" data-animation="slideInRight" data-duration="3s" data-delay="2.2s">
-                            <img src="assets/img/hero/border-shape.png" alt="shape-img">
-                        </div>
-                        <div class="circle-shape" data-animation="slideInRight" data-duration="3s" data-delay="2.1s">
-                            <img src="assets/img/choose/circle.png" alt="shape-img">
-                        </div>
-                        <div class="frame" data-animation="slideInLeft" data-duration="3s" data-delay="2.2s">
-                            <img src="assets/img/frame.png" alt="shape-img">
-                        </div>
+   <section class="hero-section fix hero-3">
+    <div class="bottom-shape">
+        <img src="assets/img/hero/bottom-shape.png" alt="shape-img">
+    </div>
+    <div class="array-button">
+        <button class="array-prev"><i class="fal fa-arrow-right"></i></button>
+        <button class="array-next"><i class="fal fa-arrow-left"></i></button>
+    </div>
+    <div class="swiper hero-slider">
+        <div class="swiper-wrapper">
+            <!-- Slide 1: Welcome & Hospitality -->
+            <div class="swiper-slide">
+                <div class="slider-image bg-cover" style="background-image: url('assets/img/hero/hero-2.jpg');">
+                    <div class="mask-shape" data-animation="slideInDown" data-duration="3s" data-delay="2s">
+                        <img src="assets/img/hero/mask-shape-2.png" alt="shape-img">
                     </div>
-                    <div class="container">
-                        <div class="row g-4 align-items-center">
-                            <div class="col-lg-8">
-                                <div class="hero-content">
-                                    <h5 data-animation="slideInRight" data-duration="2s" data-delay=".3s">
-                                        {{ __('maisonduvillage.hero.slide1.subtitle') }}
-                                    </h5>
-                                    <h1 data-animation="slideInRight" data-duration="2s" data-delay=".5s">
-                                        {!! __('maisonduvillage.hero.slide1.title') !!}
-                                    </h1>
-                                    <p data-animation="slideInRight" data-duration="2s" data-delay=".9s">
-                                        {!! __('maisonduvillage.hero.slide1.description') !!}
-                                    </p>
-                                    <div class="hero-button">
-                                        <a href="{{ route('propos.index') }}" data-animation="slideInRight"
-                                            data-duration="2s" data-delay=".9s" class="theme-btn hover-white">
-                                            About
-                                            <i class="fa-solid fa-arrow-right-long"></i>
-                                        </a>
+                    <div class="border-shape" data-animation="slideInRight" data-duration="3s" data-delay="2.2s">
+                        <img src="assets/img/hero/border-shape.png" alt="shape-img">
+                    </div>
+                    <div class="circle-shape" data-animation="slideInRight" data-duration="3s" data-delay="2.1s">
+                        <img src="assets/img/choose/circle.png" alt="shape-img">
+                    </div>
+                    <div class="frame" data-animation="slideInLeft" data-duration="3s" data-delay="2.2s">
+                        <img src="assets/img/frame.png" alt="shape-img">
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-lg-8">
+                            <div class="hero-content">
+                                <h5 data-animation="slideInRight" data-duration="2s" data-delay=".3s">
+                                    Welcome to Village House
+                                </h5>
+                                <h1 data-animation="slideInRight" data-duration="2s" data-delay=".5s">
+                                    A Space for Welcome <br> and Sharing at the Heart <br> of the Village
+                                </h1>
+                                <p data-animation="slideInRight" data-duration="2s" data-delay=".9s">
+                                    Discover a unique place where visitors, diaspora members, and local communities meet to build friendships, express solidarity, and revitalize our villages together.
+                                </p>
+                                <div class="hero-button">
+                                    <a href="{{ route('propos.index') }}" data-animation="slideInRight"
+                                        data-duration="2s" data-delay=".9s" class="theme-btn hover-white">
+                                        About Us
+                                        <i class="fa-solid fa-arrow-right-long"></i>
+                                    </a>
 
-                                        <a href="{{ route('contacter.index') }}" data-animation="slideInRight"
-                                            data-duration="2s" data-delay=".9s" class="theme-btn border-white">
-                                            <i class="fa-solid fa-arrow-right-long"></i>
-                                            Contactez-nous
-                                        </a>
-
-                                    </div>
+                                    <a href="{{ route('contacter.index') }}" data-animation="slideInRight"
+                                        data-duration="2s" data-delay=".9s" class="theme-btn border-white">
+                                        <i class="fa-solid fa-arrow-right-long"></i>
+                                        Contact Us
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Slide 2 -->
-                <div class="swiper-slide">
-                    <div class="slider-image bg-cover" style="background-image: url('assets/img/hero/hero-1.jpg');">
-                        <div class="mask-shape" data-animation="slideInDown" data-duration="3s" data-delay="2s">
-                            <img src="assets/img/hero/mask-shape-2.png" alt="shape-img">
-                        </div>
-                        <div class="border-shape" data-animation="slideInRight" data-duration="3s" data-delay="2.2s">
-                            <img src="assets/img/hero/border-shape.png" alt="shape-img">
-                        </div>
-                        <div class="circle-shape" data-animation="slideInRight" data-duration="3s" data-delay="2.1s">
-                            <img src="assets/img/choose/circle.png" alt="shape-img">
-                        </div>
-                        <div class="frame" data-animation="slideInLeft" data-duration="3s" data-delay="2.2s">
-                            <img src="assets/img/frame.png" alt="shape-img">
-                        </div>
+            <!-- Slide 2: Culture & Identity -->
+            <div class="swiper-slide">
+                <div class="slider-image bg-cover" style="background-image: url('assets/img/hero/hero-1.jpg');">
+                    <div class="mask-shape" data-animation="slideInDown" data-duration="3s" data-delay="2s">
+                        <img src="assets/img/hero/mask-shape-2.png" alt="shape-img">
                     </div>
-                    <div class="container">
-                        <div class="row g-4 align-items-center">
-                            <div class="col-lg-8">
-                                <div class="hero-content">
-                                    <h5 data-animation="slideInRight" data-duration="2s" data-delay=".3s">
-                                        {{ __('maisonduvillage.hero.slide2.subtitle') }}
-                                    </h5>
-                                    <h1 data-animation="slideInRight" data-duration="2s" data-delay=".5s">
-                                        {!! __('maisonduvillage.hero.slide2.title') !!}
-                                    </h1>
-                                    <p data-animation="slideInRight" data-duration="2s" data-delay=".9s">
-                                        {!! __('maisonduvillage.hero.slide2.description') !!}
-                                    </p>
-                                    <div class="hero-button">
-                                        <a href="about.html" data-animation="slideInRight" data-duration="2s"
-                                            data-delay=".9s" class="theme-btn hover-white">
-                                            {{ __('maisonduvillage.buttons.discover') }}
-                                            <i class="fa-solid fa-arrow-right-long"></i>
-                                        </a>
-                                        <a href="contact.html" data-animation="slideInRight" data-duration="2s"
-                                            data-delay=".9s" class="theme-btn border-white">
-                                            {{ __('maisonduvillage.buttons.book_appointment') }}
-                                            <i class="fa-solid fa-arrow-right-long"></i>
-                                        </a>
-                                    </div>
+                    <div class="border-shape" data-animation="slideInRight" data-duration="3s" data-delay="2.2s">
+                        <img src="assets/img/hero/border-shape.png" alt="shape-img">
+                    </div>
+                    <div class="circle-shape" data-animation="slideInRight" data-duration="3s" data-delay="2.1s">
+                        <img src="assets/img/choose/circle.png" alt="shape-img">
+                    </div>
+                    <div class="frame" data-animation="slideInLeft" data-duration="3s" data-delay="2.2s">
+                        <img src="assets/img/frame.png" alt="shape-img">
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-lg-8">
+                            <div class="hero-content">
+                                <h5 data-animation="slideInRight" data-duration="2s" data-delay=".3s">
+                                    Celebrate Our Heritage
+                                </h5>
+                                <h1 data-animation="slideInRight" data-duration="2s" data-delay=".5s">
+                                    Culture, Art <br> and Living <br> Traditions
+                                </h1>
+                                <p data-animation="slideInRight" data-duration="2s" data-delay=".9s">
+                                    Immerse yourself in the authenticity of our performances, local cuisine, traditional music, and learn our languages. Culture is the beating heart of our community.
+                                </p>
+                                <div class="hero-button">
+                                    <a href="about.html" data-animation="slideInRight" data-duration="2s"
+                                        data-delay=".9s" class="theme-btn hover-white">
+                                        Discover
+                                        <i class="fa-solid fa-arrow-right-long"></i>
+                                    </a>
+                                    <a href="contact.html" data-animation="slideInRight" data-duration="2s"
+                                        data-delay=".9s" class="theme-btn border-white">
+                                        Book Your Stay
+                                        <i class="fa-solid fa-arrow-right-long"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Slide 3 -->
-                <div class="swiper-slide">
-                    <div class="slider-image bg-cover" style="background-image: url('assets/img/hero/hero-3.jpg');">
-                        <div class="mask-shape" data-animation="slideInDown" data-duration="3s" data-delay="2s">
-                            <img src="assets/img/hero/mask-shape-2.png" alt="shape-img">
-                        </div>
-                        <div class="border-shape" data-animation="slideInRight" data-duration="3s" data-delay="2.2s">
-                            <img src="assets/img/hero/border-shape.png" alt="shape-img">
-                        </div>
-                        <div class="circle-shape" data-animation="slideInRight" data-duration="3s" data-delay="2.1s">
-                            <img src="assets/img/choose/circle.png" alt="shape-img">
-                        </div>
-                        <div class="frame" data-animation="slideInLeft" data-duration="3s" data-delay="2.2s">
-                            <img src="assets/img/frame.png" alt="shape-img">
-                        </div>
+            <!-- Slide 3: Education & Development -->
+            <div class="swiper-slide">
+                <div class="slider-image bg-cover" style="background-image: url('assets/img/hero/hero-3.jpg');">
+                    <div class="mask-shape" data-animation="slideInDown" data-duration="3s" data-delay="2s">
+                        <img src="assets/img/hero/mask-shape-2.png" alt="shape-img">
                     </div>
-                    <div class="container">
-                        <div class="row g-4 align-items-center">
-                            <div class="col-lg-8">
-                                <div class="hero-content">
-                                    <h5 data-animation="slideInRight" data-duration="2s" data-delay=".3s">
-                                        {{ __('maisonduvillage.hero.slide3.subtitle') }}
-                                    </h5>
-                                    <h1 data-animation="slideInRight" data-duration="2s" data-delay=".5s">
-                                        {!! __('maisonduvillage.hero.slide3.title') !!}
-                                    </h1>
-                                    <p data-animation="slideInRight" data-duration="2s" data-delay=".9s">
-                                        {!! __('maisonduvillage.hero.slide3.description') !!}
-                                    </p>
-                                    <div class="hero-button">
-                                        <a href="about.html" data-animation="slideInRight" data-duration="2s"
-                                            data-delay=".9s" class="theme-btn hover-white">
-                                            {{ __('maisonduvillage.buttons.join_us') }}
-                                            <i class="fa-solid fa-arrow-right-long"></i>
-                                        </a>
-                                        <a href="contact.html" data-animation="slideInRight" data-duration="2s"
-                                            data-delay=".9s" class="theme-btn border-white">
-                                            {{ __('maisonduvillage.buttons.donate') }}
-                                            <i class="fa-solid fa-arrow-right-long"></i>
-                                        </a>
-                                    </div>
+                    <div class="border-shape" data-animation="slideInRight" data-duration="3s" data-delay="2.2s">
+                        <img src="assets/img/hero/border-shape.png" alt="shape-img">
+                    </div>
+                    <div class="circle-shape" data-animation="slideInRight" data-duration="3s" data-delay="2.1s">
+                        <img src="assets/img/choose/circle.png" alt="shape-img">
+                    </div>
+                    <div class="frame" data-animation="slideInLeft" data-duration="3s" data-delay="2.2s">
+                        <img src="assets/img/frame.png" alt="shape-img">
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-lg-8">
+                            <div class="hero-content">
+                                <h5 data-animation="slideInRight" data-duration="2s" data-delay=".3s">
+                                    Building the Future Together
+                                </h5>
+                                <h1 data-animation="slideInRight" data-duration="2s" data-delay=".5s">
+                                    Education, Training <br> and Opportunities <br> for Everyone
+                                </h1>
+                                <p data-animation="slideInRight" data-duration="2s" data-delay=".9s">
+                                    Professional training, English courses, IT skills, and distance learning. Support local development and community crafts for a thriving village.
+                                </p>
+                                <div class="hero-button">
+                                    <a href="about.html" data-animation="slideInRight" data-duration="2s"
+                                        data-delay=".9s" class="theme-btn hover-white">
+                                        Join Us
+                                        <i class="fa-solid fa-arrow-right-long"></i>
+                                    </a>
+                                    <a href="contact.html" data-animation="slideInRight" data-duration="2s"
+                                        data-delay=".9s" class="theme-btn border-white">
+                                        Donate
+                                        <i class="fa-solid fa-arrow-right-long"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -168,7 +166,8 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     @php
         if (!function_exists('getYoutubeId')) {
