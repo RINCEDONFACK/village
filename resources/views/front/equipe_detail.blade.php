@@ -15,7 +15,7 @@
     </div>
 
     <!--<< Breadcrumb Section Start >>-->
-    <div class="breadcrumb-wrapper bg-cover" style="background-image: url('{{ asset('assets/img/breadcrumb.jpg') }}');">
+    <div class="breadcrumb-wrapper bg-cover" style="background-image: url('{{ asset('assets/img/vilatof.jpeg') }}');">
         <div class="border-shape">
             <img src="{{ asset('assets/img/element.png') }}" alt="shape-img">
         </div>
@@ -61,7 +61,7 @@
                             <p class="mt-3">
                                 {{ $membre->presentation }}
                             </p>
-                           
+
                             <div class="social-icon mt-3">
                                 <span>Contact:</span>
                                 <p>{{ $membre->tel }}</p>

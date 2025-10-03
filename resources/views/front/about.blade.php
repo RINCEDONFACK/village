@@ -14,7 +14,7 @@
 </div>
 
 <!--<< Breadcrumb Section Start >>-->
-<div class="breadcrumb-wrapper bg-cover" style="background-image: url('assets/img/breadcrumb.jpg');">
+<div class="breadcrumb-wrapper bg-cover" style="background-image: url('assets/img/vilatof.jpeg');">
     <div class="border-shape">
         <img src="assets/img/element.png" alt="shape-img">
     </div>
@@ -79,7 +79,7 @@
 
                             <!-- Deuxième image -->
                             <div class="wow fadeInUp" data-wow-delay=".5s">
-                                <img src="assets/img/breadcrumb.jpg" alt="about-img-2" class="img-fluid rounded w-100">
+                                <img src="assets/img/vilatof.jpeg" alt="about-img-2" class="img-fluid rounded w-100">
                             </div>
                         </div>
                     </div>

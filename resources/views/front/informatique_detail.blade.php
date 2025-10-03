@@ -54,7 +54,7 @@
     @endpush
 
     <!-- Breadcrumb Section Start -->
-    <div class="breadcrumb-wrapper bg-cover" style="background-image: url('{{ asset('assets/img/breadcrumb.jpg') }}');">
+    <div class="breadcrumb-wrapper bg-cover" style="background-image: url('{{ asset('assets/img/dd.jpeg') }}');">
         <div class="border-shape">
             <img src="{{ asset('assets/img/element.png') }}" alt="shape-img">
         </div>

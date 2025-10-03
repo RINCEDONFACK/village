@@ -15,7 +15,7 @@
 </div>
 
 <!--<< Breadcrumb Section Start >>-->
-<div class="breadcrumb-wrapper bg-cover" style="background-image: url('assets/img/breadcrumb.jpg');">
+<div class="breadcrumb-wrapper bg-cover" style="background-image: url('assets/img/vilatof.jpeg');">
     <div class="border-shape">
         <img src="assets/img/element.png" alt="shape-img">
     </div>
