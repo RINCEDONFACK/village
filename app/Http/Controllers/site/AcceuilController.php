@@ -8,6 +8,8 @@ use App\Models\Itcommunity;
 use App\Models\Partner;
 use App\Models\Project;
 use App\Models\Team;
+use App\Models\Temoignage;
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
 
 class AcceuilController extends Controller
@@ -15,12 +17,13 @@ class AcceuilController extends Controller
     public function index()
     {
         $teams = Team::all();
+        $temoignages = Testimonial::where('is_active', true)->get();
         $informatique = Itcommunity::all();
 
         $abouts = AboutSection::all();
         $projects = Project::all();
         $partenaire = Partner::where('is_active', true)->get();
 
-        return view('front.index', compact('abouts', 'projects', 'partenaire','teams','informatique'));
+        return view('front.index', compact('abouts', 'projects', 'partenaire','teams','informatique','temoignages'));
     }
 }

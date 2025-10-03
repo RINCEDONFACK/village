@@ -147,7 +147,8 @@ return [
     // Témoignages
     'testimonials' => [
         'subtitle' => 'Testimonials',
-        'title' => 'People Who Already Love Us',
+        'title' => 'Discover their reviews and feedback',
+        
     ],
 
     // Blog

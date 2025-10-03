@@ -992,80 +992,63 @@
         }
     </style>
 
-    <section class="tesimonial-section-3 section-padding section-bg-2 bg-cover">
-        <div class="line-shape">
-            <img src="assets/img/team/line-shape.png" alt="shape-img">
+   <section class="tesimonial-section-3 section-padding section-bg-2 bg-cover">
+    <div class="line-shape">
+        <img src="assets/img/team/line-shape.png" alt="shape-img">
+    </div>
+    <div class="mask-shape">
+        <img src="assets/img/team/mask-shape.png" alt="shape-img">
+    </div>
+    <div class="array-button">
+        <button class="array-prev"><i class="fal fa-arrow-left"></i></button>
+        <button class="array-next"><i class="fal fa-arrow-right"></i></button>
+    </div>
+    <div class="container">
+        <div class="section-title text-center">
+            <span class="text-white">{{ __('maisonduvillage.testimonials.subtitle') }}</span>
+            <h2 class="text-white">{{ __('maisonduvillage.testimonials.title') }}</h2>
         </div>
-        <div class="mask-shape">
-            <img src="assets/img/team/mask-shape.png" alt="shape-img">
-        </div>
-        <div class="array-button">
-            <button class="array-prev"><i class="fal fa-arrow-left"></i></button>
-            <button class="array-next"><i class="fal fa-arrow-right"></i></button>
-        </div>
-        <div class="container">
-            <div class="section-title text-center">
-                <span class="text-white">{{ __('maisonduvillage.testimonials.subtitle') }}</span>
-                <h2 class="text-white">{{ __('maisonduvillage.testimonials.title') }}</h2>
-            </div>
-            <div class="swiper testimonial-slider-2">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="testimonial-box-items">
-                            <div class="icon">
-                                <img src="assets/img/testimonial/icon.png" alt="icon-img">
-                            </div>
-                            <div class="client-items">
-                                <div class="client-image style-2 bg-cover"
-                                    style="background-image: url('assets/img/testimonial/02.jpg');"></div>
-                                <div class="client-content">
-                                    <h4>Kathryn Murphy</h4>
-                                    <p>Web Designer</p>
-                                    <div class="star">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
+        <div class="swiper testimonial-slider-2">
+            <div class="swiper-wrapper">
+                @foreach($temoignages as $temoignage)
+                <div class="swiper-slide">
+                    <div class="testimonial-box-items">
+                        <div class="icon">
+                            <img src="assets/img/testimonial/icon.png" alt="icon-img">
+                        </div>
+                        <div class="client-items">
+                            <div class="client-image style-2 bg-cover"
+                                style="background-image: url('{{ $temoignage->photo ? asset('storage/' . $temoignage->photo) : asset('assets/img/testimonial/default.jpg') }}'); background-position: center; background-size: cover; background-repeat: no-repeat;"></div>
+                            <div class="client-content">
+                                <h4>{{ $temoignage->name }}</h4>
+                                <p>{{ $temoignage->fonction }}</p>
+                                <div class="star">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
                                 </div>
                             </div>
-                            <p>
-                                Consectetur adipiscing elit. Integer nunc viverra laoreet est the is porta pretium metus
-                                aliquam eget maecenas porta is nunc viverra Aenean pulvinar maximus leo "
-                            </p>
                         </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="testimonial-box-items">
-                            <div class="icon">
-                                <img src="assets/img/testimonial/icon.png" alt="icon-img">
-                            </div>
-                            <div class="client-items">
-                                <div class="client-image style-2 bg-cover"
-                                    style="background-image: url('assets/img/testimonial/03.jpg');"></div>
-                                <div class="client-content">
-                                    <h4>Albert Flores</h4>
-                                    <p>Medical Assistant</p>
-                                    <div class="star">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star color-text"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <p>
-                                Consectetur adipiscing elit. Integer nunc viverra laoreet est the is porta pretium metus
-                                aliquam eget maecenas porta is nunc viverra Aenean pulvinar maximus leo "
-                            </p>
-                        </div>
+                        <p>{{ $temoignage->contenu }}</p>
                     </div>
                 </div>
+                @endforeach
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<style>
+.client-image.style-2 {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+</style>
 
     <section class="news-section-3 fix section-padding">
         <div class="container">

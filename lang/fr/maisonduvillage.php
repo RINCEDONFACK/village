@@ -150,7 +150,7 @@ return [
     // Témoignages
     'testimonials' => [
         'subtitle' => 'Témoignages',
-        'title' => 'Les Personnes Qui Nous Aiment Déjà',
+        'title' => 'Découvrez leurs avis et ressentis',
     ],
 
     // Blog
