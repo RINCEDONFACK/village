@@ -6,7 +6,8 @@
             <div class="search-cell">
                 <form method="get">
                     <div class="search-field-holder">
-                        <input type="search" class="main-search-input" placeholder="{{ __('maisonduvillage.search_placeholder') }}">
+                        <input type="search" class="main-search-input"
+                            placeholder="{{ __('maisonduvillage.search_placeholder') }}">
                     </div>
                 </form>
             </div>
@@ -53,17 +54,17 @@
                                         {!! __('maisonduvillage.hero.slide1.description') !!}
                                     </p>
                                     <div class="hero-button">
-                                       <a href="{{ route('propos.index') }}" data-animation="slideInRight" data-duration="2s"
-   data-delay=".9s" class="theme-btn hover-white">
-   About
-   <i class="fa-solid fa-arrow-right-long"></i>
-</a>
+                                        <a href="{{ route('propos.index') }}" data-animation="slideInRight"
+                                            data-duration="2s" data-delay=".9s" class="theme-btn hover-white">
+                                            About
+                                            <i class="fa-solid fa-arrow-right-long"></i>
+                                        </a>
 
-                                        <a href="{{ route('contacter.index') }}" data-animation="slideInRight" data-duration="2s"
-   data-delay=".9s" class="theme-btn border-white">
-   <i class="fa-solid fa-arrow-right-long"></i>
-   Contactez-nous
-</a>
+                                        <a href="{{ route('contacter.index') }}" data-animation="slideInRight"
+                                            data-duration="2s" data-delay=".9s" class="theme-btn border-white">
+                                            <i class="fa-solid fa-arrow-right-long"></i>
+                                            Contactez-nous
+                                        </a>
 
                                     </div>
                                 </div>
@@ -248,8 +249,8 @@
                                     <div class="brand-image text-center">
                                         @if ($item->url)
                                             <a href="{{ $item->url }}" target="_blank">
-                                                <img src="{{ asset('storage/' . $item->logo) }}" alt="{{ $item->name }}"
-                                                    class="partner-logo">
+                                                <img src="{{ asset('storage/' . $item->logo) }}"
+                                                    alt="{{ $item->name }}" class="partner-logo">
                                             </a>
                                         @else
                                             <img src="{{ asset('storage/' . $item->logo) }}" alt="{{ $item->name }}"
@@ -295,8 +296,156 @@
         }
     </style>
 
+
+
+
+<section class="service-section-3 pb-0 fix section-padding bg-cover"
+    style="background-image: url('assets/img/service/service-bg-3.jpg');">
+    <div class="container">
+        <div class="section-title-area">
+            <div class="section-title">
+                <span>{{ __('maisonduvillage.culture.section_title') }}</span>
+                <h2>{!! __('maisonduvillage.culture.section_subtitle') !!}</h2>
+            </div>
+            <a href="{{ route('site.cultures.index') }}" class="theme-btn">
+                {{ __('maisonduvillage.culture.view_all') }}
+                <i class="fa-solid fa-arrow-right-long"></i>
+            </a>
+        </div>
+
+        <div class="cultures-container">
+            <div class="row">
+                @forelse ($cultures as $culture)
+                    <div class="col-xl-4 col-lg-6 col-md-6 mb-4">
+                        <div class="service-card-items h-100">
+                            <!-- Image principale -->
+                            <div class="service-image">
+                                @if ($culture->image1)
+                                    <img src="{{ asset('storage/' . $culture->image1) }}"
+                                         alt="{{ $culture->titre }}"
+                                         class="img-fluid">
+                                @elseif ($culture->image2)
+                                    <img src="{{ asset('storage/' . $culture->image2) }}"
+                                         alt="{{ $culture->titre }}"
+                                         class="img-fluid">
+                                @else
+                                    <img src="{{ asset('assets/img/service/02.jpg') }}"
+                                         alt="{{ __('maisonduvillage.culture.default_image') }}"
+                                         class="img-fluid">
+                                @endif
+                            </div>
+
+                            <div class="icon-2">
+                                <img src="{{ asset('assets/img/service/icon/s-icon-1.svg') }}" alt="icon">
+                            </div>
+
+                            <div class="service-content">
+                                <div class="icon">
+                                    <img src="{{ asset('assets/img/service/icon/s-icon-1.svg') }}" alt="icon">
+                                </div>
+
+                                <!-- Titre -->
+                                <h4>
+                                    <a href="{{ route('site.cultures.show', $culture->id) }}">
+                                        {{ $culture->titre }}
+                                    </a>
+                                </h4>
+
+                                <!-- Description courte -->
+                                <p>{{ Str::limit($culture->description, 120) }}</p>
+
+                                <!-- Vidéo YouTube -->
+                                @if ($culture->lien_youtube1 || $culture->lien_youtube2)
+                                    <div class="culture-video mb-3">
+                                        @php
+                                            $videoLink = $culture->lien_youtube1 ?? $culture->lien_youtube2;
+                                            // Extraire l'ID de la vidéo YouTube
+                                            preg_match('/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/i', $videoLink, $match);
+                                            $videoId = $match[1] ?? null;
+                                        @endphp
+
+                                        @if ($videoId)
+                                            <div class="ratio ratio-16x9">
+                                                <iframe
+                                                    src="https://www.youtube.com/embed/{{ $videoId }}"
+                                                    title="{{ $culture->titre }}"
+                                                    frameborder="0"
+                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                    allowfullscreen>
+                                                </iframe>
+                                            </div>
+                                        @else
+                                            <a href="{{ $videoLink }}"
+                                               target="_blank"
+                                               class="btn btn-outline-danger btn-sm">
+                                                <i class="fab fa-youtube"></i>
+                                                {{ __('maisonduvillage.culture.watch_video') }}
+                                            </a>
+                                        @endif
+                                    </div>
+                                @endif
+
+                               
+                                <!-- Bouton En savoir plus -->
+                                <a href="{{ route('cultures.index', $culture->id) }}"
+                                   class="theme-btn-2 mt-3">
+                                    {{ __('maisonduvillage.buttons.learn_more') }}
+                                    <i class="fa-solid fa-arrow-right-long"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                @empty
+                    <div class="col-12">
+                        <div class="alert alert-info text-center">
+                            <i class="fa-solid fa-info-circle"></i>
+                            {{ __('maisonduvillage.culture.no_cultures') }}
+                        </div>
+                    </div>
+                @endforelse
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .culture-video {
+        margin: 15px 0;
+    }
+
+    .culture-video iframe {
+        border-radius: 8px;
+    }
+
+    .culture-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        align-items: center;
+    }
+
+    .service-card-items {
+        transition: transform 0.3s ease;
+    }
+
+    .service-card-items:hover {
+        transform: translateY(-5px);
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
     <section class="service-section-3 pb-0 fix section-padding bg-cover"
-         style="background-image: url('assets/img/service/service-bg-3.jpg');">
+        style="background-image: url('assets/img/service/service-bg-3.jpg');">
         <div class="container">
             <div class="section-title-area">
                 <div class="section-title">
@@ -318,7 +467,8 @@
                                     @if ($info->image)
                                         <img src="{{ asset('storage/' . $info->image) }}" alt="{{ $info->titre }}">
                                     @else
-                                        <img src="{{ asset('assets/img/service/02.jpg') }}" alt="{{ __('maisonduvillage.training.default_image') }}">
+                                        <img src="{{ asset('assets/img/service/02.jpg') }}"
+                                            alt="{{ __('maisonduvillage.training.default_image') }}">
                                     @endif
                                 </div>
                                 <div class="icon-2">
@@ -332,10 +482,12 @@
                                     <p>{{ Str::limit($info->description, 100) }}</p>
                                     <div class="formation-meta">
                                         @if ($info->duree)
-                                            <span class="badge bg-primary">{{ $info->duree }} {{ __('maisonduvillage.training.hours') }}</span>
+                                            <span class="badge bg-primary">{{ $info->duree }}
+                                                {{ __('maisonduvillage.training.hours') }}</span>
                                         @endif
                                         @if ($info->date_debut)
-                                            <span class="badge bg-success">{{ \Carbon\Carbon::parse($info->date_debut)->format('d/m/Y') }}</span>
+                                            <span
+                                                class="badge bg-success">{{ \Carbon\Carbon::parse($info->date_debut)->format('d/m/Y') }}</span>
                                         @endif
                                         @if ($info->lieu)
                                             <small class="text-muted d-block mt-1">📍 {{ $info->lieu }}</small>
@@ -384,7 +536,7 @@
 
             .service-card-items:hover {
                 transform: translateY(-5px);
-                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             }
 
             .service-content {
@@ -432,7 +584,7 @@
             border-radius: 10px;
             overflow: hidden;
             background: #fff;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
         }
 
         .service-image img {
@@ -976,6 +1128,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -987,127 +1140,129 @@
         }
     </style>
 
-   <section class="tesimonial-section-3 section-padding section-bg-2 bg-cover">
-    <div class="line-shape">
-        <img src="assets/img/team/line-shape.png" alt="shape-img">
-    </div>
-    <div class="mask-shape">
-        <img src="assets/img/team/mask-shape.png" alt="shape-img">
-    </div>
-    <div class="array-button">
-        <button class="array-prev"><i class="fal fa-arrow-left"></i></button>
-        <button class="array-next"><i class="fal fa-arrow-right"></i></button>
-    </div>
-    <div class="container">
-        <div class="section-title text-center">
-            <span class="text-white">{{ __('maisonduvillage.testimonials.subtitle') }}</span>
-            <h2 class="text-white">{{ __('maisonduvillage.testimonials.title') }}</h2>
+    <section class="tesimonial-section-3 section-padding section-bg-2 bg-cover">
+        <div class="line-shape">
+            <img src="assets/img/team/line-shape.png" alt="shape-img">
         </div>
-        <div class="swiper testimonial-slider-2">
-            <div class="swiper-wrapper">
-                @foreach($temoignages as $temoignage)
-                <div class="swiper-slide">
-                    <div class="testimonial-box-items">
-                        <div class="icon">
-                            <img src="assets/img/testimonial/icon.png" alt="icon-img">
-                        </div>
-                        <div class="client-items">
-                            <div class="client-image style-2 bg-cover"
-                                style="background-image: url('{{ $temoignage->photo ? asset('storage/' . $temoignage->photo) : asset('assets/img/testimonial/default.jpg') }}'); background-position: center; background-size: cover; background-repeat: no-repeat;"></div>
-                            <div class="client-content">
-                                <h4>{{ $temoignage->name }}</h4>
-                                <p>{{ $temoignage->fonction }}</p>
-                                <div class="star">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
+        <div class="mask-shape">
+            <img src="assets/img/team/mask-shape.png" alt="shape-img">
+        </div>
+        <div class="array-button">
+            <button class="array-prev"><i class="fal fa-arrow-left"></i></button>
+            <button class="array-next"><i class="fal fa-arrow-right"></i></button>
+        </div>
+        <div class="container">
+            <div class="section-title text-center">
+                <span class="text-white">{{ __('maisonduvillage.testimonials.subtitle') }}</span>
+                <h2 class="text-white">{{ __('maisonduvillage.testimonials.title') }}</h2>
+            </div>
+            <div class="swiper testimonial-slider-2">
+                <div class="swiper-wrapper">
+                    @foreach ($temoignages as $temoignage)
+                        <div class="swiper-slide">
+                            <div class="testimonial-box-items">
+                                <div class="icon">
+                                    <img src="assets/img/testimonial/icon.png" alt="icon-img">
                                 </div>
+                                <div class="client-items">
+                                    <div class="client-image style-2 bg-cover"
+                                        style="background-image: url('{{ $temoignage->photo ? asset('storage/' . $temoignage->photo) : asset('assets/img/testimonial/default.jpg') }}'); background-position: center; background-size: cover; background-repeat: no-repeat;">
+                                    </div>
+                                    <div class="client-content">
+                                        <h4>{{ $temoignage->name }}</h4>
+                                        <p>{{ $temoignage->fonction }}</p>
+                                        <div class="star">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>{{ $temoignage->contenu }}</p>
                             </div>
                         </div>
-                        <p>{{ $temoignage->contenu }}</p>
-                    </div>
+                    @endforeach
                 </div>
-                @endforeach
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<style>
-.client-image.style-2 {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    overflow: hidden;
-    flex-shrink: 0;
-}
-</style>
+    <style>
+        .client-image.style-2 {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+    </style>
 
-<section class="news-section-3 fix section-padding">
-    <div class="container">
-        <div class="section-title-area">
-            <div class="section-title">
-                <span class="wow fadeInUp">{{ __('maisonduvillage.blog.subtitle') }}</span>
-                <h2 class="wow fadeInUp" data-wow-delay=".3s">
-                    {!! __('maisonduvillage.blog.title') !!}
-                </h2>
+    <section class="news-section-3 fix section-padding">
+        <div class="container">
+            <div class="section-title-area">
+                <div class="section-title">
+                    <span class="wow fadeInUp">{{ __('maisonduvillage.blog.subtitle') }}</span>
+                    <h2 class="wow fadeInUp" data-wow-delay=".3s">
+                        {!! __('maisonduvillage.blog.title') !!}
+                    </h2>
+                </div>
+                <div class="array-button">
+                    <button class="array-prev"><i class="fal fa-arrow-right"></i></button>
+                    <button class="array-next"><i class="fal fa-arrow-left"></i></button>
+                </div>
             </div>
-            <div class="array-button">
-                <button class="array-prev"><i class="fal fa-arrow-right"></i></button>
-                <button class="array-next"><i class="fal fa-arrow-left"></i></button>
-            </div>
-        </div>
-        <div class="swiper news-slider">
-            <div class="swiper-wrapper">
-                @forelse($posts as $post)
-                    <div class="swiper-slide">
-                        <div class="news-card-items style-2">
-                            <div class="news-image">
-                                <img src="{{ $post->cover_image ? asset('storage/' . $post->cover_image) : asset('assets/img/news/default.jpg') }}"
-                                     alt="{{ $post->slug }}">
-                                <div class="post-date">
+            <div class="swiper news-slider">
+                <div class="swiper-wrapper">
+                    @forelse($posts as $post)
+                        <div class="swiper-slide">
+                            <div class="news-card-items style-2">
+                                <div class="news-image">
+                                    <img src="{{ $post->cover_image ? asset('storage/' . $post->cover_image) : asset('assets/img/news/default.jpg') }}"
+                                        alt="{{ $post->slug }}">
+                                    <div class="post-date">
+                                        <h3>
+                                            {{ $post->published_at ? $post->published_at->format('d') : $post->created_at->format('d') }}
+                                            <br>
+                                            <span>{{ $post->published_at ? __('maisonduvillage.months.' . strtolower($post->published_at->format('M'))) : __('maisonduvillage.months.' . strtolower($post->created_at->format('M'))) }}</span>
+                                        </h3>
+                                    </div>
+                                </div>
+                                <div class="news-content">
+                                    <ul>
+                                        <li>
+                                            <i class="fa-regular fa-user"></i>
+                                            {{ $post->author->name ?? 'Admin' }}
+                                        </li>
+                                        <li>
+                                            <i class="fa-solid fa-tag"></i>
+                                            {{ $post->category ?? __('maisonduvillage.blog.it_services') }}
+                                        </li>
+                                    </ul>
                                     <h3>
-                                        {{ $post->published_at ? $post->published_at->format('d') : $post->created_at->format('d') }} <br>
-                                        <span>{{ $post->published_at ? __('maisonduvillage.months.' . strtolower($post->published_at->format('M'))) : __('maisonduvillage.months.' . strtolower($post->created_at->format('M'))) }}</span>
+                                        <a href="">
+                                            {{ Str::limit(strip_tags($post->contenu), 80) }}
+                                        </a>
                                     </h3>
+                                    <p class="mt-2">
+                                        {{ Str::limit(strip_tags($post->contenu), 150) }}
+                                    </p>
+
                                 </div>
                             </div>
-                            <div class="news-content">
-                                <ul>
-                                    <li>
-                                        <i class="fa-regular fa-user"></i>
-                                        {{ $post->author->name ?? 'Admin' }}
-                                    </li>
-                                    <li>
-                                        <i class="fa-solid fa-tag"></i>
-                                        {{ $post->category ?? __('maisonduvillage.blog.it_services') }}
-                                    </li>
-                                </ul>
-                                <h3>
-                                    <a href="">
-                                        {{ Str::limit(strip_tags($post->contenu), 80) }}
-                                    </a>
-                                </h3>
-                                <p class="mt-2">
-                                    {{ Str::limit(strip_tags($post->contenu), 150) }}
-                                </p>
-
+                        </div>
+                    @empty
+                        <div class="swiper-slide">
+                            <div class="news-card-items style-2">
+                                <div class="news-content">
+                                    <p>{{ __('maisonduvillage.blog.no_posts') }}</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                @empty
-                    <div class="swiper-slide">
-                        <div class="news-card-items style-2">
-                            <div class="news-content">
-                                <p>{{ __('maisonduvillage.blog.no_posts') }}</p>
-                            </div>
-                        </div>
-                    </div>
-                @endforelse
+                    @endforelse
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 @endsection

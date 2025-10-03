@@ -4,6 +4,7 @@ namespace App\Http\Controllers\site;
 
 use App\Http\Controllers\Controller;
 use App\Models\AboutSection;
+use App\Models\Culture;
 use App\Models\Itcommunity;
 use App\Models\Partner;
 use App\Models\Post;
@@ -18,6 +19,7 @@ class AcceuilController extends Controller
     public function index()
     {
         $teams = Team::all();
+        $cultures = Culture::all();
         $temoignages = Testimonial::where('is_active', true)->get();
         $informatique = Itcommunity::all();
         $posts = Post::where('is_active', true)->get();
@@ -34,7 +36,8 @@ class AcceuilController extends Controller
             'teams',
             'informatique',
             'temoignages',
-            'posts'
+            'posts',
+            'cultures'
         ));
     }
 }
