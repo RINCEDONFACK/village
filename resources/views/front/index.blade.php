@@ -1095,10 +1095,7 @@
                                         {{ Str::limit($post->contenu, 60) }}
                                     </a>
                                 </h3>
-                                <a href="{{ route('posts.show', $post->slug) }}" class="theme-btn-2 mt-3">
-                                    {{ __('maisonduvillage.buttons.read_more') }}
-                                    <i class="fa-solid fa-arrow-right-long"></i>
-                                </a>
+                                
                             </div>
                         </div>
                     </div>
