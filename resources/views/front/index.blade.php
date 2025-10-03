@@ -1091,7 +1091,7 @@
                                     </li>
                                 </ul>
                                 <h3>
-                                    <a href="{{ route('blog.index'}}">
+                                    <a href="{{ route('posts.index') }}">
                                         {{ Str::limit(strip_tags($post->contenu), 80) }}
                                     </a>
                                 </h3>
