@@ -298,17 +298,16 @@
 
 
 
-
 <section class="service-section-3 pb-0 fix section-padding bg-cover"
     style="background-image: url('assets/img/service/service-bg-3.jpg');">
     <div class="container">
         <div class="section-title-area">
             <div class="section-title">
-                <span>{{ __('maisonduvillage.culture.section_title') }}</span>
-                <h2>{!! __('maisonduvillage.culture.section_subtitle') !!}</h2>
+                <span>Nos Cultures</span>
+                <h2>Découvrez la Richesse de nos Traditions</h2>
             </div>
             <a href="{{ route('cultures.index') }}" class="theme-btn">
-                {{ __('maisonduvillage.culture.view_all') }}
+                Voir tout
                 <i class="fa-solid fa-arrow-right-long"></i>
             </a>
         </div>
@@ -330,7 +329,7 @@
                                          class="img-fluid">
                                 @else
                                     <img src="{{ asset('assets/img/service/02.jpg') }}"
-                                         alt="{{ __('maisonduvillage.culture.default_image') }}"
+                                         alt="Image par défaut"
                                          class="img-fluid">
                                 @endif
                             </div>
@@ -379,7 +378,7 @@
                                                target="_blank"
                                                class="btn btn-outline-danger btn-sm">
                                                 <i class="fab fa-youtube"></i>
-                                                {{ __('maisonduvillage.culture.watch_video') }}
+                                                Regarder la vidéo
                                             </a>
                                         @endif
                                     </div>
@@ -389,7 +388,7 @@
                                 <!-- Bouton En savoir plus -->
                                 <a href="{{ route('cultures.index', $culture->id) }}"
                                    class="theme-btn-2 mt-3">
-                                    {{ __('maisonduvillage.buttons.learn_more') }}
+                                    En savoir plus
                                     <i class="fa-solid fa-arrow-right-long"></i>
                                 </a>
                             </div>
@@ -399,7 +398,7 @@
                     <div class="col-12">
                         <div class="alert alert-info text-center">
                             <i class="fa-solid fa-info-circle"></i>
-                            {{ __('maisonduvillage.culture.no_cultures') }}
+                            Aucune culture disponible pour le moment
                         </div>
                     </div>
                 @endforelse
