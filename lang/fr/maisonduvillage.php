@@ -116,36 +116,17 @@ return [
     ],
 
     'culture' => [
-        'section_title' => 'Notre Culture',
-        'section_subtitle' => 'Découvrez notre <span>patrimoine culturel</span>',
-        'view_all' => 'Voir toutes les cultures',
-        'default_image' => 'Image de culture par défaut',
-        'watch_video' => 'Regarder la vidéo',
-        'no_cultures' => 'Aucune culture disponible pour le moment.',
-        'reference' => 'Référence',
-        'published_on' => 'Publié le',
-    ],
+    'section_title' => 'Notre Culture',
+    'section_subtitle' => 'Découvrez notre <span>patrimoine culturel</span>',
+    'view_all' => 'Voir toutes les cultures',
+    'default_image' => 'Image de culture par défaut',
+    'watch_video' => 'Regarder la vidéo',
+    'no_cultures' => 'Aucune culture disponible pour le moment.',
+],
 
-    'training' => [
-        'section_title' => 'Nos Formations',
-        'section_subtitle' => 'Formations <span>Informatiques</span>',
-        'view_all' => 'Voir toutes les formations',
-        'default_image' => 'Image de formation par défaut',
-        'hours' => 'heures',
-        'duration' => 'Durée',
-        'start_date' => 'Date de début',
-        'location' => 'Lieu',
-        'trainer' => 'Formateur',
-        'no_trainings' => 'Aucune formation disponible pour le moment.',
-    ],
-
-    'buttons' => [
-        'learn_more' => 'En savoir plus',
-        'register' => 'S\'inscrire',
-        'contact_us' => 'Nous contacter',
-        'read_more' => 'Lire la suite',
-        'back' => 'Retour',
-    ],
+'buttons' => [
+    'learn_more' => 'En savoir plus',
+],
 
 
 
