@@ -12,7 +12,7 @@ class TradictionController extends Controller
     public function index()
     {
         // Charger les cultures avec leurs traductions
-        $cultures = Culture::with('translations')->latest()->get();
+        $cultures = Culture::all();
 
         return view('front.culture', compact('cultures'));
     }
@@ -21,7 +21,7 @@ class TradictionController extends Controller
     public function show($id)
     {
         // Charger la culture avec ses traductions et commentaires
-        $culture = Culture::with(['translations', 'culturecommentaires'])
+        $culture = Culture::with(['culturecommentaires'])
                          ->findOrFail($id);
 
         return view('front.culture_detail', compact('culture'));

@@ -298,139 +298,137 @@
 
 
 
-<section class="service-section-3 pb-0 fix section-padding bg-cover"
-    style="background-image: url('assets/img/service/service-bg-3.jpg');">
-    <div class="container">
-        <div class="section-title-area">
-            <div class="section-title">
-                <span>Nos Cultures</span>
-                <h2>Découvrez la Richesse de nos Traditions</h2>
+
+    <section class="service-section-3 pb-0 fix section-padding bg-cover"
+        style="background-image: url('assets/img/service/service-bg-3.jpg');">
+        <div class="container">
+            <div class="section-title-area">
+                <div class="section-title">
+                    <span>{{ __('maisonduvillage.culture.section_title') }}</span>
+                    <h2>{!! __('maisonduvillage.culture.section_subtitle') !!}</h2>
+                </div>
+                <a href="{{ route('cultures.index') }}" class="theme-btn">
+                    {{ __('maisonduvillage.culture.view_all') }}
+                    <i class="fa-solid fa-arrow-right-long"></i>
+                </a>
             </div>
-            <a href="{{ route('cultures.index') }}" class="theme-btn">
-                Voir tout
-                <i class="fa-solid fa-arrow-right-long"></i>
-            </a>
-        </div>
 
-        <div class="cultures-container">
-            <div class="row">
-                @forelse ($cultures as $culture)
-                    <div class="col-xl-4 col-lg-6 col-md-6 mb-4">
-                        <div class="service-card-items h-100">
-                            <!-- Image principale -->
-                            <div class="service-image">
-                                @if ($culture->image1)
-                                    <img src="{{ asset('storage/' . $culture->image1) }}"
-                                         alt="{{ $culture->titre }}"
-                                         class="img-fluid">
-                                @elseif ($culture->image2)
-                                    <img src="{{ asset('storage/' . $culture->image2) }}"
-                                         alt="{{ $culture->titre }}"
-                                         class="img-fluid">
-                                @else
-                                    <img src="{{ asset('assets/img/service/02.jpg') }}"
-                                         alt="Image par défaut"
-                                         class="img-fluid">
-                                @endif
-                            </div>
+            <div class="cultures-container">
+                <div class="row">
+                    @forelse ($cultures as $culture)
+                        <div class="col-xl-4 col-lg-6 col-md-6 mb-4">
+                            <div class="service-card-items h-100">
+                                <!-- Image principale -->
+                                <div class="service-image">
+                                    @if ($culture->image1)
+                                        <img src="{{ asset('storage/' . $culture->image1) }}"
+                                            alt="{{ $culture->titre }}" class="img-fluid">
+                                    @elseif ($culture->image2)
+                                        <img src="{{ asset('storage/' . $culture->image2) }}"
+                                            alt="{{ $culture->titre }}" class="img-fluid">
+                                    @else
+                                        <img src="{{ asset('assets/img/service/02.jpg') }}"
+                                            alt="{{ __('maisonduvillage.culture.default_image') }}" class="img-fluid">
+                                    @endif
+                                </div>
 
-                            <div class="icon-2">
-                                <img src="{{ asset('assets/img/service/icon/s-icon-1.svg') }}" alt="icon">
-                            </div>
-
-                            <div class="service-content">
-                                <div class="icon">
+                                <div class="icon-2">
                                     <img src="{{ asset('assets/img/service/icon/s-icon-1.svg') }}" alt="icon">
                                 </div>
 
-                                <!-- Titre -->
-                                <h4>
-                                    <a href="">
-                                        {{ $culture->titre }}
-                                    </a>
-                                </h4>
-
-                                <!-- Description courte -->
-                                <p>{{ Str::limit($culture->description, 120) }}</p>
-
-                                <!-- Vidéo YouTube -->
-                                @if ($culture->lien_youtube1 || $culture->lien_youtube2)
-                                    <div class="culture-video mb-3">
-                                        @php
-                                            $videoLink = $culture->lien_youtube1 ?? $culture->lien_youtube2;
-                                            // Extraire l'ID de la vidéo YouTube
-                                            preg_match('/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/i', $videoLink, $match);
-                                            $videoId = $match[1] ?? null;
-                                        @endphp
-
-                                        @if ($videoId)
-                                            <div class="ratio ratio-16x9">
-                                                <iframe
-                                                    src="https://www.youtube.com/embed/{{ $videoId }}"
-                                                    title="{{ $culture->titre }}"
-                                                    frameborder="0"
-                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                                    allowfullscreen>
-                                                </iframe>
-                                            </div>
-                                        @else
-                                            <a href="{{ $videoLink }}"
-                                               target="_blank"
-                                               class="btn btn-outline-danger btn-sm">
-                                                <i class="fab fa-youtube"></i>
-                                                Regarder la vidéo
-                                            </a>
-                                        @endif
+                                <div class="service-content">
+                                    <div class="icon">
+                                        <img src="{{ asset('assets/img/service/icon/s-icon-1.svg') }}" alt="icon">
                                     </div>
-                                @endif
+
+                                    <!-- Titre -->
+                                    <h4>
+                                        <a href="">
+                                            {{ $culture->titre }}
+                                        </a>
+                                    </h4>
+
+                                    <!-- Description courte -->
+                                    <p>{{ Str::limit($culture->description, 120) }}</p>
+
+                                    <!-- Vidéo YouTube -->
+                                    @if ($culture->lien_youtube1 || $culture->lien_youtube2)
+                                        <div class="culture-video mb-3">
+                                            @php
+                                                $videoLink = $culture->lien_youtube1 ?? $culture->lien_youtube2;
+                                                // Extraire l'ID de la vidéo YouTube
+preg_match(
+    '/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/i',
+                                                    $videoLink,
+                                                    $match,
+                                                );
+                                                $videoId = $match[1] ?? null;
+                                            @endphp
+
+                                            @if ($videoId)
+                                                <div class="ratio ratio-16x9">
+                                                    <iframe src="https://www.youtube.com/embed/{{ $videoId }}"
+                                                        title="{{ $culture->titre }}" frameborder="0"
+                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                        allowfullscreen>
+                                                    </iframe>
+                                                </div>
+                                            @else
+                                                <a href="{{ $videoLink }}" target="_blank"
+                                                    class="btn btn-outline-danger btn-sm">
+                                                    <i class="fab fa-youtube"></i>
+                                                    {{ __('maisonduvillage.culture.watch_video') }}
+                                                </a>
+                                            @endif
+                                        </div>
+                                    @endif
 
 
-                                <!-- Bouton En savoir plus -->
-                                <a href="{{ route('cultures.index', $culture->id) }}"
-                                   class="theme-btn-2 mt-3">
-                                    En savoir plus
-                                    <i class="fa-solid fa-arrow-right-long"></i>
-                                </a>
+                                    <!-- Bouton En savoir plus -->
+                                    <a href="{{ route('cultures.index', $culture->id) }}" class="theme-btn-2 mt-3">
+                                        {{ __('maisonduvillage.buttons.learn_more') }}
+                                        <i class="fa-solid fa-arrow-right-long"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                @empty
-                    <div class="col-12">
-                        <div class="alert alert-info text-center">
-                            <i class="fa-solid fa-info-circle"></i>
-                            Aucune culture disponible pour le moment
+                    @empty
+                        <div class="col-12">
+                            <div class="alert alert-info text-center">
+                                <i class="fa-solid fa-info-circle"></i>
+                                {{ __('maisonduvillage.culture.no_cultures') }}
+                            </div>
                         </div>
-                    </div>
-                @endforelse
+                    @endforelse
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<style>
-    .culture-video {
-        margin: 15px 0;
-    }
+    <style>
+        .culture-video {
+            margin: 15px 0;
+        }
 
-    .culture-video iframe {
-        border-radius: 8px;
-    }
+        .culture-video iframe {
+            border-radius: 8px;
+        }
 
-    .culture-meta {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        align-items: center;
-    }
+        .culture-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+        }
 
-    .service-card-items {
-        transition: transform 0.3s ease;
-    }
+        .service-card-items {
+            transition: transform 0.3s ease;
+        }
 
-    .service-card-items:hover {
-        transform: translateY(-5px);
-    }
-</style>
+        .service-card-items:hover {
+            transform: translateY(-5px);
+        }
+    </style>
 
 
 

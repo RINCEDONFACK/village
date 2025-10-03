@@ -45,7 +45,8 @@ class CultureController extends Controller
             'lien_youtube2' => $request->lien_youtube2,
         ]);
 
-        return redirect('admin/admin/cultures')->with('success', 'Culture enregistrée avec succès.');
+        return redirect()->action([CultureController::class, 'index'])
+            ->with('success', 'Culture enregistrée avec succès.');
     }
 
     public function show(string $id)
@@ -91,8 +92,9 @@ class CultureController extends Controller
             'lien_youtube1' => $request->lien_youtube1,
             'lien_youtube2' => $request->lien_youtube2,
         ]);
+        return redirect()->action([CultureController::class, 'index'])
+            ->with('success', 'Culture mise à jour avec succès.');
 
-        return redirect()->route('cultures.index')->with('success', 'Culture mise à jour avec succès.');
     }
 
     public function destroy(string $id)

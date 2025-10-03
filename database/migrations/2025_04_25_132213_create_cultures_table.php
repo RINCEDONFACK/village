@@ -13,8 +13,6 @@ return new class extends Migration
     {
         Schema::create('cultures', function (Blueprint $table) {
             $table->id();
-            $table->string('titre');
-            $table->text('description')->nullable();
             $table->string('reference')->nullable();
             $table->string('image1')->nullable();
             $table->string('image2')->nullable();
