@@ -1091,17 +1091,14 @@
                                     </li>
                                 </ul>
                                 <h3>
-                                    <a href="{{ route('posts.index') }}">
+                                    <a href="">
                                         {{ Str::limit(strip_tags($post->contenu), 80) }}
                                     </a>
                                 </h3>
                                 <p class="mt-2">
                                     {{ Str::limit(strip_tags($post->contenu), 150) }}
                                 </p>
-                                <a href="{{ route('blog.index') }}" class="theme-btn-2 mt-3">
-                                    {{ __('maisonduvillage.buttons.read_more') }}
-                                    <i class="fa-solid fa-arrow-right-long"></i>
-                                </a>
+                                
                             </div>
                         </div>
                     </div>
