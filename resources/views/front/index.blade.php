@@ -223,14 +223,7 @@
                                 <p class="mt-3 mt-md-0 wow fadeInUp" data-wow-delay=".5s">
                                     {!! $about->contenu !!}
                                 </p>
-                                <div class="about-author">
-                                    <div class="about-button wow fadeInUp" data-wow-delay=".5s">
-                                        <a href="about.html" class="theme-btn">
-                                            {{ __('maisonduvillage.buttons.explore_more') }}
-                                            <i class="fa-solid fa-arrow-right-long"></i>
-                                        </a>
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -1098,7 +1091,7 @@
                                 <p class="mt-2">
                                     {{ Str::limit(strip_tags($post->contenu), 150) }}
                                 </p>
-                                
+
                             </div>
                         </div>
                     </div>
