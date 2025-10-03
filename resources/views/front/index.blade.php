@@ -307,7 +307,7 @@
                 <span>{{ __('maisonduvillage.culture.section_title') }}</span>
                 <h2>{!! __('maisonduvillage.culture.section_subtitle') !!}</h2>
             </div>
-            <a href="{{ route('site.cultures.index') }}" class="theme-btn">
+            <a href="{{ route('cultures.index') }}" class="theme-btn">
                 {{ __('maisonduvillage.culture.view_all') }}
                 <i class="fa-solid fa-arrow-right-long"></i>
             </a>
@@ -385,7 +385,7 @@
                                     </div>
                                 @endif
 
-                               
+
                                 <!-- Bouton En savoir plus -->
                                 <a href="{{ route('cultures.index', $culture->id) }}"
                                    class="theme-btn-2 mt-3">
