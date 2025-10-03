@@ -346,7 +346,7 @@
 
                                 <!-- Titre -->
                                 <h4>
-                                    <a href="{{ route('site.cultures.show', $culture->id) }}">
+                                    <a href="">
                                         {{ $culture->titre }}
                                     </a>
                                 </h4>
