@@ -1090,12 +1090,13 @@
                                         {{ $post->category ?? __('maisonduvillage.blog.it_services') }}
                                     </li>
                                 </ul>
-                                <h3>
-                                    <a href="{{ route('posts.show', $post->slug) }}">
-                                        {{ Str::limit($post->contenu, 60) }}
-                                    </a>
-                                </h3>
-                                
+                               <h3>
+    <a href="{{ route('posts.show', $post) }}">
+        {{ Str::limit($post->contenu, 60) }}
+    </a>
+</h3>
+
+
                             </div>
                         </div>
                     </div>
