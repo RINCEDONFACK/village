@@ -242,7 +242,7 @@
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                 <div class="stats-card" style="background: #fff; padding: 30px; border-radius: 15px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.08); transition: transform 0.3s ease;">
                     <i class="fas fa-newspaper" style="font-size: 40px; color: #ff6b2c; margin-bottom: 15px;"></i>
-                    <h3 style="font-size: 36px; font-weight: 700; color: #1a1a1a; margin-bottom: 5px;">{{ $post->total() }}+</h3>
+                    <h3 style="font-size: 36px; font-weight: 700; color: #1a1a1a; margin-bottom: 5px;"></h3>
                     <p style="color: #666; margin: 0;">Articles Publiés</p>
                 </div>
             </div>
