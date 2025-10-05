@@ -238,3 +238,4 @@ Route::prefix('formations-informatiques')->group(function () {
 
 Route::get('/services', [NosServiceController::class, 'nosservice'])->name('services');
 
+Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
