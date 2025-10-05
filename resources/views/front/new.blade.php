@@ -43,39 +43,45 @@
 </div>
 
 <!-- News Section Start -->
-@foreach ($post as $poster)
-<div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".5s">
-    <div class="news-card-items style-2 mt-0 pb-0">
-        <div class="news-image">
-            <img src="{{ asset('storage/' . $poster->cover_image) }}" alt="news-img">
-            <div class="post-date">
-                <h3>
-                    {{ $poster->published_at ? $poster->published_at->format('d') : '' }} <br>
-                    <span>{{ $poster->published_at ? $poster->published_at->format('M') : '' }}</span>
-                </h3>
+<section class="news-section section-padding">
+    <div class="container">
+        <div class="row">
+            @foreach ($post as $poster)
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".5s">
+                <div class="news-card-items style-2 mt-0 pb-0">
+                    <div class="news-image">
+                        <img src="{{ asset('storage/' . $poster->cover_image) }}" alt="news-img">
+                        <div class="post-date">
+                            <h3>
+                                {{ $poster->published_at ? $poster->published_at->format('d') : '' }} <br>
+                                <span>{{ $poster->published_at ? $poster->published_at->format('M') : '' }}</span>
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="news-content">
+                        <ul>
+                            <li>
+                                <i class="fa-regular fa-user"></i>
+                                By Admin
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-tag"></i>
+                                UI/UX Design
+                            </li>
+                        </ul>
+                        <h3>
+                            <a href="{{ route('blog.show', $poster->slug) }}">{{ $poster->title }}</a>
+                        </h3>
+                        <a href="{{ route('blog.show', $poster->slug) }}" class="theme-btn-2 mt-3">
+                            Read More
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="news-content">
-            <ul>
-                <li>
-                    <i class="fa-regular fa-user"></i>
-                    By Admin
-                </li>
-                <li>
-                    <i class="fa-solid fa-tag"></i>
-                    UI/UX Design
-                </li>
-            </ul>
-            <h3>
-                <a href="{{ route('blog.show', $poster->slug) }}">{{$poster->slug }}</a>
-            </h3>
-            <a href="{{ route('blog.show', $poster->slug) }}" class="theme-btn-2 mt-3">
-                Read More
-                <i class="fa-solid fa-arrow-right-long"></i>
-            </a>
+            @endforeach
         </div>
     </div>
-</div>
-@endforeach
+</section>
 
 @endsection
