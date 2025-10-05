@@ -205,7 +205,6 @@
         <div class="row mt-5">
             <div class="col-12 text-center">
                 <div class="pagination-wrap wow fadeInUp" data-wow-delay=".5s">
-                    {{ $post->links() }}
                 </div>
             </div>
         </div>
