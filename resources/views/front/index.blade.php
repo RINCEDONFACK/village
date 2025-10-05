@@ -14,151 +14,155 @@
         </div>
     </div>
 
-   <section class="hero-section fix hero-3">
-    <div class="bottom-shape">
-        <img src="assets/img/hero/bottom-shape.png" alt="shape-img">
-    </div>
-    <div class="array-button">
-        <button class="array-prev"><i class="fal fa-arrow-right"></i></button>
-        <button class="array-next"><i class="fal fa-arrow-left"></i></button>
-    </div>
-    <div class="swiper hero-slider">
-        <div class="swiper-wrapper">
-            <!-- Slide 1: Welcome & Hospitality -->
-            <div class="swiper-slide">
-                <div class="slider-image bg-cover" style="background-image: url('assets/img/hero/hero-2.jpg');">
-                    <div class="mask-shape" data-animation="slideInDown" data-duration="3s" data-delay="2s">
-                        <img src="assets/img/hero/mask-shape-2.png" alt="shape-img">
+    <section class="hero-section fix hero-3">
+        <div class="bottom-shape">
+            <img src="assets/img/hero/bottom-shape.png" alt="shape-img">
+        </div>
+        <div class="array-button">
+            <button class="array-prev"><i class="fal fa-arrow-right"></i></button>
+            <button class="array-next"><i class="fal fa-arrow-left"></i></button>
+        </div>
+        <div class="swiper hero-slider">
+            <div class="swiper-wrapper">
+                <!-- Slide 1: Welcome & Hospitality -->
+                <div class="swiper-slide">
+                    <div class="slider-image bg-cover" style="background-image: url('assets/img/hero/hero-2.jpg');">
+                        <div class="mask-shape" data-animation="slideInDown" data-duration="3s" data-delay="2s">
+                            <img src="assets/img/hero/mask-shape-2.png" alt="shape-img">
+                        </div>
+                        <div class="border-shape" data-animation="slideInRight" data-duration="3s" data-delay="2.2s">
+                            <img src="assets/img/hero/border-shape.png" alt="shape-img">
+                        </div>
+                        <div class="circle-shape" data-animation="slideInRight" data-duration="3s" data-delay="2.1s">
+                            <img src="assets/img/choose/circle.png" alt="shape-img">
+                        </div>
+                        <div class="frame" data-animation="slideInLeft" data-duration="3s" data-delay="2.2s">
+                            <img src="assets/img/frame.png" alt="shape-img">
+                        </div>
                     </div>
-                    <div class="border-shape" data-animation="slideInRight" data-duration="3s" data-delay="2.2s">
-                        <img src="assets/img/hero/border-shape.png" alt="shape-img">
-                    </div>
-                    <div class="circle-shape" data-animation="slideInRight" data-duration="3s" data-delay="2.1s">
-                        <img src="assets/img/choose/circle.png" alt="shape-img">
-                    </div>
-                    <div class="frame" data-animation="slideInLeft" data-duration="3s" data-delay="2.2s">
-                        <img src="assets/img/frame.png" alt="shape-img">
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row g-4 align-items-center">
-                        <div class="col-lg-8">
-                            <div class="hero-content">
-                                <h5 data-animation="slideInRight" data-duration="2s" data-delay=".3s">
-                                    Welcome to Village House
-                                </h5>
-                                <h1 data-animation="slideInRight" data-duration="2s" data-delay=".5s">
-                                    A Space for Welcome <br> and Sharing at the Heart <br> of the Village
-                                </h1>
-                                <p data-animation="slideInRight" data-duration="2s" data-delay=".9s">
-                                    Discover a unique place where visitors, diaspora members, and local communities meet to build friendships, express solidarity, and revitalize our villages together.
-                                </p>
-                                <div class="hero-button">
-                                    <a href="{{ route('propos.index') }}" data-animation="slideInRight"
-                                        data-duration="2s" data-delay=".9s" class="theme-btn hover-white">
-                                        About Us
-                                        <i class="fa-solid fa-arrow-right-long"></i>
-                                    </a>
+                    <div class="container">
+                        <div class="row g-4 align-items-center">
+                            <div class="col-lg-8">
+                                <div class="hero-content">
+                                    <h5 data-animation="slideInRight" data-duration="2s" data-delay=".3s">
+                                        Welcome to Village House
+                                    </h5>
+                                    <h1 data-animation="slideInRight" data-duration="2s" data-delay=".5s">
+                                        A Space for Welcome <br> and Sharing at the Heart <br> of the Village
+                                    </h1>
+                                    <p data-animation="slideInRight" data-duration="2s" data-delay=".9s">
+                                        Discover a unique place where visitors, diaspora members, and local communities meet
+                                        to build friendships, express solidarity, and revitalize our villages together.
+                                    </p>
+                                    <div class="hero-button">
+                                        <a href="{{ route('propos.index') }}" data-animation="slideInRight"
+                                            data-duration="2s" data-delay=".9s" class="theme-btn hover-white">
+                                            About Us
+                                            <i class="fa-solid fa-arrow-right-long"></i>
+                                        </a>
 
-                                    <a href="{{ route('contacter.index') }}" data-animation="slideInRight"
-                                        data-duration="2s" data-delay=".9s" class="theme-btn border-white">
-                                        <i class="fa-solid fa-arrow-right-long"></i>
-                                        Contact Us
-                                    </a>
+                                        <a href="{{ route('contacter.index') }}" data-animation="slideInRight"
+                                            data-duration="2s" data-delay=".9s" class="theme-btn border-white">
+                                            <i class="fa-solid fa-arrow-right-long"></i>
+                                            Contact Us
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Slide 2: Culture & Identity -->
-            <div class="swiper-slide">
-                <div class="slider-image bg-cover" style="background-image: url('assets/img/hero/hero-1.jpg');">
-                    <div class="mask-shape" data-animation="slideInDown" data-duration="3s" data-delay="2s">
-                        <img src="assets/img/hero/mask-shape-2.png" alt="shape-img">
+                <!-- Slide 2: Culture & Identity -->
+                <div class="swiper-slide">
+                    <div class="slider-image bg-cover" style="background-image: url('assets/img/hero/hero-1.jpg');">
+                        <div class="mask-shape" data-animation="slideInDown" data-duration="3s" data-delay="2s">
+                            <img src="assets/img/hero/mask-shape-2.png" alt="shape-img">
+                        </div>
+                        <div class="border-shape" data-animation="slideInRight" data-duration="3s" data-delay="2.2s">
+                            <img src="assets/img/hero/border-shape.png" alt="shape-img">
+                        </div>
+                        <div class="circle-shape" data-animation="slideInRight" data-duration="3s" data-delay="2.1s">
+                            <img src="assets/img/choose/circle.png" alt="shape-img">
+                        </div>
+                        <div class="frame" data-animation="slideInLeft" data-duration="3s" data-delay="2.2s">
+                            <img src="assets/img/frame.png" alt="shape-img">
+                        </div>
                     </div>
-                    <div class="border-shape" data-animation="slideInRight" data-duration="3s" data-delay="2.2s">
-                        <img src="assets/img/hero/border-shape.png" alt="shape-img">
-                    </div>
-                    <div class="circle-shape" data-animation="slideInRight" data-duration="3s" data-delay="2.1s">
-                        <img src="assets/img/choose/circle.png" alt="shape-img">
-                    </div>
-                    <div class="frame" data-animation="slideInLeft" data-duration="3s" data-delay="2.2s">
-                        <img src="assets/img/frame.png" alt="shape-img">
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row g-4 align-items-center">
-                        <div class="col-lg-8">
-                            <div class="hero-content">
-                                <h5 data-animation="slideInRight" data-duration="2s" data-delay=".3s">
-                                    Celebrate Our Heritage
-                                </h5>
-                                <h1 data-animation="slideInRight" data-duration="2s" data-delay=".5s">
-                                    Culture, Art <br> and Living <br> Traditions
-                                </h1>
-                                <p data-animation="slideInRight" data-duration="2s" data-delay=".9s">
-                                    Immerse yourself in the authenticity of our performances, local cuisine, traditional music, and learn our languages. Culture is the beating heart of our community.
-                                </p>
-                                <div class="hero-button">
-                                    <a href="about.html" data-animation="slideInRight" data-duration="2s"
-                                        data-delay=".9s" class="theme-btn hover-white">
-                                        Discover
-                                        <i class="fa-solid fa-arrow-right-long"></i>
-                                    </a>
-                                    <a href="contact.html" data-animation="slideInRight" data-duration="2s"
-                                        data-delay=".9s" class="theme-btn border-white">
-                                        Book Your Stay
-                                        <i class="fa-solid fa-arrow-right-long"></i>
-                                    </a>
+                    <div class="container">
+                        <div class="row g-4 align-items-center">
+                            <div class="col-lg-8">
+                                <div class="hero-content">
+                                    <h5 data-animation="slideInRight" data-duration="2s" data-delay=".3s">
+                                        Celebrate Our Heritage
+                                    </h5>
+                                    <h1 data-animation="slideInRight" data-duration="2s" data-delay=".5s">
+                                        Culture, Art <br> and Living <br> Traditions
+                                    </h1>
+                                    <p data-animation="slideInRight" data-duration="2s" data-delay=".9s">
+                                        Immerse yourself in the authenticity of our performances, local cuisine, traditional
+                                        music, and learn our languages. Culture is the beating heart of our community.
+                                    </p>
+                                    <div class="hero-button">
+                                        <a href="about.html" data-animation="slideInRight" data-duration="2s"
+                                            data-delay=".9s" class="theme-btn hover-white">
+                                            Discover
+                                            <i class="fa-solid fa-arrow-right-long"></i>
+                                        </a>
+                                        <a href="contact.html" data-animation="slideInRight" data-duration="2s"
+                                            data-delay=".9s" class="theme-btn border-white">
+                                            Book Your Stay
+                                            <i class="fa-solid fa-arrow-right-long"></i>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Slide 3: Education & Development -->
-            <div class="swiper-slide">
-                <div class="slider-image bg-cover" style="background-image: url('assets/img/hero/hero-3.jpg');">
-                    <div class="mask-shape" data-animation="slideInDown" data-duration="3s" data-delay="2s">
-                        <img src="assets/img/hero/mask-shape-2.png" alt="shape-img">
+                <!-- Slide 3: Education & Development -->
+                <div class="swiper-slide">
+                    <div class="slider-image bg-cover" style="background-image: url('assets/img/hero/hero-3.jpg');">
+                        <div class="mask-shape" data-animation="slideInDown" data-duration="3s" data-delay="2s">
+                            <img src="assets/img/hero/mask-shape-2.png" alt="shape-img">
+                        </div>
+                        <div class="border-shape" data-animation="slideInRight" data-duration="3s" data-delay="2.2s">
+                            <img src="assets/img/hero/border-shape.png" alt="shape-img">
+                        </div>
+                        <div class="circle-shape" data-animation="slideInRight" data-duration="3s" data-delay="2.1s">
+                            <img src="assets/img/choose/circle.png" alt="shape-img">
+                        </div>
+                        <div class="frame" data-animation="slideInLeft" data-duration="3s" data-delay="2.2s">
+                            <img src="assets/img/frame.png" alt="shape-img">
+                        </div>
                     </div>
-                    <div class="border-shape" data-animation="slideInRight" data-duration="3s" data-delay="2.2s">
-                        <img src="assets/img/hero/border-shape.png" alt="shape-img">
-                    </div>
-                    <div class="circle-shape" data-animation="slideInRight" data-duration="3s" data-delay="2.1s">
-                        <img src="assets/img/choose/circle.png" alt="shape-img">
-                    </div>
-                    <div class="frame" data-animation="slideInLeft" data-duration="3s" data-delay="2.2s">
-                        <img src="assets/img/frame.png" alt="shape-img">
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row g-4 align-items-center">
-                        <div class="col-lg-8">
-                            <div class="hero-content">
-                                <h5 data-animation="slideInRight" data-duration="2s" data-delay=".3s">
-                                    Building the Future Together
-                                </h5>
-                                <h1 data-animation="slideInRight" data-duration="2s" data-delay=".5s">
-                                    Education, Training <br> and Opportunities <br> for Everyone
-                                </h1>
-                                <p data-animation="slideInRight" data-duration="2s" data-delay=".9s">
-                                    Professional training, English courses, IT skills, and distance learning. Support local development and community crafts for a thriving village.
-                                </p>
-                                <div class="hero-button">
-                                    <a href="about.html" data-animation="slideInRight" data-duration="2s"
-                                        data-delay=".9s" class="theme-btn hover-white">
-                                        Join Us
-                                        <i class="fa-solid fa-arrow-right-long"></i>
-                                    </a>
-                                    <a href="contact.html" data-animation="slideInRight" data-duration="2s"
-                                        data-delay=".9s" class="theme-btn border-white">
-                                        Donate
-                                        <i class="fa-solid fa-arrow-right-long"></i>
-                                    </a>
+                    <div class="container">
+                        <div class="row g-4 align-items-center">
+                            <div class="col-lg-8">
+                                <div class="hero-content">
+                                    <h5 data-animation="slideInRight" data-duration="2s" data-delay=".3s">
+                                        Building the Future Together
+                                    </h5>
+                                    <h1 data-animation="slideInRight" data-duration="2s" data-delay=".5s">
+                                        Education, Training <br> and Opportunities <br> for Everyone
+                                    </h1>
+                                    <p data-animation="slideInRight" data-duration="2s" data-delay=".9s">
+                                        Professional training, English courses, IT skills, and distance learning. Support
+                                        local development and community crafts for a thriving village.
+                                    </p>
+                                    <div class="hero-button">
+                                        <a href="about.html" data-animation="slideInRight" data-duration="2s"
+                                            data-delay=".9s" class="theme-btn hover-white">
+                                            Join Us
+                                            <i class="fa-solid fa-arrow-right-long"></i>
+                                        </a>
+                                        <a href="contact.html" data-animation="slideInRight" data-duration="2s"
+                                            data-delay=".9s" class="theme-btn border-white">
+                                            Donate
+                                            <i class="fa-solid fa-arrow-right-long"></i>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -166,8 +170,7 @@
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     @php
         if (!function_exists('getYoutubeId')) {
@@ -235,151 +238,151 @@
     @endforeach
 
     <section class="service-section-3 pb-0 fix section-padding bg-cover"
-    style="background-image: url('assets/img/service/service-bg-3.jpg');">
-    <div class="container">
-        <div class="section-title-area">
-            <div class="section-title">
-                <span>Our Services</span>
-                <h2>Discover Our <br> Professional Services</h2>
+        style="background-image: url('assets/img/service/service-bg-3.jpg');">
+        <div class="container">
+            <div class="section-title-area">
+                <div class="section-title">
+                    <span>Our Services</span>
+                    <h2>Discover Our <br> Professional Services</h2>
+                </div>
+                <a href="{{ route('services') }}" class="theme-btn">
+                    View All Services
+                    <i class="fa-solid fa-arrow-right-long"></i>
+                </a>
             </div>
-            <a href="{{ route('services') }}" class="theme-btn">
-                View All Services
-                <i class="fa-solid fa-arrow-right-long"></i>
-            </a>
-        </div>
 
-        <div class="services-container">
-            <div class="row">
-                @forelse ($services as $service)
-                    <div class="col-xl-4 col-lg-6 col-md-6 mb-4">
-                        <div class="service-card-items h-100">
-                            <!-- Image principale -->
-                            <div class="service-image">
-                                @if ($service->image)
-                                    <img src="{{ asset('storage/' . $service->image) }}"
-                                        alt="{{ $service->slug }}" class="img-fluid">
-                                @else
-                                    <img src="{{ asset('assets/img/service/02.jpg') }}"
-                                        alt="Default Service Image" class="img-fluid">
-                                @endif
-                            </div>
-
-
-                            <div class="service-content">
-
-
-                                <!-- Titre (slug) -->
-                                <h4>
-                                    <a href="{{ route('services') }}">
-                                        {{ $service->slug }}
-                                    </a>
-                                </h4>
-
-                                <!-- Description courte -->
-                                @if ($service->description)
-                                    <p>{{ Str::limit(strip_tags($service->description), 120) }}</p>
-                                @endif
-
-                                <!-- Badge de statut -->
-                                <div class="service-status mb-3">
-                                    @if ($service->is_active)
-                                        <span class="badge bg-success">
-                                            <i class="fa-solid fa-check-circle"></i> Active
-                                        </span>
+            <div class="services-container">
+                <div class="row">
+                    @forelse ($services as $service)
+                        <div class="col-xl-4 col-lg-6 col-md-6 mb-4">
+                            <div class="service-card-items h-100">
+                                <!-- Image principale -->
+                                <div class="service-image">
+                                    @if ($service->image)
+                                        <img src="{{ asset('storage/' . $service->image) }}" alt="{{ $service->slug }}"
+                                            class="img-fluid">
                                     @else
-                                        <span class="badge bg-secondary">
-                                            <i class="fa-solid fa-times-circle"></i> Inactive
-                                        </span>
+                                        <img src="{{ asset('assets/img/service/02.jpg') }}" alt="Default Service Image"
+                                            class="img-fluid">
                                     @endif
                                 </div>
 
-                                <!-- Bouton En savoir plus -->
-                                <a href="{{ route('services') }}" class="theme-btn-2 mt-3">
-                                    Learn More
-                                    <i class="fa-solid fa-arrow-right-long"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                @empty
-                    <div class="col-12">
-                        <div class="alert alert-info text-center">
-                            <i class="fa-solid fa-info-circle"></i>
-                            No services available at the moment
-                        </div>
-                    </div>
-                @endforelse
-            </div>
-        </div>
-    </div>
-</section>
 
-<style>
-    .service-status {
-        margin: 15px 0;
-    }
+                                <div class="service-content">
 
-    .service-status .badge {
-        padding: 8px 15px;
-        font-size: 0.85rem;
-        font-weight: 500;
-    }
 
-    .service-card-items {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .service-card-items:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    }
-
-    .service-image {
-        position: relative;
-        overflow: hidden;
-        border-radius: 8px;
-    }
-
-    .service-image img {
-        transition: transform 0.3s ease;
-    }
-
-    .service-card-items:hover .service-image img {
-        transform: scale(1.05);
-    }
-</style>
-
-   <div class="brand-section fix section-padding pt-0">
-    <div class="container mx-auto">
-        <div class="brand-wrapper">
-            <h6 class="text-center wow fadeInUp" data-wow-delay=".3s">
-                Our Partners
-            </h6>
-            <div class="swiper brand-slider">
-                <div class="swiper-wrapper">
-                    @foreach ($partenaire as $item)
-                        @if ($item->is_active)
-                            <div class="swiper-slide logo-slide">
-                                <div class="brand-image text-center">
-                                    @if ($item->url)
-                                        <a href="{{ $item->url }}" target="_blank">
-                                            <img src="{{ asset('storage/' . $item->logo) }}"
-                                                alt="{{ $item->name }}" class="partner-logo">
+                                    <!-- Titre (slug) -->
+                                    <h4>
+                                        <a href="{{ route('services') }}">
+                                            {{ $service->slug }}
                                         </a>
-                                    @else
-                                        <img src="{{ asset('storage/' . $item->logo) }}" alt="{{ $item->name }}"
-                                            class="partner-logo">
+                                    </h4>
+
+                                    <!-- Description courte -->
+                                    @if ($service->description)
+                                        <p>{{ Str::limit(strip_tags($service->description), 120) }}</p>
                                     @endif
-                                    <p class="partner-name">{{ $item->name }}</p>
+
+                                    <!-- Badge de statut -->
+                                    <div class="service-status mb-3">
+                                        @if ($service->is_active)
+                                            <span class="badge bg-success">
+                                                <i class="fa-solid fa-check-circle"></i> Active
+                                            </span>
+                                        @else
+                                            <span class="badge bg-secondary">
+                                                <i class="fa-solid fa-times-circle"></i> Inactive
+                                            </span>
+                                        @endif
+                                    </div>
+
+                                    <!-- Bouton En savoir plus -->
+                                    <a href="{{ route('services') }}" class="theme-btn-2 mt-3">
+                                        Learn More
+                                        <i class="fa-solid fa-arrow-right-long"></i>
+                                    </a>
                                 </div>
                             </div>
-                        @endif
-                    @endforeach
+                        </div>
+                    @empty
+                        <div class="col-12">
+                            <div class="alert alert-info text-center">
+                                <i class="fa-solid fa-info-circle"></i>
+                                No services available at the moment
+                            </div>
+                        </div>
+                    @endforelse
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .service-status {
+            margin: 15px 0;
+        }
+
+        .service-status .badge {
+            padding: 8px 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .service-card-items {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card-items:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-image {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .service-image img {
+            transition: transform 0.3s ease;
+        }
+
+        .service-card-items:hover .service-image img {
+            transform: scale(1.05);
+        }
+    </style>
+
+    <div class="brand-section fix section-padding pt-0">
+        <div class="container mx-auto">
+            <div class="brand-wrapper">
+                <h6 class="text-center wow fadeInUp" data-wow-delay=".3s">
+                    Our Partners
+                </h6>
+                <div class="swiper brand-slider">
+                    <div class="swiper-wrapper">
+                        @foreach ($partenaire as $item)
+                            @if ($item->is_active)
+                                <div class="swiper-slide logo-slide">
+                                    <div class="brand-image text-center">
+                                        @if ($item->url)
+                                            <a href="{{ $item->url }}" target="_blank">
+                                                <img src="{{ asset('storage/' . $item->logo) }}"
+                                                    alt="{{ $item->name }}" class="partner-logo">
+                                            </a>
+                                        @else
+                                            <img src="{{ asset('storage/' . $item->logo) }}" alt="{{ $item->name }}"
+                                                class="partner-logo">
+                                        @endif
+                                        <p class="partner-name">{{ $item->name }}</p>
+                                    </div>
+                                </div>
+                            @endif
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
     <style>
         .partner-logo {
@@ -411,111 +414,111 @@
     </style>
 
 
-<section class="service-section-3 pb-0 fix section-padding bg-cover"
-    style="background-image: url('assets/img/service/service-bg-3.jpg');">
-    <div class="container">
-        <div class="section-title-area">
-            <div class="section-title">
-                <span>Our Culture</span>
-                <h2>Discover Our Rich Cultural Heritage</h2>
+    <section class="service-section-3 pb-0 fix section-padding bg-cover"
+        style="background-image: url('assets/img/service/service-bg-3.jpg');">
+        <div class="container">
+            <div class="section-title-area">
+                <div class="section-title">
+                    <span>Our Culture</span>
+                    <h2>Discover Our Rich Cultural Heritage</h2>
+                </div>
+                <a href="{{ route('cultures.index') }}" class="theme-btn">
+                    View All
+                    <i class="fa-solid fa-arrow-right-long"></i>
+                </a>
             </div>
-            <a href="{{ route('cultures.index') }}" class="theme-btn">
-                View All
-                <i class="fa-solid fa-arrow-right-long"></i>
-            </a>
-        </div>
 
-        <div class="cultures-container">
-            <div class="row">
-                @forelse ($cultures as $culture)
-                    <div class="col-xl-4 col-lg-6 col-md-6 mb-4">
-                        <div class="service-card-items h-100">
-                            <!-- Image principale -->
-                            <div class="service-image">
-                                @if ($culture->image1)
-                                    <img src="{{ asset('storage/' . $culture->image1) }}"
-                                        alt="{{ $culture->titre }}" class="img-fluid">
-                                @elseif ($culture->image2)
-                                    <img src="{{ asset('storage/' . $culture->image2) }}"
-                                        alt="{{ $culture->titre }}" class="img-fluid">
-                                @else
-                                    <img src="{{ asset('assets/img/service/02.jpg') }}"
-                                        alt="Default culture image" class="img-fluid">
-                                @endif
-                            </div>
+            <div class="cultures-container">
+                <div class="row">
+                    @forelse ($cultures as $culture)
+                        <div class="col-xl-4 col-lg-6 col-md-6 mb-4">
+                            <div class="service-card-items h-100">
+                                <!-- Image principale -->
+                                <div class="service-image">
+                                    @if ($culture->image1)
+                                        <img src="{{ asset('storage/' . $culture->image1) }}"
+                                            alt="{{ $culture->titre }}" class="img-fluid">
+                                    @elseif ($culture->image2)
+                                        <img src="{{ asset('storage/' . $culture->image2) }}"
+                                            alt="{{ $culture->titre }}" class="img-fluid">
+                                    @else
+                                        <img src="{{ asset('assets/img/service/02.jpg') }}" alt="Default culture image"
+                                            class="img-fluid">
+                                    @endif
+                                </div>
 
-                            <div class="icon-2">
-                                <img src="{{ asset('assets/img/service/icon/s-icon-1.svg') }}" alt="icon">
-                            </div>
-
-                            <div class="service-content">
-                                <div class="icon">
+                                <div class="icon-2">
                                     <img src="{{ asset('assets/img/service/icon/s-icon-1.svg') }}" alt="icon">
                                 </div>
 
-                                <!-- Titre -->
-                                <h4>
-                                    <a href="">
-                                        {{ $culture->titre }}
-                                    </a>
-                                </h4>
-
-                                <!-- Description courte -->
-                                <p>{{ Str::limit($culture->description, 120) }}</p>
-
-                                <!-- Vidéo YouTube -->
-                                @if ($culture->lien_youtube1 || $culture->lien_youtube2)
-                                    <div class="culture-video mb-3">
-                                        @php
-                                            $videoLink = $culture->lien_youtube1 ?? $culture->lien_youtube2;
-                                            // Extraire l'ID de la vidéo YouTube
-                                            preg_match(
-                                                '/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/i',
-                                                $videoLink,
-                                                $match,
-                                            );
-                                            $videoId = $match[1] ?? null;
-                                        @endphp
-
-                                        @if ($videoId)
-                                            <div class="ratio ratio-16x9">
-                                                <iframe src="https://www.youtube.com/embed/{{ $videoId }}"
-                                                    title="{{ $culture->titre }}" frameborder="0"
-                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                                    allowfullscreen>
-                                                </iframe>
-                                            </div>
-                                        @else
-                                            <a href="{{ $videoLink }}" target="_blank"
-                                                class="btn btn-outline-danger btn-sm">
-                                                <i class="fab fa-youtube"></i>
-                                                Watch Video
-                                            </a>
-                                        @endif
+                                <div class="service-content">
+                                    <div class="icon">
+                                        <img src="{{ asset('assets/img/service/icon/s-icon-1.svg') }}" alt="icon">
                                     </div>
-                                @endif
+
+                                    <!-- Titre -->
+                                    <h4>
+                                        <a href="">
+                                            {{ $culture->titre }}
+                                        </a>
+                                    </h4>
+
+                                    <!-- Description courte -->
+                                    <p>{{ Str::limit($culture->description, 120) }}</p>
+
+                                    <!-- Vidéo YouTube -->
+                                    @if ($culture->lien_youtube1 || $culture->lien_youtube2)
+                                        <div class="culture-video mb-3">
+                                            @php
+                                                $videoLink = $culture->lien_youtube1 ?? $culture->lien_youtube2;
+                                                // Extraire l'ID de la vidéo YouTube
+preg_match(
+    '/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/i',
+                                                    $videoLink,
+                                                    $match,
+                                                );
+                                                $videoId = $match[1] ?? null;
+                                            @endphp
+
+                                            @if ($videoId)
+                                                <div class="ratio ratio-16x9">
+                                                    <iframe src="https://www.youtube.com/embed/{{ $videoId }}"
+                                                        title="{{ $culture->titre }}" frameborder="0"
+                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                        allowfullscreen>
+                                                    </iframe>
+                                                </div>
+                                            @else
+                                                <a href="{{ $videoLink }}" target="_blank"
+                                                    class="btn btn-outline-danger btn-sm">
+                                                    <i class="fab fa-youtube"></i>
+                                                    Watch Video
+                                                </a>
+                                            @endif
+                                        </div>
+                                    @endif
 
 
-                                <!-- Bouton En savoir plus -->
-                                <a href="{{ route('cultures.index', $culture->id) }}" class="theme-btn-2 mt-3">
-                                    Learn more
-                                    <i class="fa-solid fa-arrow-right-long"></i>
-                                </a>
+                                    <!-- Bouton En savoir plus -->
+                                    <a href="{{ route('cultures.index', $culture->id) }}" class="theme-btn-2 mt-3">
+                                        Learn more
+                                        <i class="fa-solid fa-arrow-right-long"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                @empty
-                    <div class="col-12">
-                        <div class="alert alert-info text-center">
-                            <i class="fa-solid fa-info-circle"></i>
-                            No cultures available at the moment
+                    @empty
+                        <div class="col-12">
+                            <div class="alert alert-info text-center">
+                                <i class="fa-solid fa-info-circle"></i>
+                                No cultures available at the moment
+                            </div>
                         </div>
-                    </div>
-                @endforelse
+                    @endforelse
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
     <style>
         .culture-video {
             margin: 15px 0;
@@ -551,17 +554,16 @@
 
 
 
-
     <section class="service-section-3 pb-0 fix section-padding bg-cover"
         style="background-image: url('assets/img/service/service-bg-3.jpg');">
         <div class="container">
             <div class="section-title-area">
                 <div class="section-title">
-                    <span>{{ __('maisonduvillage.training.section_title') }}</span>
-                    <h2>{!! __('maisonduvillage.training.section_subtitle') !!}</h2>
+                    <span>Nos Formations</span>
+                    <h2>Découvrez Nos Programmes de Formation</h2>
                 </div>
                 <a href="formations.html" class="theme-btn">
-                    {{ __('maisonduvillage.training.view_all') }}
+                    Voir Tout
                     <i class="fa-solid fa-arrow-right-long"></i>
                 </a>
             </div>
@@ -576,7 +578,7 @@
                                         <img src="{{ asset('storage/' . $info->image) }}" alt="{{ $info->titre }}">
                                     @else
                                         <img src="{{ asset('assets/img/service/02.jpg') }}"
-                                            alt="{{ __('maisonduvillage.training.default_image') }}">
+                                            alt="Image de formation par défaut">
                                     @endif
                                 </div>
                                 <div class="icon-2">
@@ -590,8 +592,7 @@
                                     <p>{{ Str::limit($info->description, 100) }}</p>
                                     <div class="formation-meta">
                                         @if ($info->duree)
-                                            <span class="badge bg-primary">{{ $info->duree }}
-                                                {{ __('maisonduvillage.training.hours') }}</span>
+                                            <span class="badge bg-primary">{{ $info->duree }} heures</span>
                                         @endif
                                         @if ($info->date_debut)
                                             <span
@@ -605,7 +606,7 @@
                                         @endif
                                     </div>
                                     <a href="{{ route('site.informatique.show', $info->id) }}" class="theme-btn-2 mt-3">
-                                        {{ __('maisonduvillage.buttons.learn_more') }}
+                                        En savoir plus
                                         <i class="fa-solid fa-arrow-right-long"></i>
                                     </a>
                                 </div>
@@ -616,7 +617,6 @@
             </div>
         </div>
     </section>
-
     <style>
         @media (min-width: 1200px) {
             .formations-container .row {
@@ -723,8 +723,8 @@
     <section class="work-process-section fix section-padding pt-0">
         <div class="container">
             <div class="section-title text-center">
-                <span>{{ __('maisonduvillage.process.subtitle') }}</span>
-                <h2>{{ __('maisonduvillage.process.title') }}</h2>
+                <span>Our Process</span>
+                <h2>How We Work</h2>
             </div>
             <div class="process-work-wrapper">
                 <div class="line-shape">
@@ -738,16 +738,16 @@
                                 <h6 class="number">1</h6>
                             </div>
                             <div class="content">
-                                <h4>{{ __('maisonduvillage.process.step1.title') }}</h4>
-                                <p>{{ __('maisonduvillage.process.step1.description') }}</p>
+                                <h4>Consultation</h4>
+                                <p>We listen to your needs and analyze your goals</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-4 col-md-6">
                         <div class="work-process-items text-center">
                             <div class="content style-2">
-                                <h4>{{ __('maisonduvillage.process.step2.title') }}</h4>
-                                <p>{{ __('maisonduvillage.process.step2.description') }}</p>
+                                <h4>Planning</h4>
+                                <p>We develop a strategy tailored to your project</p>
                             </div>
                             <div class="icon">
                                 <img src="assets/img/process/02.svg" alt="img">
@@ -762,16 +762,16 @@
                                 <h6 class="number">3</h6>
                             </div>
                             <div class="content">
-                                <h4>{{ __('maisonduvillage.process.step3.title') }}</h4>
-                                <p>{{ __('maisonduvillage.process.step3.description') }}</p>
+                                <h4>Implementation</h4>
+                                <p>We execute solutions with expertise</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-4 col-md-6">
                         <div class="work-process-items text-center">
                             <div class="content style-2">
-                                <h4>{{ __('maisonduvillage.process.step4.title') }}</h4>
-                                <p>{{ __('maisonduvillage.process.step4.description') }}</p>
+                                <h4>Delivery</h4>
+                                <p>We support you until final success</p>
                             </div>
                             <div class="icon">
                                 <img src="assets/img/process/04.svg" alt="img">
@@ -784,59 +784,59 @@
         </div>
     </section>
 
-    <section class="achievement-section-3 fix section-bg-2">
-        <div class="shape-image">
-            <img src="assets/img/achiv-shape.png" alt="shape-img">
-        </div>
-        <div class="container">
-            <div class="achievement-wrapper style-2">
-                <div class="section-title mb-0">
-                    <span class="text-white wow fadeInUp">{{ __('maisonduvillage.achievement.subtitle') }}</span>
-                    <h2 class="text-white wow fadeInUp" data-wow-delay=".3s">
-                        {!! __('maisonduvillage.achievement.title') !!}
-                    </h2>
+   <section class="achievement-section-3 fix section-bg-2">
+    <div class="shape-image">
+        <img src="assets/img/achiv-shape.png" alt="shape-img">
+    </div>
+    <div class="container">
+        <div class="achievement-wrapper style-2">
+            <div class="section-title mb-0">
+                <span class="text-white wow fadeInUp">Our Achievements</span>
+                <h2 class="text-white wow fadeInUp" data-wow-delay=".3s">
+                    Building Community Impact <br> Through Action
+                </h2>
+            </div>
+            <div class="counter-area">
+                <div class="counter-items wow fadeInUp" data-wow-delay=".3s">
+                    <div class="icon">
+                        <img src="assets/img/achievement-icon/01.svg" alt="icon-img">
+                    </div>
+                    <div class="content">
+                        <h2><span class="count">1,200</span>+</h2>
+                        <p>Community Members Served</p>
+                    </div>
                 </div>
-                <div class="counter-area">
-                    <div class="counter-items wow fadeInUp" data-wow-delay=".3s">
-                        <div class="icon">
-                            <img src="assets/img/achievement-icon/01.svg" alt="icon-img">
-                        </div>
-                        <div class="content">
-                            <h2><span class="count">6,561</span>+</h2>
-                            <p>{{ __('maisonduvillage.achievement.satisfied_clients') }}</p>
-                        </div>
+                <div class="counter-items wow fadeInUp" data-wow-delay=".5s">
+                    <div class="icon">
+                        <img src="assets/img/achievement-icon/02.svg" alt="icon-img">
                     </div>
-                    <div class="counter-items wow fadeInUp" data-wow-delay=".5s">
-                        <div class="icon">
-                            <img src="assets/img/achievement-icon/02.svg" alt="icon-img">
-                        </div>
-                        <div class="content">
-                            <h2><span class="count">600</span>+</h2>
-                            <p>{{ __('maisonduvillage.achievement.finished_projects') }}</p>
-                        </div>
+                    <div class="content">
+                        <h2><span class="count">150</span>+</h2>
+                        <p>Community Projects Completed</p>
                     </div>
-                    <div class="counter-items wow fadeInUp" data-wow-delay=".7s">
-                        <div class="icon">
-                            <img src="assets/img/achievement-icon/03.svg" alt="icon-img">
-                        </div>
-                        <div class="content">
-                            <h2><span class="count">250</span>+</h2>
-                            <p>{{ __('maisonduvillage.achievement.skilled_experts') }}</p>
-                        </div>
+                </div>
+                <div class="counter-items wow fadeInUp" data-wow-delay=".7s">
+                    <div class="icon">
+                        <img src="assets/img/achievement-icon/03.svg" alt="icon-img">
                     </div>
-                    <div class="counter-items wow fadeInUp" data-wow-delay=".9s">
-                        <div class="icon">
-                            <img src="assets/img/achievement-icon/04.svg" alt="icon-img">
-                        </div>
-                        <div class="content">
-                            <h2><span class="count">5,90</span>+</h2>
-                            <p>{{ __('maisonduvillage.achievement.media_posts') }}</p>
-                        </div>
+                    <div class="content">
+                        <h2><span class="count">50</span>+</h2>
+                        <p>Local Volunteers & Partners</p>
+                    </div>
+                </div>
+                <div class="counter-items wow fadeInUp" data-wow-delay=".9s">
+                    <div class="icon">
+                        <img src="assets/img/achievement-icon/04.svg" alt="icon-img">
+                    </div>
+                    <div class="content">
+                        <h2><span class="count">25</span>+</h2>
+                        <p>Cultural Events Organized</p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <section class="project-section-3 section-padding pb-0 fix bg-cover"
         style="background-image: url('assets/img/testimonial/bg.jpg');">
