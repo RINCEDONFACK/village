@@ -14,151 +14,155 @@
         </div>
     </div>
 
-   <section class="hero-section fix hero-3">
-    <div class="bottom-shape">
-        <img src="assets/img/hero/bottom-shape.png" alt="shape-img">
-    </div>
-    <div class="array-button">
-        <button class="array-prev"><i class="fal fa-arrow-right"></i></button>
-        <button class="array-next"><i class="fal fa-arrow-left"></i></button>
-    </div>
-    <div class="swiper hero-slider">
-        <div class="swiper-wrapper">
-            <!-- Slide 1: Welcome & Hospitality -->
-            <div class="swiper-slide">
-                <div class="slider-image bg-cover" style="background-image: url('assets/img/hero/hero-2.jpg');">
-                    <div class="mask-shape" data-animation="slideInDown" data-duration="3s" data-delay="2s">
-                        <img src="assets/img/hero/mask-shape-2.png" alt="shape-img">
+    <section class="hero-section fix hero-3">
+        <div class="bottom-shape">
+            <img src="assets/img/hero/bottom-shape.png" alt="shape-img">
+        </div>
+        <div class="array-button">
+            <button class="array-prev"><i class="fal fa-arrow-right"></i></button>
+            <button class="array-next"><i class="fal fa-arrow-left"></i></button>
+        </div>
+        <div class="swiper hero-slider">
+            <div class="swiper-wrapper">
+                <!-- Slide 1: Welcome & Hospitality -->
+                <div class="swiper-slide">
+                    <div class="slider-image bg-cover" style="background-image: url('assets/img/hero/hero-2.jpg');">
+                        <div class="mask-shape" data-animation="slideInDown" data-duration="3s" data-delay="2s">
+                            <img src="assets/img/hero/mask-shape-2.png" alt="shape-img">
+                        </div>
+                        <div class="border-shape" data-animation="slideInRight" data-duration="3s" data-delay="2.2s">
+                            <img src="assets/img/hero/border-shape.png" alt="shape-img">
+                        </div>
+                        <div class="circle-shape" data-animation="slideInRight" data-duration="3s" data-delay="2.1s">
+                            <img src="assets/img/choose/circle.png" alt="shape-img">
+                        </div>
+                        <div class="frame" data-animation="slideInLeft" data-duration="3s" data-delay="2.2s">
+                            <img src="assets/img/frame.png" alt="shape-img">
+                        </div>
                     </div>
-                    <div class="border-shape" data-animation="slideInRight" data-duration="3s" data-delay="2.2s">
-                        <img src="assets/img/hero/border-shape.png" alt="shape-img">
-                    </div>
-                    <div class="circle-shape" data-animation="slideInRight" data-duration="3s" data-delay="2.1s">
-                        <img src="assets/img/choose/circle.png" alt="shape-img">
-                    </div>
-                    <div class="frame" data-animation="slideInLeft" data-duration="3s" data-delay="2.2s">
-                        <img src="assets/img/frame.png" alt="shape-img">
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row g-4 align-items-center">
-                        <div class="col-lg-8">
-                            <div class="hero-content">
-                                <h5 data-animation="slideInRight" data-duration="2s" data-delay=".3s">
-                                    Welcome to Village House
-                                </h5>
-                                <h1 data-animation="slideInRight" data-duration="2s" data-delay=".5s">
-                                    A Space for Welcome <br> and Sharing at the Heart <br> of the Village
-                                </h1>
-                                <p data-animation="slideInRight" data-duration="2s" data-delay=".9s">
-                                    Discover a unique place where visitors, diaspora members, and local communities meet to build friendships, express solidarity, and revitalize our villages together.
-                                </p>
-                                <div class="hero-button">
-                                    <a href="{{ route('propos.index') }}" data-animation="slideInRight"
-                                        data-duration="2s" data-delay=".9s" class="theme-btn hover-white">
-                                        About Us
-                                        <i class="fa-solid fa-arrow-right-long"></i>
-                                    </a>
+                    <div class="container">
+                        <div class="row g-4 align-items-center">
+                            <div class="col-lg-8">
+                                <div class="hero-content">
+                                    <h5 data-animation="slideInRight" data-duration="2s" data-delay=".3s">
+                                        Welcome to Village House
+                                    </h5>
+                                    <h1 data-animation="slideInRight" data-duration="2s" data-delay=".5s">
+                                        A Space for Welcome <br> and Sharing at the Heart <br> of the Village
+                                    </h1>
+                                    <p data-animation="slideInRight" data-duration="2s" data-delay=".9s">
+                                        Discover a unique place where visitors, diaspora members, and local communities meet
+                                        to build friendships, express solidarity, and revitalize our villages together.
+                                    </p>
+                                    <div class="hero-button">
+                                        <a href="{{ route('propos.index') }}" data-animation="slideInRight"
+                                            data-duration="2s" data-delay=".9s" class="theme-btn hover-white">
+                                            About Us
+                                            <i class="fa-solid fa-arrow-right-long"></i>
+                                        </a>
 
-                                    <a href="{{ route('contacter.index') }}" data-animation="slideInRight"
-                                        data-duration="2s" data-delay=".9s" class="theme-btn border-white">
-                                        <i class="fa-solid fa-arrow-right-long"></i>
-                                        Contact Us
-                                    </a>
+                                        <a href="{{ route('contacter.index') }}" data-animation="slideInRight"
+                                            data-duration="2s" data-delay=".9s" class="theme-btn border-white">
+                                            <i class="fa-solid fa-arrow-right-long"></i>
+                                            Contact Us
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Slide 2: Culture & Identity -->
-            <div class="swiper-slide">
-                <div class="slider-image bg-cover" style="background-image: url('assets/img/hero/hero-1.jpg');">
-                    <div class="mask-shape" data-animation="slideInDown" data-duration="3s" data-delay="2s">
-                        <img src="assets/img/hero/mask-shape-2.png" alt="shape-img">
+                <!-- Slide 2: Culture & Identity -->
+                <div class="swiper-slide">
+                    <div class="slider-image bg-cover" style="background-image: url('assets/img/hero/hero-1.jpg');">
+                        <div class="mask-shape" data-animation="slideInDown" data-duration="3s" data-delay="2s">
+                            <img src="assets/img/hero/mask-shape-2.png" alt="shape-img">
+                        </div>
+                        <div class="border-shape" data-animation="slideInRight" data-duration="3s" data-delay="2.2s">
+                            <img src="assets/img/hero/border-shape.png" alt="shape-img">
+                        </div>
+                        <div class="circle-shape" data-animation="slideInRight" data-duration="3s" data-delay="2.1s">
+                            <img src="assets/img/choose/circle.png" alt="shape-img">
+                        </div>
+                        <div class="frame" data-animation="slideInLeft" data-duration="3s" data-delay="2.2s">
+                            <img src="assets/img/frame.png" alt="shape-img">
+                        </div>
                     </div>
-                    <div class="border-shape" data-animation="slideInRight" data-duration="3s" data-delay="2.2s">
-                        <img src="assets/img/hero/border-shape.png" alt="shape-img">
-                    </div>
-                    <div class="circle-shape" data-animation="slideInRight" data-duration="3s" data-delay="2.1s">
-                        <img src="assets/img/choose/circle.png" alt="shape-img">
-                    </div>
-                    <div class="frame" data-animation="slideInLeft" data-duration="3s" data-delay="2.2s">
-                        <img src="assets/img/frame.png" alt="shape-img">
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row g-4 align-items-center">
-                        <div class="col-lg-8">
-                            <div class="hero-content">
-                                <h5 data-animation="slideInRight" data-duration="2s" data-delay=".3s">
-                                    Celebrate Our Heritage
-                                </h5>
-                                <h1 data-animation="slideInRight" data-duration="2s" data-delay=".5s">
-                                    Culture, Art <br> and Living <br> Traditions
-                                </h1>
-                                <p data-animation="slideInRight" data-duration="2s" data-delay=".9s">
-                                    Immerse yourself in the authenticity of our performances, local cuisine, traditional music, and learn our languages. Culture is the beating heart of our community.
-                                </p>
-                                <div class="hero-button">
-                                    <a href="about.html" data-animation="slideInRight" data-duration="2s"
-                                        data-delay=".9s" class="theme-btn hover-white">
-                                        Discover
-                                        <i class="fa-solid fa-arrow-right-long"></i>
-                                    </a>
-                                    <a href="contact.html" data-animation="slideInRight" data-duration="2s"
-                                        data-delay=".9s" class="theme-btn border-white">
-                                        Book Your Stay
-                                        <i class="fa-solid fa-arrow-right-long"></i>
-                                    </a>
+                    <div class="container">
+                        <div class="row g-4 align-items-center">
+                            <div class="col-lg-8">
+                                <div class="hero-content">
+                                    <h5 data-animation="slideInRight" data-duration="2s" data-delay=".3s">
+                                        Celebrate Our Heritage
+                                    </h5>
+                                    <h1 data-animation="slideInRight" data-duration="2s" data-delay=".5s">
+                                        Culture, Art <br> and Living <br> Traditions
+                                    </h1>
+                                    <p data-animation="slideInRight" data-duration="2s" data-delay=".9s">
+                                        Immerse yourself in the authenticity of our performances, local cuisine, traditional
+                                        music, and learn our languages. Culture is the beating heart of our community.
+                                    </p>
+                                    <div class="hero-button">
+                                        <a href="about.html" data-animation="slideInRight" data-duration="2s"
+                                            data-delay=".9s" class="theme-btn hover-white">
+                                            Discover
+                                            <i class="fa-solid fa-arrow-right-long"></i>
+                                        </a>
+                                        <a href="contact.html" data-animation="slideInRight" data-duration="2s"
+                                            data-delay=".9s" class="theme-btn border-white">
+                                            Book Your Stay
+                                            <i class="fa-solid fa-arrow-right-long"></i>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Slide 3: Education & Development -->
-            <div class="swiper-slide">
-                <div class="slider-image bg-cover" style="background-image: url('assets/img/hero/hero-3.jpg');">
-                    <div class="mask-shape" data-animation="slideInDown" data-duration="3s" data-delay="2s">
-                        <img src="assets/img/hero/mask-shape-2.png" alt="shape-img">
+                <!-- Slide 3: Education & Development -->
+                <div class="swiper-slide">
+                    <div class="slider-image bg-cover" style="background-image: url('assets/img/hero/hero-3.jpg');">
+                        <div class="mask-shape" data-animation="slideInDown" data-duration="3s" data-delay="2s">
+                            <img src="assets/img/hero/mask-shape-2.png" alt="shape-img">
+                        </div>
+                        <div class="border-shape" data-animation="slideInRight" data-duration="3s" data-delay="2.2s">
+                            <img src="assets/img/hero/border-shape.png" alt="shape-img">
+                        </div>
+                        <div class="circle-shape" data-animation="slideInRight" data-duration="3s" data-delay="2.1s">
+                            <img src="assets/img/choose/circle.png" alt="shape-img">
+                        </div>
+                        <div class="frame" data-animation="slideInLeft" data-duration="3s" data-delay="2.2s">
+                            <img src="assets/img/frame.png" alt="shape-img">
+                        </div>
                     </div>
-                    <div class="border-shape" data-animation="slideInRight" data-duration="3s" data-delay="2.2s">
-                        <img src="assets/img/hero/border-shape.png" alt="shape-img">
-                    </div>
-                    <div class="circle-shape" data-animation="slideInRight" data-duration="3s" data-delay="2.1s">
-                        <img src="assets/img/choose/circle.png" alt="shape-img">
-                    </div>
-                    <div class="frame" data-animation="slideInLeft" data-duration="3s" data-delay="2.2s">
-                        <img src="assets/img/frame.png" alt="shape-img">
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row g-4 align-items-center">
-                        <div class="col-lg-8">
-                            <div class="hero-content">
-                                <h5 data-animation="slideInRight" data-duration="2s" data-delay=".3s">
-                                    Building the Future Together
-                                </h5>
-                                <h1 data-animation="slideInRight" data-duration="2s" data-delay=".5s">
-                                    Education, Training <br> and Opportunities <br> for Everyone
-                                </h1>
-                                <p data-animation="slideInRight" data-duration="2s" data-delay=".9s">
-                                    Professional training, English courses, IT skills, and distance learning. Support local development and community crafts for a thriving village.
-                                </p>
-                                <div class="hero-button">
-                                    <a href="about.html" data-animation="slideInRight" data-duration="2s"
-                                        data-delay=".9s" class="theme-btn hover-white">
-                                        Join Us
-                                        <i class="fa-solid fa-arrow-right-long"></i>
-                                    </a>
-                                    <a href="contact.html" data-animation="slideInRight" data-duration="2s"
-                                        data-delay=".9s" class="theme-btn border-white">
-                                        Donate
-                                        <i class="fa-solid fa-arrow-right-long"></i>
-                                    </a>
+                    <div class="container">
+                        <div class="row g-4 align-items-center">
+                            <div class="col-lg-8">
+                                <div class="hero-content">
+                                    <h5 data-animation="slideInRight" data-duration="2s" data-delay=".3s">
+                                        Building the Future Together
+                                    </h5>
+                                    <h1 data-animation="slideInRight" data-duration="2s" data-delay=".5s">
+                                        Education, Training <br> and Opportunities <br> for Everyone
+                                    </h1>
+                                    <p data-animation="slideInRight" data-duration="2s" data-delay=".9s">
+                                        Professional training, English courses, IT skills, and distance learning. Support
+                                        local development and community crafts for a thriving village.
+                                    </p>
+                                    <div class="hero-button">
+                                        <a href="about.html" data-animation="slideInRight" data-duration="2s"
+                                            data-delay=".9s" class="theme-btn hover-white">
+                                            Join Us
+                                            <i class="fa-solid fa-arrow-right-long"></i>
+                                        </a>
+                                        <a href="contact.html" data-animation="slideInRight" data-duration="2s"
+                                            data-delay=".9s" class="theme-btn border-white">
+                                            Donate
+                                            <i class="fa-solid fa-arrow-right-long"></i>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -166,8 +170,7 @@
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     @php
         if (!function_exists('getYoutubeId')) {
@@ -235,125 +238,261 @@
     @endforeach
 
     <section class="service-section-3 pb-0 fix section-padding bg-cover"
-    style="background-image: url('assets/img/service/service-bg-3.jpg');">
-    <div class="container">
-        <div class="section-title-area">
-            <div class="section-title">
-                <span>Our Services</span>
-                <h2>Discover Our <br> Professional Services</h2>
+        style="background-image: url('assets/img/service/service-bg-3.jpg');">
+        <div class="container">
+            <div class="section-title-area">
+                <div class="section-title">
+                    <span>Our Services</span>
+                    <h2>Discover Our <br> Professional Services</h2>
+                </div>
+                <a href="{{ route('services') }}" class="theme-btn">
+                    View All Services
+                    <i class="fa-solid fa-arrow-right-long"></i>
+                </a>
             </div>
-            <a href="{{ route('services') }}" class="theme-btn">
-                View All Services
-                <i class="fa-solid fa-arrow-right-long"></i>
-            </a>
-        </div>
 
-        <div class="services-container">
-            <div class="row">
-                @forelse ($services as $service)
-                    <div class="col-xl-4 col-lg-6 col-md-6 mb-4">
-                        <div class="service-card-items h-100">
-                            <!-- Image principale -->
-                            <div class="service-image">
-                                @if ($service->image)
-                                    <img src="{{ asset('storage/' . $service->image) }}"
-                                        alt="{{ $service->slug }}" class="img-fluid">
-                                @else
-                                    <img src="{{ asset('assets/img/service/02.jpg') }}"
-                                        alt="Default Service Image" class="img-fluid">
-                                @endif
-                            </div>
+            <div class="services-container">
+                <!-- Carousel Wrapper -->
+                <div id="servicesCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                    <div class="carousel-inner">
+                        @forelse ($services->chunk(3) as $chunkIndex => $serviceChunk)
+                            <div class="carousel-item {{ $chunkIndex == 0 ? 'active' : '' }}">
+                                <div class="row">
+                                    @foreach ($serviceChunk as $service)
+                                        <div class="col-xl-4 col-lg-6 col-md-6 mb-4">
+                                            <div class="service-card-items h-100">
+                                                <!-- Image principale -->
+                                                <div class="service-image">
+                                                    @if ($service->image)
+                                                        <img src="{{ asset('storage/' . $service->image) }}"
+                                                            alt="{{ $service->slug }}" class="img-fluid">
+                                                    @else
+                                                        <img src="{{ asset('assets/img/service/02.jpg') }}"
+                                                            alt="Default Service Image" class="img-fluid">
+                                                    @endif
+                                                </div>
 
-                            <div class="icon-2">
-                                <img src="{{ asset('assets/img/service/icon/s-icon-1.svg') }}" alt="icon">
-                            </div>
+                                                <div class="service-content">
+                                                    <!-- Titre (slug) -->
+                                                    <h4>
+                                                        <a href="{{ route('services') }}">
+                                                            {{ $service->slug }}
+                                                        </a>
+                                                    </h4>
 
-                            <div class="service-content">
-                                <div class="icon">
-                                    <img src="{{ asset('assets/img/service/icon/s-icon-1.svg') }}" alt="icon">
+                                                    <!-- Description courte -->
+                                                    @if ($service->description)
+                                                        <p>{{ Str::limit(strip_tags($service->description), 120) }}</p>
+                                                    @endif
+
+                                                    <!-- Badge de statut -->
+                                                    <div class="service-status mb-3">
+                                                        @if ($service->is_active)
+                                                            <span class="badge bg-success">
+                                                                <i class="fa-solid fa-check-circle"></i> Active
+                                                            </span>
+                                                        @else
+                                                            <span class="badge bg-secondary">
+                                                                <i class="fa-solid fa-times-circle"></i> Inactive
+                                                            </span>
+                                                        @endif
+                                                    </div>
+
+                                                    <!-- Bouton En savoir plus -->
+                                                    <a href="{{ route('services') }}" class="theme-btn-2 mt-3">
+                                                        Learn More
+                                                        <i class="fa-solid fa-arrow-right-long"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
                                 </div>
-
-                                <!-- Titre (slug) -->
-                                <h4>
-                                    <a href="{{ route('services') }}">
-                                        {{ $service->slug }}
-                                    </a>
-                                </h4>
-
-                                <!-- Description courte -->
-                                @if ($service->description)
-                                    <p>{{ Str::limit(strip_tags($service->description), 120) }}</p>
-                                @endif
-
-                                <!-- Badge de statut -->
-                                <div class="service-status mb-3">
-                                    @if ($service->is_active)
-                                        <span class="badge bg-success">
-                                            <i class="fa-solid fa-check-circle"></i> Active
-                                        </span>
-                                    @else
-                                        <span class="badge bg-secondary">
-                                            <i class="fa-solid fa-times-circle"></i> Inactive
-                                        </span>
-                                    @endif
-                                </div>
-
-                                <!-- Bouton En savoir plus -->
-                                <a href="{{ route('services') }}" class="theme-btn-2 mt-3">
-                                    Learn More
-                                    <i class="fa-solid fa-arrow-right-long"></i>
-                                </a>
                             </div>
-                        </div>
+                        @empty
+                            <div class="carousel-item active">
+                                <div class="col-12">
+                                    <div class="alert alert-info text-center">
+                                        <i class="fa-solid fa-info-circle"></i>
+                                        No services available at the moment
+                                    </div>
+                                </div>
+                            </div>
+                        @endforelse
                     </div>
-                @empty
-                    <div class="col-12">
-                        <div class="alert alert-info text-center">
-                            <i class="fa-solid fa-info-circle"></i>
-                            No services available at the moment
+
+                    <!-- Contrôles du carousel -->
+                    @if ($services->count() > 3)
+                        <button class="carousel-control-prev" type="button" data-bs-target="#servicesCarousel"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#servicesCarousel"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+
+                        <!-- Indicateurs -->
+                        <div class="carousel-indicators">
+                            @foreach ($services->chunk(3) as $index => $chunk)
+                                <button type="button" data-bs-target="#servicesCarousel"
+                                    data-bs-slide-to="{{ $index }}" class="{{ $index == 0 ? 'active' : '' }}"
+                                    aria-current="{{ $index == 0 ? 'true' : 'false' }}"
+                                    aria-label="Slide {{ $index + 1 }}">
+                                </button>
+                            @endforeach
                         </div>
-                    </div>
-                @endforelse
+                    @endif
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<style>
-    .service-status {
-        margin: 15px 0;
-    }
+    <style>
+        .service-status {
+            margin: 15px 0;
+        }
 
-    .service-status .badge {
-        padding: 8px 15px;
-        font-size: 0.85rem;
-        font-weight: 500;
-    }
+        .service-status .badge {
+            padding: 8px 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
 
-    .service-card-items {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+        .service-card-items {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-    .service-card-items:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    }
+        .service-card-items:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
 
-    .service-image {
-        position: relative;
-        overflow: hidden;
-        border-radius: 8px;
-    }
+        .service-image {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+        }
 
-    .service-image img {
-        transition: transform 0.3s ease;
-    }
+        .service-image img {
+            transition: transform 0.3s ease;
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
 
-    .service-card-items:hover .service-image img {
-        transform: scale(1.05);
-    }
-</style>
+        .service-card-items:hover .service-image img {
+            transform: scale(1.05);
+        }
 
+        /* Styles du carousel */
+        #servicesCarousel {
+            position: relative;
+            padding: 0 50px;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-control-prev:hover,
+        .carousel-control-next:hover {
+            opacity: 1;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .carousel-control-prev {
+            left: 0;
+        }
+
+        .carousel-control-next {
+            right: 0;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .carousel-indicators {
+            position: relative;
+            margin-top: 30px;
+            margin-bottom: 0;
+        }
+
+        .carousel-indicators button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ddd;
+            border: none;
+            margin: 0 5px;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-indicators button.active {
+            background-color: #007bff;
+            width: 30px;
+            border-radius: 6px;
+        }
+
+        /* Transition douce */
+        .carousel-item {
+            transition: transform 0.8s ease-in-out;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            #servicesCarousel {
+                padding: 0 30px;
+            }
+
+            .carousel-control-prev,
+            .carousel-control-next {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    </style>
+
+    <script>
+        // Configuration du carousel pour un défilement plus lent et fluide
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousel = document.querySelector('#servicesCarousel');
+
+            if (carousel) {
+                // Initialiser le carousel avec Bootstrap
+                const bsCarousel = new bootstrap.Carousel(carousel, {
+                    interval: 5000, // 5 secondes entre chaque slide (vitesse modérée)
+                    wrap: true, // Boucle infinie
+                    pause: 'hover', // Pause au survol
+                    ride: 'carousel'
+                });
+
+                // Pause au survol des cartes
+                const serviceCards = document.querySelectorAll('.service-card-items');
+                serviceCards.forEach(card => {
+                    card.addEventListener('mouseenter', () => {
+                        bsCarousel.pause();
+                    });
+                    card.addEventListener('mouseleave', () => {
+                        bsCarousel.cycle();
+                    });
+                });
+            }
+        });
+    </script>
     <div class="brand-section fix section-padding pt-0">
         <div class="container mx-auto">
             <div class="brand-wrapper">
