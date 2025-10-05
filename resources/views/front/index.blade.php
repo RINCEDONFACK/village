@@ -234,6 +234,126 @@
         </section>
     @endforeach
 
+    <section class="service-section-3 pb-0 fix section-padding bg-cover"
+    style="background-image: url('assets/img/service/service-bg-3.jpg');">
+    <div class="container">
+        <div class="section-title-area">
+            <div class="section-title">
+                <span>Our Services</span>
+                <h2>Discover Our <br> Professional Services</h2>
+            </div>
+            <a href="{{ route('services') }}" class="theme-btn">
+                View All Services
+                <i class="fa-solid fa-arrow-right-long"></i>
+            </a>
+        </div>
+
+        <div class="services-container">
+            <div class="row">
+                @forelse ($services as $service)
+                    <div class="col-xl-4 col-lg-6 col-md-6 mb-4">
+                        <div class="service-card-items h-100">
+                            <!-- Image principale -->
+                            <div class="service-image">
+                                @if ($service->image)
+                                    <img src="{{ asset('storage/' . $service->image) }}"
+                                        alt="{{ $service->slug }}" class="img-fluid">
+                                @else
+                                    <img src="{{ asset('assets/img/service/02.jpg') }}"
+                                        alt="Default Service Image" class="img-fluid">
+                                @endif
+                            </div>
+
+                            <div class="icon-2">
+                                <img src="{{ asset('assets/img/service/icon/s-icon-1.svg') }}" alt="icon">
+                            </div>
+
+                            <div class="service-content">
+                                <div class="icon">
+                                    <img src="{{ asset('assets/img/service/icon/s-icon-1.svg') }}" alt="icon">
+                                </div>
+
+                                <!-- Titre (slug) -->
+                                <h4>
+                                    <a href="{{ route('services') }}">
+                                        {{ $service->slug }}
+                                    </a>
+                                </h4>
+
+                                <!-- Description courte -->
+                                @if ($service->description)
+                                    <p>{{ Str::limit(strip_tags($service->description), 120) }}</p>
+                                @endif
+
+                                <!-- Badge de statut -->
+                                <div class="service-status mb-3">
+                                    @if ($service->is_active)
+                                        <span class="badge bg-success">
+                                            <i class="fa-solid fa-check-circle"></i> Active
+                                        </span>
+                                    @else
+                                        <span class="badge bg-secondary">
+                                            <i class="fa-solid fa-times-circle"></i> Inactive
+                                        </span>
+                                    @endif
+                                </div>
+
+                                <!-- Bouton En savoir plus -->
+                                <a href="{{ route('services') }}" class="theme-btn-2 mt-3">
+                                    Learn More
+                                    <i class="fa-solid fa-arrow-right-long"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                @empty
+                    <div class="col-12">
+                        <div class="alert alert-info text-center">
+                            <i class="fa-solid fa-info-circle"></i>
+                            No services available at the moment
+                        </div>
+                    </div>
+                @endforelse
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .service-status {
+        margin: 15px 0;
+    }
+
+    .service-status .badge {
+        padding: 8px 15px;
+        font-size: 0.85rem;
+        font-weight: 500;
+    }
+
+    .service-card-items {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-card-items:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .service-image {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+    }
+
+    .service-image img {
+        transition: transform 0.3s ease;
+    }
+
+    .service-card-items:hover .service-image img {
+        transform: scale(1.05);
+    }
+</style>
+
     <div class="brand-section fix section-padding pt-0">
         <div class="container mx-auto">
             <div class="brand-wrapper">

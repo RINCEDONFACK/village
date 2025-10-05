@@ -9,6 +9,7 @@ use App\Models\Itcommunity;
 use App\Models\Partner;
 use App\Models\Post;
 use App\Models\Project;
+use App\Models\Service;
 use App\Models\Team;
 use App\Models\Temoignage;
 use App\Models\Testimonial;
@@ -19,6 +20,7 @@ class AcceuilController extends Controller
     public function index()
     {
         $teams = Team::all();
+        $services = Service::all();
         $cultures = Culture::all();
         $temoignages = Testimonial::where('is_active', true)->get();
         $informatique = Itcommunity::all();
@@ -37,7 +39,8 @@ class AcceuilController extends Controller
             'informatique',
             'temoignages',
             'posts',
-            'cultures'
+            'cultures',
+            'services'
         ));
     }
 }
