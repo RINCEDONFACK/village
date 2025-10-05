@@ -10,7 +10,6 @@ return new class extends Migration {
         Schema::create('it_trainings', function (Blueprint $table) {
             $table->id();
             $table->string('image')->nullable();
-            $table->string('titre');
             $table->string('reference')->nullable();
             $table->text('description');
             $table->integer('duree')->nullable();
