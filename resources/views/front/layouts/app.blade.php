@@ -2,12 +2,12 @@
 <html lang="{{ app()->getLocale() }}">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-<meta name="theme-color" content="#007bff">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="mobile-web-app-capable" content="yes">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#007bff">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="mobile-web-app-capable" content="yes">
 
     <title>{{ __('maisonduvillage.site_title') }}</title>
     <link rel="shortcut icon" href="{{ asset('assets/img/logo/logo.jpg') }}" type="image/x-icon" />
@@ -489,13 +489,15 @@
         }
 
         /* Empêcher le débordement horizontal */
-        body, html {
+        body,
+        html {
             max-width: 100vw;
             overflow-x: hidden;
         }
 
         /* Touch friendly */
-        a, button {
+        a,
+        button {
             min-height: 44px;
             min-width: 44px;
             display: inline-flex;
@@ -513,268 +515,427 @@
 </head>
 
 <body>
+<header>
+    <div class="nav-container">
+        <div class="logo">
+            <a href="/">
+                <img src="{{ asset('assets/img/logo/logo.jpg') }}" alt="{{ __('maisonduvillage.logo_alt') }}" />
+            </a>
+        </div>
 
-    <header>
-        <div class="nav-container">
-            <div class="logo">
-                <a href="/">
-                    <img src="{{ asset('assets/img/logo/logo.jpg') }}" alt="{{ __('maisonduvillage.logo_alt') }}" />
+        <div class="nav-right">
+            <!-- Menu -->
+            <nav id="nav-menu" class="menu" role="navigation">
+                <a href="{{ route('accueil.index') }}">{{ __('maisonduvillage.nav.home') }}</a>
+                <a href="{{ route('propos.index') }}">{{ __('maisonduvillage.nav.about') }}</a>
+                <a href="{{ route('services') }}">Services</a>
+                <a href="{{ route('cultures.index') }}">{{ __('maisonduvillage.nav.culture') }}</a>
+                <a href="{{ route('women.index') }}">{{ __('maisonduvillage.nav.women') }}</a>
+                <a href="{{ route('site.informatique.index') }}">{{ __('maisonduvillage.nav.it') }}</a>
+                <a href="#">{{ __('maisonduvillage.nav.youth_festival') }}</a>
+                <a href="{{ route('blog.index') }}">{{ __('maisonduvillage.nav.news') }}</a>
+                <a href="{{ route('projects.index') }}">{{ __('maisonduvillage.nav.projects') }}</a>
+                <a href="{{ route('equipe.index') }}">{{ __('maisonduvillage.nav.team') }}</a>
+                <a href="{{ route('contacter.index') }}">{{ __('maisonduvillage.nav.contact') }}</a>
+            </nav>
+
+            <!-- Sélecteur de langue -->
+            <div class="language-switcher">
+                <a href="{{ route('lang.switch', 'fr') }}"
+                    class="{{ app()->getLocale() == 'fr' ? 'active' : '' }}"
+                    title="{{ __('maisonduvillage.switch_to_french') }}">
+                    🇫🇷 FR
+                </a>
+                <a href="{{ route('lang.switch', 'en') }}"
+                    class="{{ app()->getLocale() == 'en' ? 'active' : '' }}"
+                    title="{{ __('maisonduvillage.switch_to_english') }}">
+                    🇬🇧 EN
                 </a>
             </div>
 
-            <div class="nav-right">
-                <!-- Menu -->
-                <nav id="nav-menu" class="menu" role="navigation">
-                    <a href="{{ route('accueil.index') }}">{{ __('maisonduvillage.nav.home') }}</a>
-                    <a href="{{ route('propos.index') }}">{{ __('maisonduvillage.nav.about') }}</a>
-                    <a href="{{ route('cultures.index') }}">{{ __('maisonduvillage.nav.culture') }}</a>
-                    <a href="{{ route('women.index') }}">{{ __('maisonduvillage.nav.women') }}</a>
-                    <a href="{{ route('site.informatique.index') }}">{{ __('maisonduvillage.nav.it') }}</a>
-                    <a href="#">{{ __('maisonduvillage.nav.youth_festival') }}</a>
-                    <a href="{{ route('blog.index') }}">{{ __('maisonduvillage.nav.news') }}</a>
-                    <a href="{{ route('projects.index') }}">{{ __('maisonduvillage.nav.projects') }}</a>
-                    <a href="{{ route('equipe.index') }}">{{ __('maisonduvillage.nav.team') }}</a>
-                    <a href="{{ route('contacter.index') }}">{{ __('maisonduvillage.nav.contact') }}</a>
-                </nav>
-
-                <!-- Sélecteur de langue -->
-                <div class="language-switcher">
-                    <a href="{{ route('lang.switch', 'fr') }}"
-                       class="{{ app()->getLocale() == 'fr' ? 'active' : '' }}"
-                       title="{{ __('maisonduvillage.switch_to_french') }}">
-                        🇫🇷 FR
-                    </a>
-                    <a href="{{ route('lang.switch', 'en') }}"
-                       class="{{ app()->getLocale() == 'en' ? 'active' : '' }}"
-                       title="{{ __('maisonduvillage.switch_to_english') }}">
-                        🇬🇧 EN
-                    </a>
-                </div>
-
-                <!-- Bouton mobile -->
-                <button class="hamburger" onclick="toggleMenu()" aria-label="{{ __('maisonduvillage.navigation_menu') }}">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-        </div>
-    </header>
-
-@yield('content')
-
-<footer class="footer-section footer-bg">
-    <div class="footer-shape-4">
-        <img src="assets/img/footer-shape-4.png" alt="shape-img">
-    </div>
-    <div class="shape-2">
-        <img src="assets/img/footer-shape-3.png" alt="shape-img">
-    </div>
-    <div class="footer-widgets-wrapper">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
-                    <div class="single-footer-widget">
-                        <div class="widget-head">
-                            <h3>{{ __('maisonduvillage.footer.about_title') }}</h3>
-                        </div>
-                        <div class="footer-content">
-                            <p>{{ __('maisonduvillage.footer.about_description') }}</p>
-                            <div class="social-icon d-flex align-items-center">
-                                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                                <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                                <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-2 col-lg-4 col-md-6 ps-lg-5 wow fadeInUp" data-wow-delay=".5s">
-                    <div class="single-footer-widget">
-                        <div class="widget-head">
-                            <h3>{{ __('maisonduvillage.footer.navigation_title') }}</h3>
-                        </div>
-                        <ul class="list-area">
-                            <li>
-                                <a href="{{ route('accueil.index') }}">
-                                    <i class="fa-solid fa-chevron-right"></i>
-                                    {{ __('maisonduvillage.nav.home') }}
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('propos.index') }}">
-                                    <i class="fa-solid fa-chevron-right"></i>
-                                    {{ __('maisonduvillage.nav.about') }}
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('cultures.index') }}">
-                                    <i class="fa-solid fa-chevron-right"></i>
-                                    {{ __('maisonduvillage.nav.culture') }}
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('women.index') }}">
-                                    <i class="fa-solid fa-chevron-right"></i>
-                                    {{ __('maisonduvillage.nav.women') }}
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('blog.index') }}">
-                                    <i class="fa-solid fa-chevron-right"></i>
-                                    {{ __('maisonduvillage.nav.news') }}
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 ps-lg-5 wow fadeInUp" data-wow-delay=".5s">
-                    <div class="single-footer-widget style-margin">
-                        <div class="widget-head">
-                            <h3>{{ __('maisonduvillage.footer.services_title') }}</h3>
-                        </div>
-                        <ul class="list-area">
-                            <li>
-                                <a href="{{ route('site.informatique.index') }}">
-                                    <i class="fa-solid fa-chevron-right"></i>
-                                    {{ __('maisonduvillage.nav.it') }}
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('projects.index') }}">
-                                    <i class="fa-solid fa-chevron-right"></i>
-                                    {{ __('maisonduvillage.nav.projects') }}
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('equipe.index') }}">
-                                    <i class="fa-solid fa-chevron-right"></i>
-                                    {{ __('maisonduvillage.nav.team') }}
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fa-solid fa-chevron-right"></i>
-                                    {{ __('maisonduvillage.nav.youth_festival') }}
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('contacter.index') }}">
-                                    <i class="fa-solid fa-chevron-right"></i>
-                                    {{ __('maisonduvillage.nav.contact') }}
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".7s">
-                    <div class="single-footer-widget style-margin">
-                        <div class="widget-head">
-                            <h3>{{ __('maisonduvillage.footer.newsletter_title') }}</h3>
-                        </div>
-                       <div class="footer-content">
-                            <p>{{ __('maisonduvillage.footer.newsletter_description') }}</p>
-                            <div class="footer-input">
-                                <input type="email" id="email2" placeholder="{{ __('maisonduvillage.footer.email_placeholder') }}">
-                                <button class="newsletter-btn" type="submit" aria-label="{{ __('maisonduvillage.footer.subscribe_button') }}">
-                                    <i class="fab fa-telegram-plane"></i>
-                                </button>
-                            </div>
-                       </div>
-                    </div>
-                </div>
-            </div>
+            <!-- Bouton mobile -->
+            <button class="hamburger" onclick="toggleMenu()"
+                aria-label="{{ __('maisonduvillage.navigation_menu') }}">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </div>
-   <div class="footer-bottom style-3">
-    <div class="container">
-        <div class="footer-wrapper d-flex align-items-center justify-content-between">
-            <!-- Logo dans un avatar -->
-            <div class="footer-logo wow fadeInLeft" data-wow-delay=".3s">
-                <a href="{{ route('accueil.index') }}" class="d-flex align-items-center">
-                    <div>
-                        <img src="{{ asset('assets/img/logo/logo.jpg') }}" alt="{{ __('maisonduvillage.logo_alt') }}">
-                    </div>
-                </a>
-            </div>
+</header>
 
-            <!-- Texte du footer -->
-            <p class="wow fadeInRight color-2" data-wow-delay=".5s">
-                {{ __('maisonduvillage.footer.copyright', ['year' => date('Y')]) }} <a href="{{ route('accueil.index') }}">{{ __('maisonduvillage.site_name') }}</a>
-            </p>
-        </div>
-    </div>
-
-    <!-- Bouton pour remonter -->
-    <a href="#" id="scrollUp" class="scroll-icon" aria-label="{{ __('maisonduvillage.scroll_to_top') }}">
-        <i class="far fa-arrow-up"></i>
-    </a>
-</div>
-
-</footer>
-
-<script>
-// Toggle menu mobile
-function toggleMenu() {
-    const menu = document.getElementById('nav-menu');
-    menu.classList.toggle('show');
+<style>
+/* Style de base pour le header */
+header {
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-// Fermer le menu lors du clic sur un lien
-document.querySelectorAll('.menu a').forEach(link => {
-    link.addEventListener('click', () => {
-        if (window.innerWidth <= 991) {
-            document.getElementById('nav-menu').classList.remove('show');
-        }
-    });
-});
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
 
-// Fermer le menu si on clique en dehors
-document.addEventListener('click', (e) => {
-    const menu = document.getElementById('nav-menu');
-    const hamburger = document.querySelector('.hamburger');
+.logo img {
+    height: 60px;
+    width: auto;
+}
 
-    if (window.innerWidth <= 991 &&
-        !menu.contains(e.target) &&
-        !hamburger.contains(e.target) &&
-        menu.classList.contains('show')) {
-        menu.classList.remove('show');
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* Menu navigation */
+.menu {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    transition: color 0.3s;
+    white-space: nowrap;
+}
+
+.menu a:hover {
+    color: #007bff;
+}
+
+/* Sélecteur de langue */
+.language-switcher {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.language-switcher a {
+    text-decoration: none;
+    color: #666;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+}
+
+.language-switcher a:hover {
+    background: #f0f0f0;
+}
+
+.language-switcher a.active {
+    background: #007bff;
+    color: #fff;
+}
+
+/* Bouton hamburger */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .menu {
+        gap: 1rem;
     }
-});
 
-// Service Worker Registration
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js')
-            .then(registration => {
-                console.log('✅ Service Worker enregistré:', registration.scope);
-            })
-            .catch(error => {
-                console.log('❌ Erreur Service Worker:', error);
-            });
-    });
+    .menu a {
+        font-size: 0.9rem;
+    }
 }
 
-// Smooth scroll pour le bouton remonter
-document.getElementById('scrollUp').addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
-</script>
+@media (max-width: 992px) {
+    .hamburger {
+        display: block;
+    }
 
-<!--<< All JS Plugins >>-->
-<script src="{{asset('assets/js/jquery-3.7.1.min.js')}}"></script>
-<script src="{{asset('assets/js/viewport.jquery.js')}}"></script>
-<script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>
-<script src="{{asset('assets/js/jquery.nice-select.min.js')}}"></script>
-<script src="{{asset('assets/js/jquery.waypoints.js')}}"></script>
-<script src="{{asset('assets/js/jquery.counterup.min.js')}}"></script>
-<script src="{{asset('assets/js/swiper-bundle.min.js')}}"></script>
-<script src="{{asset('assets/js/jquery.meanmenu.min.js')}}"></script>
-<script src="{{asset('assets/js/jquery.magnific-popup.min.js')}}"></script>
-<script src="{{asset('assets/js/wow.min.js')}}"></script>
-<script src="{{asset('assets/js/main.js')}}"></script>
+    .nav-right {
+        position: relative;
+    }
+
+    .menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: #fff;
+        flex-direction: column;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        padding: 1rem;
+        border-radius: 8px;
+        min-width: 200px;
+        gap: 0;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu a {
+        padding: 0.75rem 1rem;
+        width: 100%;
+        border-bottom: 1px solid #eee;
+    }
+
+    .menu a:last-child {
+        border-bottom: none;
+    }
+
+    .language-switcher {
+        order: -1;
+    }
+}
+
+@media (max-width: 576px) {
+    .nav-container {
+        padding: 1rem;
+    }
+
+    .logo img {
+        height: 45px;
+    }
+
+    .nav-right {
+        gap: 1rem;
+    }
+}
+</style>
+
+    @yield('content')
+
+    <footer class="footer-section footer-bg">
+        <div class="footer-shape-4">
+            <img src="assets/img/footer-shape-4.png" alt="shape-img">
+        </div>
+        <div class="shape-2">
+            <img src="assets/img/footer-shape-3.png" alt="shape-img">
+        </div>
+        <div class="footer-widgets-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
+                        <div class="single-footer-widget">
+                            <div class="widget-head">
+                                <h3>{{ __('maisonduvillage.footer.about_title') }}</h3>
+                            </div>
+                            <div class="footer-content">
+                                <p>{{ __('maisonduvillage.footer.about_description') }}</p>
+                                <div class="social-icon d-flex align-items-center">
+                                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-4 col-md-6 ps-lg-5 wow fadeInUp" data-wow-delay=".5s">
+                        <div class="single-footer-widget">
+                            <div class="widget-head">
+                                <h3>{{ __('maisonduvillage.footer.navigation_title') }}</h3>
+                            </div>
+                            <ul class="list-area">
+                                <li>
+                                    <a href="{{ route('accueil.index') }}">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                        {{ __('maisonduvillage.nav.home') }}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('propos.index') }}">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                        {{ __('maisonduvillage.nav.about') }}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('cultures.index') }}">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                        {{ __('maisonduvillage.nav.culture') }}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('women.index') }}">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                        {{ __('maisonduvillage.nav.women') }}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('blog.index') }}">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                        {{ __('maisonduvillage.nav.news') }}
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 ps-lg-5 wow fadeInUp" data-wow-delay=".5s">
+                        <div class="single-footer-widget style-margin">
+                            <div class="widget-head">
+                                <h3>{{ __('maisonduvillage.footer.services_title') }}</h3>
+                            </div>
+                            <ul class="list-area">
+                                <li>
+                                    <a href="{{ route('site.informatique.index') }}">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                        {{ __('maisonduvillage.nav.it') }}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('projects.index') }}">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                        {{ __('maisonduvillage.nav.projects') }}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('equipe.index') }}">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                        {{ __('maisonduvillage.nav.team') }}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                        {{ __('maisonduvillage.nav.youth_festival') }}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('contacter.index') }}">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                        {{ __('maisonduvillage.nav.contact') }}
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".7s">
+                        <div class="single-footer-widget style-margin">
+                            <div class="widget-head">
+                                <h3>{{ __('maisonduvillage.footer.newsletter_title') }}</h3>
+                            </div>
+                            <div class="footer-content">
+                                <p>{{ __('maisonduvillage.footer.newsletter_description') }}</p>
+                                <div class="footer-input">
+                                    <input type="email" id="email2"
+                                        placeholder="{{ __('maisonduvillage.footer.email_placeholder') }}">
+                                    <button class="newsletter-btn" type="submit"
+                                        aria-label="{{ __('maisonduvillage.footer.subscribe_button') }}">
+                                        <i class="fab fa-telegram-plane"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom style-3">
+            <div class="container">
+                <div class="footer-wrapper d-flex align-items-center justify-content-between">
+                    <!-- Logo dans un avatar -->
+                    <div class="footer-logo wow fadeInLeft" data-wow-delay=".3s">
+                        <a href="{{ route('accueil.index') }}" class="d-flex align-items-center">
+                            <div>
+                                <img src="{{ asset('assets/img/logo/logo.jpg') }}"
+                                    alt="{{ __('maisonduvillage.logo_alt') }}">
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Texte du footer -->
+                    <p class="wow fadeInRight color-2" data-wow-delay=".5s">
+                        {{ __('maisonduvillage.footer.copyright', ['year' => date('Y')]) }} <a
+                            href="{{ route('accueil.index') }}">{{ __('maisonduvillage.site_name') }}</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Bouton pour remonter -->
+            <a href="#" id="scrollUp" class="scroll-icon"
+                aria-label="{{ __('maisonduvillage.scroll_to_top') }}">
+                <i class="far fa-arrow-up"></i>
+            </a>
+        </div>
+
+    </footer>
+
+    <script>
+        // Toggle menu mobile
+        function toggleMenu() {
+            const menu = document.getElementById('nav-menu');
+            menu.classList.toggle('show');
+        }
+
+        // Fermer le menu lors du clic sur un lien
+        document.querySelectorAll('.menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 991) {
+                    document.getElementById('nav-menu').classList.remove('show');
+                }
+            });
+        });
+
+        // Fermer le menu si on clique en dehors
+        document.addEventListener('click', (e) => {
+            const menu = document.getElementById('nav-menu');
+            const hamburger = document.querySelector('.hamburger');
+
+            if (window.innerWidth <= 991 &&
+                !menu.contains(e.target) &&
+                !hamburger.contains(e.target) &&
+                menu.classList.contains('show')) {
+                menu.classList.remove('show');
+            }
+        });
+
+        // Service Worker Registration
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('✅ Service Worker enregistré:', registration.scope);
+                    })
+                    .catch(error => {
+                        console.log('❌ Erreur Service Worker:', error);
+                    });
+            });
+        }
+
+        // Smooth scroll pour le bouton remonter
+        document.getElementById('scrollUp').addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+
+    <!--<< All JS Plugins >>-->
+    <script src="{{ asset('assets/js/jquery-3.7.1.min.js') }}"></script>
+    <script src="{{ asset('assets/js/viewport.jquery.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.nice-select.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.waypoints.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.counterup.min.js') }}"></script>
+    <script src="{{ asset('assets/js/swiper-bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.meanmenu.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('assets/js/wow.min.js') }}"></script>
+    <script src="{{ asset('assets/js/main.js') }}"></script>
 </body>
 
 </html>

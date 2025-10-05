@@ -385,7 +385,7 @@ preg_match(
 
                                     <!-- Bouton En savoir plus -->
                                     <a href="{{ route('cultures.index', $culture->id) }}" class="theme-btn-2 mt-3">
-                                        {{ __('maisonduvillage.buttons.learn_more') }}
+                                        Learnmore
                                         <i class="fa-solid fa-arrow-right-long"></i>
                                     </a>
                                 </div>

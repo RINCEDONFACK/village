@@ -30,6 +30,7 @@ use App\Http\Controllers\site\BlogController;
 use App\Http\Controllers\site\ContacterController;
 use App\Http\Controllers\site\FrontwomenController;
 use App\Http\Controllers\site\InformatiqueController;
+use App\Http\Controllers\site\NosServiceController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -234,3 +235,6 @@ Route::prefix('formations-informatiques')->group(function () {
     Route::get('/', [InformatiqueController::class, 'index'])->name('site.informatique.index');
     Route::get('/{itcommunity}', [InformatiqueController::class, 'show'])->name('site.informatique.show');
 });
+
+Route::get('/services', [NosServiceController::class, 'nosservice'])->name('services');
+

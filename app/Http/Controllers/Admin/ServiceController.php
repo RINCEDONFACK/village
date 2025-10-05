@@ -39,41 +39,20 @@ class ServiceController extends Controller
             'image' => 'nullable',
             'description' => 'nullable|string',
         ]);
-    
+
         // Gestion de l'image
         if ($request->hasFile('image')) {
             $data['image'] = $request->file('image')->store('services', 'public');
         }
-    
+
         // Le service est actif par défaut
         $data['is_active'] = true;
-    
+
         // Création du service
         $service = Service::create($data);
-    
-        // Enregistrement en français (par défaut)
-        // ServiceTranslation::create([
-        //     'service_id' => $service->id,
-        //     'locale' => 'fr',
-        //     'title' => $data['slug'],
-        //     'description' => $data['description'],
-        // ]);
-    
-        // Langues à traduire
-        // $languages = ['en', 'es'];
-    
-        // foreach ($languages as $lang) {
-        //     $translatedTitle = TranslationHelper::translateText($data['slug'], $lang);
-        //     $translatedDescription = TranslationHelper::translateText($data['description'], $lang);
-    
-        //     ServiceTranslation::create([
-        //         'service_id' => $service->id,
-        //         'locale' => $lang,
-        //         'title' => $translatedTitle,
-        //         'description' => $translatedDescription,
-        //     ]);
-        // }
-    
+
+      
+
         return redirect()->route('admin.services.index')
                          ->with('success', 'Service créé avec succès.');
     }
