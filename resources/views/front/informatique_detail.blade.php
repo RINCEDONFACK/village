@@ -173,16 +173,7 @@
                         </div>
 
                         <!-- Boutons d'action -->
-                        <div class="formation-actions text-center">
-                            <a href="#" class="btn btn-primary btn-lg me-3 mb-3">
-                                <i class="fas fa-user-plus me-2"></i>
-                                S'inscrire à la formation
-                            </a>
-                            <a href="#" class="btn btn-outline-secondary btn-lg mb-3">
-                                <i class="fas fa-download me-2"></i>
-                                Télécharger le programme
-                            </a>
-                        </div>
+
                     </div>
                 </div>
 
@@ -267,29 +258,7 @@
                             </div>
                         </div>
 
-                        <!-- Contact -->
-                        <div class="card shadow-sm mb-4">
-                            <div class="card-header bg-success text-white">
-                                <h5 class="mb-0">
-                                    <i class="fas fa-phone me-2"></i>
-                                    Nous contacter
-                                </h5>
-                            </div>
-                            <div class="card-body">
-                                <p class="mb-3">
-                                    <i class="fas fa-envelope text-primary me-2"></i>
-                                    <a href="mailto:formation@example.com">formation@example.com</a>
-                                </p>
-                                <p class="mb-3">
-                                    <i class="fas fa-phone text-success me-2"></i>
-                                    <a href="tel:+237000000000">+237 000 000 000</a>
-                                </p>
-                                <p class="mb-0">
-                                    <i class="fas fa-whatsapp text-success me-2"></i>
-                                    <a href="https://wa.me/237000000000" target="_blank">WhatsApp</a>
-                                </p>
-                            </div>
-                        </div>
+
 
                         <!-- Partage -->
                         <div class="card shadow-sm">
@@ -328,7 +297,7 @@
     </section>
 
     <!-- Formations similaires -->
-    <section class="section-padding bg-light">
+    {{-- <section class="section-padding bg-light">
         <div class="container">
             <div class="section-title text-center mb-5">
                 <h3>Autres formations disponibles</h3>
@@ -367,5 +336,5 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 @endsection
