@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\site\EquipeController;
 use Illuminate\Support\Facades\Route;
-use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
 use App\Http\Controllers\Admin\{
     ServiceController,
     ProjectController,
@@ -238,4 +237,3 @@ Route::prefix('formations-informatiques')->group(function () {
 
 Route::get('/services', [NosServiceController::class, 'nosservice'])->name('services');
 
-Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');

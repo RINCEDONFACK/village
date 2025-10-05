@@ -15,19 +15,19 @@
         </div>
 
         <!--<< Breadcrumb Section Start >>-->
-        <div class="breadcrumb-wrapper bg-cover" style="background-image: url('{{ asset('assets/img/vilatof.jpeg') }}');">
+        <div class="breadcrumb-wrapper bg-cover" style="background-image: url('assets/img/breadcrumb.jpg');">
             <div class="border-shape">
-                <img src="{{ asset('assets/img/element.png') }}" alt="shape-img">
+                <img src="assets/img/element.png" alt="shape-img">
             </div>
             <div class="line-shape">
-                <img src="{{ asset('assets/img/line-element.png') }}" alt="shape-img">
+                <img src="assets/img/line-element.png" alt="shape-img">
             </div>
             <div class="container">
                 <div class="page-heading">
                     <h1 class="wow fadeInUp" data-wow-delay=".3s">Contact Us</h1>
                     <ul class="breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
                         <li>
-                            <a href="{{ url('/') }}">
+                            <a href="index.html">
                                 Home
                             </a>
                         </li>
@@ -45,48 +45,27 @@
         <!-- Contact Section Start -->
         <section class="contact-section fix section-padding">
             <div class="container">
-                @if(session('success'))
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        {{ session('success') }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                @endif
-
-                @if(session('error'))
-                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        {{ session('error') }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                @endif
-
                 <div class="contact-wrapper-2">
                     <div class="row g-4 align-items-center">
                         <div class="col-lg-6">
                             <div class="contact-left-items">
                                 <div class="contact-info-area-2">
-                                    @php
-                                        $tel1 = $setting->where('key', 'tel1')->first();
-                                        $email = $setting->where('key', 'email')->first();
-                                        $adresse = $setting->where('key', 'adresse')->first();
-                                    @endphp
-
                                     <div class="contact-info-items mb-4">
                                         <div class="icon">
                                             <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M23.7891 1.81641H16.7578C13.3658 1.81641 10.6055 4.5767 10.6055 7.96875C10.6055 11.063 12.9015 13.631 15.8789 14.0585V16.7578C15.8788 16.9317 15.9303 17.1016 16.0268 17.2462C16.1234 17.3907 16.2607 17.5033 16.4214 17.5697C16.7456 17.705 17.1258 17.6325 17.3793 17.3792L20.6374 14.1211H23.7891C27.1811 14.1211 30 11.3608 30 7.96875C30 4.5767 27.1811 1.81641 23.7891 1.81641ZM16.7578 8.84754C16.2723 8.84754 15.8789 8.45402 15.8789 7.96863C15.8789 7.48324 16.2723 7.08973 16.7578 7.08973C17.2432 7.08973 17.6367 7.48324 17.6367 7.96863C17.6367 8.45402 17.2432 8.84754 16.7578 8.84754ZM20.2734 8.84754C19.7879 8.84754 19.3945 8.45402 19.3945 7.96863C19.3945 7.48324 19.7879 7.08973 20.2734 7.08973C20.7588 7.08973 21.1523 7.48324 21.1523 7.96863C21.1523 8.45402 20.7588 8.84754 20.2734 8.84754ZM23.7891 8.84754C23.3036 8.84754 22.9102 8.45402 22.9102 7.96863C22.9102 7.48324 23.3036 7.08973 23.7891 7.08973C24.2745 7.08973 24.668 7.48324 24.668 7.96863C24.668 8.45402 24.2745 8.84754 23.7891 8.84754Z" fill="white"/>
                                                 <path d="M19.7461 28.1836C21.2 28.1836 22.3828 27.0008 22.3828 25.5469V22.0312C22.3828 21.6527 22.1408 21.3171 21.782 21.1978L16.5209 19.44C16.2634 19.3533 15.9819 19.3928 15.7553 19.5421L13.5186 21.033C11.1496 19.9035 8.33871 17.0925 7.20914 14.7236L8.7 12.4868C8.77415 12.3754 8.82189 12.2485 8.83958 12.1158C8.85728 11.9831 8.84447 11.8482 8.80213 11.7212L7.04432 6.46014C6.98611 6.28516 6.87428 6.13295 6.72469 6.02512C6.5751 5.91728 6.39534 5.85929 6.21094 5.85938H2.63672C1.18277 5.85938 0 7.02979 0 8.48373C0 18.61 9.6198 28.1836 19.7461 28.1836Z" fill="white"/>
-                                            </svg>
+                                                </svg>
+
                                         </div>
                                         <div class="content">
                                             <p>Call Us 7/24</p>
                                             <h3>
-                                                <a href="tel:{{ $tel1->tel1 ?? '' }}">
-                                                    {{ $tel1->tel1 ?? $tel1->value ?? 'Non disponible' }}
+                                                <a href=""><p>{{ site_setting('tel1', 'Non disponible') }}</p>
                                                 </a>
                                             </h3>
                                         </div>
                                     </div>
-
                                     <div class="contact-info-items mb-4">
                                         <div class="icon">
                                             <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -98,13 +77,10 @@
                                         <div class="content">
                                             <p>Make a Quote</p>
                                             <h3>
-                                                <a href="mailto:{{ $email->email ?? '' }}">
-                                                    {{ $email->email ?? $email->value ?? 'info@example.com' }}
-                                                </a>
+                                                <a href="mailto:infotech@gmail.com">{{ site_setting('email') }}</a>
                                             </h3>
                                         </div>
                                     </div>
-
                                     <div class="contact-info-items border-none">
                                         <div class="icon">
                                             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -115,13 +91,13 @@
                                         <div class="content">
                                             <p>Location</p>
                                             <h3>
-                                                {{ $adresse->adresse ?? $adresse->value ?? 'Dschang, Cameroun' }}
+                                                {{ site_setting('adresse',) }}
                                             </h3>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="video-image">
-                                    <img src="{{ asset('assets/img/video.jpg') }}" alt="img">
+                                    <img src="assets/img/video.jpg" alt="img">
                                     <div class="video-box">
                                         <a href="https://www.youtube.com/watch?v=Cn4G2lZ_g2I" class="video-btn ripple video-popup">
                                             <i class="fa-solid fa-play"></i>
@@ -136,34 +112,24 @@
                                 <p>
                                     Nullam varius, erat quis iaculis dictum, eros urna varius eros, ut blandit felis odio in turpis. Quisque rhoncus, eros in auctor ultrices,
                                 </p>
-                                <form action="{{ route('contact.submit') }}" id="contact-form" method="POST" class="contact-form-items">
-                                    @csrf
+                                <form action="https://gramentheme.com/html/infotek/contact.php" id="contact-form" method="POST" class="contact-form-items">
                                     <div class="row g-4">
                                         <div class="col-lg-6 wow fadeInUp" data-wow-delay=".3s">
                                             <div class="form-clt">
                                                 <span>Your name*</span>
-                                                <input type="text" name="name" id="name" placeholder="Your Name" value="{{ old('name') }}" required>
-                                                @error('name')
-                                                    <small class="text-danger">{{ $message }}</small>
-                                                @enderror
+                                                <input type="text" name="name" id="name" placeholder="Your Name">
                                             </div>
                                         </div>
                                         <div class="col-lg-6 wow fadeInUp" data-wow-delay=".5s">
                                             <div class="form-clt">
                                                 <span>Your Email*</span>
-                                                <input type="email" name="email" id="email" placeholder="Your Email" value="{{ old('email') }}" required>
-                                                @error('email')
-                                                    <small class="text-danger">{{ $message }}</small>
-                                                @enderror
+                                                <input type="text" name="email" id="email" placeholder="Your Email">
                                             </div>
                                         </div>
                                         <div class="col-lg-12 wow fadeInUp" data-wow-delay=".7s">
                                             <div class="form-clt">
                                                 <span>Write Message*</span>
-                                                <textarea name="message" id="message" placeholder="Write Message" required>{{ old('message') }}</textarea>
-                                                @error('message')
-                                                    <small class="text-danger">{{ $message }}</small>
-                                                @enderror
+                                                <textarea name="message" id="message" placeholder="Write Message"></textarea>
                                             </div>
                                         </div>
                                         <div class="col-lg-7 wow fadeInUp" data-wow-delay=".9s">
@@ -184,7 +150,7 @@
         <div class="map-section">
             <div class="map-items">
                 <div class="googpemap">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63703.28893686859!2d10.0127!3d5.4441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x105f31b15ba9c0ed%3A0x17e5f8b3e41ef3c1!2sDschang%2C%20Cameroon!5e0!3m2!1sen!2s!4v1641984054261!5m2!1sen!2s" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6678.7619084840835!2d144.9618311901502!3d-37.81450084255415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642b4758afc1d%3A0x3119cc820fdfc62e!2sEnvato!5e0!3m2!1sen!2sbd!4v1641984054261!5m2!1sen!2sbd" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
