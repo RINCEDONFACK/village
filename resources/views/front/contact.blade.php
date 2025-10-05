@@ -45,11 +45,31 @@
         <!-- Contact Section Start -->
         <section class="contact-section fix section-padding">
             <div class="container">
+                @if(session('success'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ session('success') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
+
+                @if(session('error'))
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        {{ session('error') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
+
                 <div class="contact-wrapper-2">
                     <div class="row g-4 align-items-center">
                         <div class="col-lg-6">
                             <div class="contact-left-items">
                                 <div class="contact-info-area-2">
+                                    @php
+                                        $tel1 = $setting->where('key', 'tel1')->first();
+                                        $email = $setting->where('key', 'email')->first();
+                                        $adresse = $setting->where('key', 'adresse')->first();
+                                    @endphp
+
                                     <div class="contact-info-items mb-4">
                                         <div class="icon">
                                             <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -60,12 +80,13 @@
                                         <div class="content">
                                             <p>Call Us 7/24</p>
                                             <h3>
-                                                <a href="tel:{{ site_setting('tel1') }}">
-                                                    {{ site_setting('tel1', 'Non disponible') }}
+                                                <a href="tel:{{ $tel1->tel1 ?? '' }}">
+                                                    {{ $tel1->tel1 ?? $tel1->value ?? 'Non disponible' }}
                                                 </a>
                                             </h3>
                                         </div>
                                     </div>
+
                                     <div class="contact-info-items mb-4">
                                         <div class="icon">
                                             <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -77,12 +98,13 @@
                                         <div class="content">
                                             <p>Make a Quote</p>
                                             <h3>
-                                                <a href="mailto:{{ site_setting('email') }}">
-                                                    {{ site_setting('email', 'info@example.com') }}
+                                                <a href="mailto:{{ $email->email ?? '' }}">
+                                                    {{ $email->email ?? $email->value ?? 'info@example.com' }}
                                                 </a>
                                             </h3>
                                         </div>
                                     </div>
+
                                     <div class="contact-info-items border-none">
                                         <div class="icon">
                                             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -93,7 +115,7 @@
                                         <div class="content">
                                             <p>Location</p>
                                             <h3>
-                                                {{ site_setting('adresse', 'Dschang, Cameroun') }}
+                                                {{ $adresse->adresse ?? $adresse->value ?? 'Dschang, Cameroun' }}
                                             </h3>
                                         </div>
                                     </div>
@@ -120,19 +142,28 @@
                                         <div class="col-lg-6 wow fadeInUp" data-wow-delay=".3s">
                                             <div class="form-clt">
                                                 <span>Your name*</span>
-                                                <input type="text" name="name" id="name" placeholder="Your Name" required>
+                                                <input type="text" name="name" id="name" placeholder="Your Name" value="{{ old('name') }}" required>
+                                                @error('name')
+                                                    <small class="text-danger">{{ $message }}</small>
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="col-lg-6 wow fadeInUp" data-wow-delay=".5s">
                                             <div class="form-clt">
                                                 <span>Your Email*</span>
-                                                <input type="email" name="email" id="email" placeholder="Your Email" required>
+                                                <input type="email" name="email" id="email" placeholder="Your Email" value="{{ old('email') }}" required>
+                                                @error('email')
+                                                    <small class="text-danger">{{ $message }}</small>
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="col-lg-12 wow fadeInUp" data-wow-delay=".7s">
                                             <div class="form-clt">
                                                 <span>Write Message*</span>
-                                                <textarea name="message" id="message" placeholder="Write Message" required></textarea>
+                                                <textarea name="message" id="message" placeholder="Write Message" required>{{ old('message') }}</textarea>
+                                                @error('message')
+                                                    <small class="text-danger">{{ $message }}</small>
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="col-lg-7 wow fadeInUp" data-wow-delay=".9s">
