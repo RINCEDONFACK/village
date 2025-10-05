@@ -140,9 +140,7 @@
                             </div>
                             @forelse($post->comments ?? [] as $comment)
                                 <div class="blog-single-comment d-flex gap-4 pt-4 pb-4" style="border-bottom: 1px solid #e0e0e0;">
-                                    <div class="image" style="flex-shrink: 0;">
-                                        <img src="{{ asset('assets/img/news/comment.png') }}" alt="image" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; border: 3px solid #ff6b2c;">
-                                    </div>
+                                   
                                     <div class="content" style="flex: 1;">
                                         <div class="head d-flex flex-wrap gap-2 align-items-center justify-content-between">
                                             <div class="con">
