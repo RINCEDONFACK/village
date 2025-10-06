@@ -39,7 +39,7 @@ class TeamController extends Controller
             'tel' => 'required|string|regex:/^\+\d{8,15}$/',
             'tel' => 'required',
             'image' => 'nullable',
-            'presentation' => 'nullable|string',
+            'contenue' => 'nullable|string',
 
         ]);
 
@@ -84,10 +84,10 @@ class TeamController extends Controller
             'fonction' => 'required|string|max:255',
             'tel' => 'nullable|string|max:50',
             'full_phone' => 'nullable|string|max:50',
-            'presentation' => 'nullable|string',
+            'contenue' => 'nullable|string',
             'image' => 'nullable',
         ]);
-    
+
         if ($request->hasFile('image')) {
             if ($team->image) {
                 Storage::disk('public')->delete($team->image);
@@ -96,10 +96,10 @@ class TeamController extends Controller
         }
         $data['tel'] = $request->input('full_phone');
         $team->update($data);
-    
+
         return redirect()->route('admin.teams.index')->with('success', 'Membre de l\'équipe mis à jour avec succès.');
     }
-    
+
 
     /**
      * Supprime un project.

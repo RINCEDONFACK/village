@@ -45,8 +45,8 @@
                 <p class="text-lg">{{ $team->tel }}</p>
             </div>
             <div>
-                <strong class="block text-sm text-gray-500">Presentation :</strong>
-                <div class="prose max-w-none">{!! $team->presentation !!}</div>
+                <strong class="block text-sm text-gray-500">contenue :</strong>
+                <div class="prose max-w-none">{!! $team->contenue !!}</div>
             </div>
         </div>
 
