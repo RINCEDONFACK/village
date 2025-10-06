@@ -86,7 +86,7 @@ return new class extends Migration {
             $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
-        
+
         Schema::create('company_missions', function (Blueprint $table) {
             $table->id();
             $table->string('title');
@@ -110,20 +110,12 @@ return new class extends Migration {
             $table->id();
             $table->string('photo')->nullable();
             $table->string('name');
-            $table->string('fonction');
-            $table->string('contenu');
+
             $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
 
-        Schema::create('testimonial_translations', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('testimonial_id')->constrained()->onDelete('cascade');
-            $table->string('locale');
-            $table->longText('content')->nullable();
-            $table->timestamps();
-        });
-
+        
         // Contacts
         Schema::create('contacts', function (Blueprint $table) {
             $table->id();

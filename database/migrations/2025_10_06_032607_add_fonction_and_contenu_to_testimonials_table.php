@@ -6,24 +6,18 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::table('testimonials', function (Blueprint $table) {
-                    $table->text('contenu')->change();
-
+            $table->string('fonction')->after('name');
+            $table->string('contenu')->after('fonction');
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::table('testimonials', function (Blueprint $table) {
-            $table->string('contenu')->change();
+            $table->dropColumn(['fonction', 'contenu']);
         });
     }
 };

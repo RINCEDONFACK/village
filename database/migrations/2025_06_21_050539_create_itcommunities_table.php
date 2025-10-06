@@ -11,7 +11,6 @@ return new class extends Migration {
             $table->id();
             $table->string('image')->nullable();
             $table->string('reference')->nullable();
-            $table->text('description');
             $table->integer('duree')->nullable();
             $table->date('date_debut')->nullable();
             $table->date('date_fin')->nullable();
