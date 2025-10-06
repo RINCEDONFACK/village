@@ -10,14 +10,14 @@ return new class extends Migration
     {
         Schema::table('teams', function (Blueprint $table) {
             $table->string('fonction')->after('name');
-            $table->string('contenu')->after('fonction');
+            $table->string('presentation')->after('fonction');
         });
     }
 
     public function down(): void
     {
         Schema::table('teams', function (Blueprint $table) {
-            $table->dropColumn(['fonction', 'contenu']);
+            $table->dropColumn(['fonction', 'presentation']);
         });
     }
 };
