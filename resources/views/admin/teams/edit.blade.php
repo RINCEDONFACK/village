@@ -60,8 +60,8 @@
 
             <!-- Présentation -->
             <div>
-                <label for="contenue" class="block text-sm font-medium text-gray-700 mb-1">Présentation</label>
-                <textarea rows="8" name="contenue" id="contenue" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:ring-yellow-300">{{ old('contenue', $team->contenue) }}</textarea>
+                <label for="contenu" class="block text-sm font-medium text-gray-700 mb-1">Présentation</label>
+                <textarea rows="8" name="contenu" id="contenu" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:ring-yellow-300">{{ old('contenu', $team->contenu) }}</textarea>
             </div>
 
             <!-- Bouton Enregistrer -->

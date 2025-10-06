@@ -39,7 +39,7 @@ class TeamController extends Controller
             'tel' => 'required|string|regex:/^\+\d{8,15}$/',
             'tel' => 'required',
             'image' => 'nullable',
-            'contenue' => 'nullable|string',
+            'contenu' => 'nullable|string',
 
         ]);
 
@@ -84,7 +84,7 @@ class TeamController extends Controller
             'fonction' => 'required|string|max:255',
             'tel' => 'nullable|string|max:50',
             'full_phone' => 'nullable|string|max:50',
-            'contenue' => 'nullable|string',
+            'contenu' => 'nullable|string',
             'image' => 'nullable',
         ]);
 
