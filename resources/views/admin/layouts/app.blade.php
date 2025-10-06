@@ -10,6 +10,11 @@
     <meta name="theme-color" content="#3b82f6">
     <title>Admin - La Maison du Village</title>
 
+    <link rel="icon" href="{{ asset('logo.jpg') }}?v={{ time() }}" type="image/jpeg">
+<link rel="apple-touch-icon" href="{{ asset('logo.jpg') }}?v={{ time() }}">
+<link rel="manifest" href="{{ asset('manifest.json') }}?v={{ time() }}">
+
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" />
