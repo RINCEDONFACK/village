@@ -544,7 +544,10 @@
                 <a href="{{ route('blog.index') }}">{{ __('maisonduvillage.nav.news') }}</a>
                 <a href="{{ route('projects.index') }}">{{ __('maisonduvillage.nav.projects') }}</a>
                 <a href="{{ route('equipe.index') }}">{{ __('maisonduvillage.nav.team') }}</a>
+                <a href="{{ route('produits.index') }}">Produits Traditionnels</a>
+
                 <a href="{{ route('contacter.index') }}">{{ __('maisonduvillage.nav.contact') }}</a>
+
             </nav>
 
             <!-- Sélecteur de langue -->

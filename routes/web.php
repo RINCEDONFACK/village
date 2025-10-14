@@ -31,6 +31,7 @@ use App\Http\Controllers\site\ContacterController;
 use App\Http\Controllers\site\FrontwomenController;
 use App\Http\Controllers\site\InformatiqueController;
 use App\Http\Controllers\site\NosServiceController;
+use App\Http\Controllers\site\ProduitController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -270,4 +271,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('produits_traditionnels-export', [ProduitTraditionnelController::class, 'export'])->name('produits_traditionnels.export');
     Route::get('produits_traditionnels-statistiques', [ProduitTraditionnelController::class, 'statistiques'])->name('produits_traditionnels.statistiques');
     Route::post('produits_traditionnels-check-stock', [ProduitTraditionnelController::class, 'checkStock'])->name('produits_traditionnels.check-stock');
+});
+
+
+Route::prefix('produits-traditionnels')->name('produits.')->group(function () {
+    Route::get('/', [ProduitController::class, 'index'])->name('index');
+    Route::get('/{produitTraditionnel}', [ProduitController::class, 'show'])->name('show');
 });
