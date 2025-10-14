@@ -742,6 +742,7 @@
                         ['label' => 'Missions', 'route' => route('admin.missions.index'), 'icon' => 'fas fa-bullseye'],
                         ['label' => 'Actualités', 'route' => route('admin.posts.index'), 'icon' => 'fas fa-newspaper'],
                         ['label' => 'Itcommunity', 'route' => route('admin.itcommunities.index'), 'icon' => 'fas fa-laptop-code'],
+                            ['label' => 'Produits Traditionnels', 'route' => route('admin.produits_traditionnels.index'), 'icon' => 'fas fa-gift'],
                         ['label' => 'Paramètres', 'route' => route('admin.settings.index'), 'icon' => 'fas fa-cog'],
                         ['label' => 'Chat', 'route' => route('chat.index'), 'icon' => 'fas fa-comments'],
                     ];

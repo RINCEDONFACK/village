@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\{
     CultureController,
     DashboardController,
     ItcommunityController,
+    ProduitTraditionnelController,
     ProfilController,
     WomentemController
 };
@@ -257,3 +258,16 @@ Route::prefix('formations-informatiques')->group(function () {
 
 Route::get('/services', [NosServiceController::class, 'nosservice'])->name('services');
 
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::resource('produits_traditionnels', ProduitTraditionnelController::class)
+        ->parameters(['produits_traditionnels' => 'produitTraditionnel']);
+
+    Route::post('produits_traditionnels/{produitTraditionnel}/toggle-disponibilite', [ProduitTraditionnelController::class, 'toggleDisponibilite'])->name('produits_traditionnels.toggle-disponibilite');
+    Route::post('produits_traditionnels/{produitTraditionnel}/toggle-exposition', [ProduitTraditionnelController::class, 'toggleExposition'])->name('produits_traditionnels.toggle-exposition');
+    Route::post('produits_traditionnels/{produitTraditionnel}/update-quantite', [ProduitTraditionnelController::class, 'updateQuantite'])->name('produits_traditionnels.update-quantite');
+    Route::post('produits_traditionnels/{produitTraditionnel}/duplicate', [ProduitTraditionnelController::class, 'duplicate'])->name('produits_traditionnels.duplicate');
+    Route::delete('produits_traditionnels/destroy-multiple', [ProduitTraditionnelController::class, 'destroyMultiple'])->name('produits_traditionnels.destroy-multiple');
+    Route::get('produits_traditionnels-export', [ProduitTraditionnelController::class, 'export'])->name('produits_traditionnels.export');
+    Route::get('produits_traditionnels-statistiques', [ProduitTraditionnelController::class, 'statistiques'])->name('produits_traditionnels.statistiques');
+    Route::post('produits_traditionnels-check-stock', [ProduitTraditionnelController::class, 'checkStock'])->name('produits_traditionnels.check-stock');
+});
