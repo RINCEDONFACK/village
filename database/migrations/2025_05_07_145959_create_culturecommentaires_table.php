@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('culturecommentaires', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('culture_id')->constrained('cultures')->onDelete('cascade'); 
+            
+            $table->foreignId('culture_id')->constrained('cultures')->onDelete('cascade');
             $table->string('auteur')->nullable();
             $table->text('contenu');
             $table->string('photo')->nullable();

@@ -10,6 +10,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <title>{{ __('maisonduvillage.site_title') }}</title>
+<meta name="csrf-token" content="{{ csrf_token() }}">
 
 <link rel="icon" href="{{ asset('logo.jpg') }}?v={{ time() }}" type="image/jpeg">
 <link rel="apple-touch-icon" href="{{ asset('logo.jpg') }}?v={{ time() }}">

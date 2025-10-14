@@ -42,10 +42,8 @@ return new class extends Migration {
         Schema::create('teams', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('fonction');
             $table->string('tel')->nullable();
             $table->string('image')->nullable();
-            $table->longText('presentation')->nullable();
             $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
@@ -115,7 +113,7 @@ return new class extends Migration {
             $table->timestamps();
         });
 
-        
+
         // Contacts
         Schema::create('contacts', function (Blueprint $table) {
             $table->id();

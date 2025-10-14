@@ -220,9 +220,29 @@ Route::controller(EquipeController::class)->prefix('equipe')->name('equipe.')->g
 
 use App\Http\Controllers\site\TradictionController;
 
-Route::get('/cultures', [TradictionController::class, 'index'])->name('cultures.index');
-Route::get('/cultures/{id}', [TradictionController::class, 'show'])->name('cultures.show');
-Route::post('/cultures/{id}/commentaire', [TradictionController::class, 'storeCommentaire'])->name('cultures.commentaire.store');
+
+
+
+Route::prefix('cultures')->name('cultures.')->group(function () {
+    // Liste des cultures
+    Route::get('/', [TradictionController::class, 'index'])->name('index');
+
+    // Détail d'une culture
+    Route::get('/{id}', [TradictionController::class, 'show'])->name('show');
+
+    // Ajouter un commentaire (AJAX)
+    Route::post('/{id}/commentaire', [TradictionController::class, 'storeCommentaire'])->name('commentaire.store');
+
+    // Like une culture (AJAX)
+    Route::post('/{id}/like', [TradictionController::class, 'like'])->name('like');
+
+    // Unlike une culture (AJAX)
+    Route::post('/{id}/unlike', [TradictionController::class, 'unlike'])->name('unlike');
+     Route::delete('/{id}/commentaire/{commentaireId}', [TradictionController::class, 'deleteCommentaire'])->name('commentaire.delete');
+
+    // Répondre à un commentaire (AJAX)
+    Route::post('/{id}/commentaire/{commentaireId}/reply', [TradictionController::class, 'replyCommentaire'])->name('commentaire.reply');
+});
 
 
 Route::prefix('empowerment')->name('women.')->group(function () {
