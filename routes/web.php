@@ -32,6 +32,7 @@ use App\Http\Controllers\site\ContacterController;
 use App\Http\Controllers\site\FrontwomenController;
 use App\Http\Controllers\site\InformatiqueController;
 use App\Http\Controllers\site\NosServiceController;
+use App\Http\Controllers\site\PhotoEvenementController;
 use App\Http\Controllers\site\ProduitController;
 use Illuminate\Support\Facades\Auth;
 
@@ -286,12 +287,12 @@ Route::prefix('produits-traditionnels')->name('produits.')->group(function () {
 });
 
 
+
 // Dans routes/web.php
 
-use App\Http\Controllers\Site\PhotoController;
 
 // Routes pour la galerie photos
 Route::prefix('photos')->name('site.photos.')->group(function () {
-    Route::get('/', [PhotoController::class, 'index'])->name('index');
-    Route::get('/{id}', [PhotoController::class, 'show'])->name('show');
+    Route::get('/', [PhotoEvenementController::class, 'index'])->name('index');
+    Route::get('/{id}', [PhotoEvenementController::class, 'show'])->name('show');
 });
