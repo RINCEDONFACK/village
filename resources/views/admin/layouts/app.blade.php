@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover" />
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -11,15 +12,16 @@
     <title>Admin - La Maison du Village</title>
 
     <link rel="icon" href="{{ asset('logo.jpg') }}?v={{ time() }}" type="image/jpeg">
-<link rel="apple-touch-icon" href="{{ asset('logo.jpg') }}?v={{ time() }}">
-<link rel="manifest" href="{{ asset('manifest.json') }}?v={{ time() }}">
+    <link rel="apple-touch-icon" href="{{ asset('logo.jpg') }}?v={{ time() }}">
+    <link rel="manifest" href="{{ asset('manifest.json') }}?v={{ time() }}">
 
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/trix/2.0.0/trix.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
 
     <style>
@@ -637,6 +639,7 @@
 
         /* Préférence mouvement réduit */
         @media (prefers-reduced-motion: reduce) {
+
             *,
             *::before,
             *::after {
@@ -648,6 +651,7 @@
 
         /* Print styles */
         @media print {
+
             .menu-btn,
             .theme-toggle-btn,
             aside,
@@ -698,7 +702,8 @@
                 <!-- User info (desktop only) -->
                 <div class="user-info hidden sm:flex">
                     @if (Auth::user()->photo)
-                        <img src="{{ asset('storage/' . Auth::user()->photo) }}" alt="Avatar" class="user-avatar" loading="lazy">
+                        <img src="{{ asset('storage/' . Auth::user()->photo) }}" alt="Avatar" class="user-avatar"
+                            loading="lazy">
                     @else
                         <i class="fas fa-user-circle text-2xl text-gray-600"></i>
                     @endif
@@ -727,22 +732,52 @@
     <aside id="sidebar" class="themed-element">
         <nav>
             <ul>
+
                 @php
                     $links = [
                         ['label' => 'Dashboard', 'route' => url('admin/dashboard'), 'icon' => 'fas fa-tachometer-alt'],
                         ['label' => 'Utilisateurs', 'route' => route('admin.users.index'), 'icon' => 'fas fa-users'],
                         ['label' => 'Services', 'route' => route('admin.services.index'), 'icon' => 'fas fa-cogs'],
                         ['label' => 'Projets', 'route' => route('admin.projects.index'), 'icon' => 'fas fa-briefcase'],
-                        ['label' => 'Danse traditionnelle', 'route' => route('admin.cultures.index'), 'icon' => 'fas fa-drum'],
-                        ['label' => 'Témoignages', 'route' => route('admin.testimonials.index'), 'icon' => 'fas fa-quote-left'],
+                        ['label' => 'Albums', 'route' => route('admin.albums.index'), 'icon' => 'fas fa-images'], // ← NOUVEAU LIEN
+                        [
+                            'label' => 'Danse traditionnelle',
+                            'route' => route('admin.cultures.index'),
+                            'icon' => 'fas fa-drum',
+                        ],
+                        [
+                            'label' => 'Témoignages',
+                            'route' => route('admin.testimonials.index'),
+                            'icon' => 'fas fa-quote-left',
+                        ],
                         ['label' => 'Équipe', 'route' => route('admin.teams.index'), 'icon' => 'fas fa-users-cog'],
-                        ['label' => 'Partenaires', 'route' => route('admin.partners.index'), 'icon' => 'fas fa-handshake'],
-                        ['label' => 'À propos', 'route' => route('admin.about_sections.index'), 'icon' => 'fas fa-book-open'],
-                        ['label' => 'Woment Empowerment', 'route' => route('admin.women.index'), 'icon' => 'fas fa-scale-balanced'],
+                        [
+                            'label' => 'Partenaires',
+                            'route' => route('admin.partners.index'),
+                            'icon' => 'fas fa-handshake',
+                        ],
+                        [
+                            'label' => 'À propos',
+                            'route' => route('admin.about_sections.index'),
+                            'icon' => 'fas fa-book-open',
+                        ],
+                        [
+                            'label' => 'Woment Empowerment',
+                            'route' => route('admin.women.index'),
+                            'icon' => 'fas fa-scale-balanced',
+                        ],
                         ['label' => 'Missions', 'route' => route('admin.missions.index'), 'icon' => 'fas fa-bullseye'],
                         ['label' => 'Actualités', 'route' => route('admin.posts.index'), 'icon' => 'fas fa-newspaper'],
-                        ['label' => 'Itcommunity', 'route' => route('admin.itcommunities.index'), 'icon' => 'fas fa-laptop-code'],
-                            ['label' => 'Produits Traditionnels', 'route' => route('admin.produits_traditionnels.index'), 'icon' => 'fas fa-gift'],
+                        [
+                            'label' => 'Itcommunity',
+                            'route' => route('admin.itcommunities.index'),
+                            'icon' => 'fas fa-laptop-code',
+                        ],
+                        [
+                            'label' => 'Produits Traditionnels',
+                            'route' => route('admin.produits_traditionnels.index'),
+                            'icon' => 'fas fa-gift',
+                        ],
                         ['label' => 'Paramètres', 'route' => route('admin.settings.index'), 'icon' => 'fas fa-cog'],
                         ['label' => 'Chat', 'route' => route('chat.index'), 'icon' => 'fas fa-comments'],
                     ];
@@ -750,7 +785,8 @@
 
                 @foreach ($links as $link)
                     <li>
-                        <a href="{{ $link['route'] }}" class="{{ request()->url() == $link['route'] ? 'active' : '' }}">
+                        <a href="{{ $link['route'] }}"
+                            class="{{ request()->url() == $link['route'] ? 'active' : '' }}">
                             <i class="{{ $link['icon'] }}"></i>
                             <span>{{ $link['label'] }}</span>
                         </a>
@@ -913,7 +949,8 @@
                 if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
                     // Viewport height fix
                     const setVH = () => {
-                        document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+                        document.documentElement.style.setProperty('--vh',
+                        `${window.innerHeight * 0.01}px`);
                     };
                     setVH();
                     window.addEventListener('resize', setVH);

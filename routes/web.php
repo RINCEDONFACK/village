@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\{
     ProjectController,
     PostController,
     AboutSectionController,
+    AlbumController,
     TestimonialController,
     PartnerController,
     ContactController,
@@ -125,6 +126,11 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::resource('missions', CompanyMissionController::class);
     Route::patch('missions/{mission}/toggle-status', [CompanyMissionController::class, 'toggleStatus'])
         ->name('missions.toggleStatus');
+
+
+         Route::resource('albums', AlbumController::class);
+    Route::patch('albums/{album}/toggle-status', [AlbumController::class, 'toggleStatus'])
+        ->name('albums.toggleStatus');
 
 
 
