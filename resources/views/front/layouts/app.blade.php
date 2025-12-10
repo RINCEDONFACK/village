@@ -709,20 +709,21 @@
 
             <div class="nav-right">
                 <!-- Navigation Menu -->
-                <nav id="nav-menu" class="menu" role="navigation" aria-label="Main Navigation">
-                    <a href="{{ route('accueil.index') }}">Home</a>
-                    <a href="{{ route('propos.index') }}">About</a>
-                    <a href="{{ route('services') }}">Services</a>
-                    <a href="{{ route('cultures.index') }}">Culture</a>
-                    <a href="{{ route('women.index') }}">Women</a>
-                    <a href="{{ route('site.informatique.index') }}">IT</a>
-                    <a href="#">Youth Festival</a>
-                    <a href="{{ route('blog.index') }}">News</a>
-                    <a href="{{ route('projects.index') }}">Projects</a>
-                    <a href="{{ route('equipe.index') }}">Team</a>
-                    <a href="{{ route('produits.index') }}">Traditional Products</a>
-                    <a href="{{ route('contacter.index') }}">Contact</a>
-                </nav>
+               <nav id="nav-menu" class="menu" role="navigation" aria-label="Main Navigation">
+    <a href="{{ route('accueil.index') }}">Home</a>
+    <a href="{{ route('propos.index') }}">About</a>
+    <a href="{{ route('services') }}">Services</a>
+    <a href="{{ route('cultures.index') }}">Culture</a>
+    <a href="{{ route('women.index') }}">Women</a>
+    <a href="{{ route('site.informatique.index') }}">IT</a>
+    <a href="#">Youth Festival</a>
+    <a href="{{ route('blog.index') }}">News</a>
+    <a href="{{ route('projects.index') }}">Projects</a>
+    <a href="{{ route('equipe.index') }}">Team</a>
+    <a href="{{ route('produits.index') }}">Traditional Products</a>
+    <a href="{{ route('site.photos.index') }}">Gallery</a>
+    <a href="{{ route('contacter.index') }}">Contact</a>
+</nav>
 
                 <!-- Language Switcher -->
                 <div class="language-switcher">

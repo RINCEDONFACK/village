@@ -284,3 +284,14 @@ Route::prefix('produits-traditionnels')->name('produits.')->group(function () {
     Route::get('/', [ProduitController::class, 'index'])->name('index');
     Route::get('/{produitTraditionnel}', [ProduitController::class, 'show'])->name('show');
 });
+
+
+// Dans routes/web.php
+
+use App\Http\Controllers\Site\PhotoController;
+
+// Routes pour la galerie photos
+Route::prefix('photos')->name('site.photos.')->group(function () {
+    Route::get('/', [PhotoController::class, 'index'])->name('index');
+    Route::get('/{id}', [PhotoController::class, 'show'])->name('show');
+});
