@@ -51,7 +51,8 @@
             line-height: 1.6;
         }
 
-        body, html {
+        body,
+        html {
             max-width: 100vw;
             overflow-x: hidden;
         }
@@ -660,7 +661,9 @@
 
         /* Touch Friendly - Minimum tap target size */
         @media (hover: none) and (pointer: coarse) {
-            a, button {
+
+            a,
+            button {
                 min-height: 44px;
                 min-width: 44px;
                 display: inline-flex;
@@ -709,32 +712,30 @@
 
             <div class="nav-right">
                 <!-- Navigation Menu -->
-               <nav id="nav-menu" class="menu" role="navigation" aria-label="Main Navigation">
-    <a href="{{ route('accueil.index') }}">Home</a>
-    <a href="{{ route('propos.index') }}">About</a>
-    <a href="{{ route('services') }}">Services</a>
-    <a href="{{ route('cultures.index') }}">Culture</a>
-    <a href="{{ route('women.index') }}">Women</a>
-    <a href="{{ route('site.informatique.index') }}">IT</a>
-    <a href="#">Youth Festival</a>
-    <a href="{{ route('blog.index') }}">News</a>
-    <a href="{{ route('projects.index') }}">Projects</a>
-    <a href="{{ route('equipe.index') }}">Team</a>
-    <a href="{{ route('produits.index') }}">Traditional Products</a>
-    <a href="{{ route('site.photos.index') }}">Gallery</a>
-    <a href="{{ route('contacter.index') }}">Contact</a>
-</nav>
+                <nav id="nav-menu" class="menu" role="navigation" aria-label="Main Navigation">
+                    <a href="{{ route('accueil.index') }}">Home</a>
+                    <a href="{{ route('propos.index') }}">About</a>
+                    <a href="{{ route('services') }}">Services</a>
+                    <a href="{{ route('cultures.index') }}">Culture</a>
+                    <a href="{{ route('women.index') }}">Women</a>
+                    <a href="{{ route('site.informatique.index') }}">IT</a>
+                    <a href="#">Youth Festival</a>
+                    <a href="{{ route('blog.index') }}">News</a>
+                    <a href="{{ route('projects.index') }}">Projects</a>
+                    <a href="{{ route('equipe.index') }}">Team</a>
+                    <a href="{{ route('produits.index') }}">Traditional Products</a>
+                    <a href="{{ route('site.photos.index') }}">Gallery</a>
+                    <a href="{{ route('contacter.index') }}">Contact</a>
+                </nav>
 
                 <!-- Language Switcher -->
                 <div class="language-switcher">
                     <a href="{{ route('lang.switch', 'fr') }}"
-                        class="{{ app()->getLocale() == 'fr' ? 'active' : '' }}"
-                        title="Switch to French">
+                        class="{{ app()->getLocale() == 'fr' ? 'active' : '' }}" title="Switch to French">
                         🇫🇷 FR
                     </a>
                     <a href="{{ route('lang.switch', 'en') }}"
-                        class="{{ app()->getLocale() == 'en' ? 'active' : '' }}"
-                        title="Switch to English">
+                        class="{{ app()->getLocale() == 'en' ? 'active' : '' }}" title="Switch to English">
                         🇬🇧 EN
                     </a>
                 </div>
@@ -765,7 +766,8 @@
                                 <h3>About Us</h3>
                             </div>
                             <div class="footer-content">
-                                <p>Village House is committed to promoting culture, empowering women, and fostering community development through various initiatives.</p>
+                                <p>Village House is committed to promoting culture, empowering women, and fostering
+                                    community development through various initiatives.</p>
                                 <div class="social-icon d-flex align-items-center">
                                     <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                                     <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
@@ -862,7 +864,8 @@
                                 <p>Subscribe to our newsletter to receive the latest news and updates.</p>
                                 <div class="footer-input">
                                     <input type="email" id="email2" placeholder="Enter your email">
-                                    <button class="newsletter-btn" type="submit" aria-label="Subscribe to Newsletter">
+                                    <button class="newsletter-btn" type="submit"
+                                        aria-label="Subscribe to Newsletter">
                                         <i class="fab fa-telegram-plane"></i>
                                     </button>
                                 </div>
@@ -886,7 +889,8 @@
 
                     <!-- Copyright Text -->
                     <p class="wow fadeInRight color-2" data-wow-delay=".5s">
-                        © {{ date('Y') }} <a href="{{ route('accueil.index') }}">Village House</a>. All rights reserved.
+                        © {{ date('Y') }} <a href="{{ route('accueil.index') }}">Village House</a>. All rights
+                        reserved.
                     </p>
                 </div>
             </div>
